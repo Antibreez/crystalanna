@@ -1,0 +1,37 @@
+<div class="file-input">
+  <label>
+    <input type="file" class="visually-hidden" accept="image/jpeg,image/png,image/gif" name="file-test" data-max-bytes="1000000">
+    <div class="file-input__card">
+      <div class="file-input__card-icon">
+        <svg><use xlink:href="img/sprite.svg#download"></use></svg>
+      </div>
+      <div class="file-input__card-text">
+        <span class="file-input__card-text-label">
+          Отправьте проект или план помещения. Формат: jpeg, png, максимальный размер: xxx мб.
+        </span>
+        <span class="file-input__card-text-error"></span>
+      </div>
+
+      <button type="button" class="file-input__clear-btn  file-input__clear-btn--error">
+        <svg><use xlink:href="img/sprite.svg#close"></use></svg>
+      </button>
+
+      <div class="file-input__progress">
+        <div class="file-input__progress-bar">
+          <div class="file-input__progress-current"></div>
+        </div>
+        <div class="file-input__progress-value"></div>
+      </div>
+
+      <div class="file-input__result">
+        <div class="file-input__result-image">
+          <img>
+        </div>
+        <div class="file-input__result-name"></div>
+        <button type="button" class="file-input__clear-btn">
+          <svg><use xlink:href="img/sprite.svg#close"></use></svg>
+        </button>
+      </div>
+    </div>
+  </label>
+</div>

@@ -1,0 +1,17 @@
+<div class="breadcrumbs">
+  <div class="breadcrumbs__container container">
+    <nav class="breadcrumbs__nav swiper">
+      <ul class="breadcrumbs__nav-list swiper-wrapper">
+        @@for (let i = 0; i < arr.length - 1; i++) { <li class="breadcrumbs__nav-item swiper-slide">
+          <a href="`+arr[i].link+`">`+arr[i].text+`</a>
+          </li>
+          }
+
+          @@for (let i = arr.length - 1; i < arr.length; i++) { <li class="breadcrumbs__nav-item swiper-slide">
+            <span>`+arr[i].text+`</span>
+            </li>
+            }
+      </ul>
+    </nav>
+  </div>
+</div>

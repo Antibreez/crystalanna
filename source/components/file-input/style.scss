@@ -1,0 +1,263 @@
+@import '../../scss/global/variables.scss';
+@import '../../scss/global/mixins.scss';
+
+.file-input {
+  &__card {
+    height: 84px;
+    display: flex;
+    align-items: center;
+    color: $grey400;
+    padding: 24px;
+    border: 1px dashed $grey300;
+    border-radius: 5px;
+    position: relative;
+    transition: border-color 0.2s, color 0.2s;
+
+    @include mobile {
+      height: vmin(84);
+      padding: vmin(24);
+      border-radius: vmin(5);
+      border-width: vmin(1);
+    }
+
+    &.highlight {
+      color: $main-text;
+      border-color: $main-text;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $main-text;
+      border-color: $main-text;
+    }
+  }
+
+  &__card-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    @include mobile {
+      width: vmin(24);
+      height: vmin(24);
+      margin-right: vmin(16);
+
+      svg {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+  }
+
+  &__card-text-label,
+  &__card-text-error {
+    @include b2;
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+  }
+
+  &__card-text-error {
+    display: none;
+  }
+
+  &__progress {
+    display: none;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    background-color: #fff;
+    padding: 24px;
+    align-items: center;
+    color: $grey400;
+    border: 1px solid $grey300;
+    border-radius: 5px;
+
+    @include mobile {
+      top: vmin(-1);
+      left: vmin(-1);
+      width: calc(100% + vmin(2));
+      height: calc(100% + vmin(2));
+      padding: vmin(24);
+      border-width: vmin(1);
+      border-radius: vmin(5);
+    }
+
+    &-bar {
+      flex: 1;
+      height: 4px;
+      background-color: $grey200;
+      margin-right: 16px;
+
+      @include mobile {
+        height: vmin(4);
+        margin-right: vmin(16);
+      }
+    }
+
+    &-current {
+      height: 100%;
+      background-color: $main-text;
+    }
+
+    &-value {
+      flex-shrink: 0;
+      @include b2;
+
+      @include mobile {
+        font-size: vmin(12);
+      }
+    }
+  }
+
+  &__result {
+    display: none;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    align-items: center;
+    height: calc(100% + 2px);
+    width: calc(100% + 2px);
+    border: 1px solid $grey300;
+    border-radius: 5px;
+    background-color: #fff;
+
+    @include mobile {
+      top: vmin(-1);
+      left: vmin(-1);
+      width: calc(100% + vmin(2));
+      height: calc(100% + vmin(2));
+      border-width: vmin(1);
+      border-radius: vmin(5);
+    }
+
+    &-image {
+      width: 84px;
+      height: 100%;
+      background-color: $grey200;
+      position: relative;
+      flex-shrink: 0;
+
+      @include mobile {
+        width: vmin(84);
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+
+        &:not([src]) {
+          display: none;
+        }
+      }
+    }
+
+    &-name {
+      flex: 1;
+      @include b2;
+      color: $main-text;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-left: 16px;
+      margin-right: 16px;
+
+      @include mobile {
+        font-size: vmin(12);
+        margin-left: vmin(16);
+        margin-right: vmin(16);
+      }
+    }
+  }
+
+  &__clear-btn {
+    width: 24px;
+    height: 24px;
+    color: $grey400;
+    margin-left: auto;
+    margin-right: 24px;
+    flex-shrink: 0;
+    transition: color 0.2s;
+
+    @include hover {
+      color: $main-text;
+      cursor: pointer;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    @include mobile {
+      width: vmin(24);
+      height: vmin(24);
+      margin-right: vmin(24);
+
+      svg {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+  }
+
+  &__clear-btn--error {
+    display: none;
+    color: $fail;
+    margin-right: 0;
+  }
+
+  &.is--progress {
+    .file-input__progress {
+      display: flex;
+    }
+  }
+
+  &.is--error {
+    .file-input__card {
+      border-color: $fail;
+      color: $fail;
+
+      .file-input__card-text-label {
+        display: none;
+      }
+
+      .file-input__card-text-error {
+        display: block;
+      }
+
+      .file-input__clear-btn--error {
+        display: block;
+      }
+    }
+  }
+
+  &.is--result {
+    .file-input__result {
+      display: flex;
+    }
+  }
+
+  &.is--invalid {
+    .file-input__card {
+      border-color: $fail;
+    }
+
+    .input-field__error {
+      display: block;
+    }
+  }
+}

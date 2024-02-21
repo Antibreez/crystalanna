@@ -1,0 +1,92 @@
+.support-card {
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    padding: 40px;
+    background-color: $grey200;
+
+    @include mobile {
+      flex-direction: column;
+      padding: vmin(24);
+    }
+  }
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    background-color: $main-text;
+    border-radius: 12px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 24px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    @include mobile {
+      width: vmin(48);
+      height: vmin(48);
+      border-radius: vmin(12);
+      margin-right: 0;
+      margin-bottom: vmin(16);
+
+      svg {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+  }
+
+  &__text {
+    flex: 1;
+    padding-top: 4px;
+    padding-right: 24px;
+
+    @include mobile {
+      padding-top: 0;
+      padding-right: 0;
+      margin-bottom: vmin(16);
+    }
+  }
+
+  &__title {
+    @include h6;
+    margin-bottom: 4px;
+
+    @include mobile {
+      font-size: vmin(16);
+      margin-bottom: vmin(4);
+    }
+  }
+
+  &__desc {
+    @include b1;
+    color: $grey400;
+    margin: 0;
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+  }
+
+  &__phone {
+    @include h4;
+    margin: 0;
+    color: $main-text;
+    align-self: center;
+
+    @include hover {
+      color: $additional2;
+    }
+
+    @include mobile {
+      font-size: vmin(24);
+      align-self: flex-start;
+    }
+  }
+}

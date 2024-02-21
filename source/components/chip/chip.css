@@ -1,0 +1,68 @@
+.chip {
+  height: 46px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 16px;
+  border: 1.5px solid #e6e6ef;
+  border-radius: 40px;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
+}
+@media (max-width: 767px) {
+  .chip {
+    height: vmin(46);
+    padding: vmin(8) vmin(16);
+    border-width: vmin(1.5);
+    border-radius: vmin(40);
+  }
+}
+@media (min-width: 1024px) {
+  .chip:hover {
+    border-color: #6c7684;
+    cursor: pointer;
+  }
+  .chip:hover .chip__icon {
+    color: #151515;
+  }
+}
+.chip__text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 400;
+  color: #151515;
+}
+@media (max-width: 767px) {
+  .chip__text {
+    font-size: vmin(12);
+  }
+}
+.chip__icon {
+  width: 24px;
+  height: 24px;
+  color: #6c7684;
+  margin-right: 16px;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+@media (max-width: 767px) {
+  .chip__icon {
+    width: vmin(24);
+    height: vmin(24);
+    margin-right: vmin(16);
+  }
+}
+.chip__icon svg {
+  width: 24px;
+  height: 24px;
+}
+@media (max-width: 767px) {
+  .chip__icon svg {
+    width: vmin(24);
+    height: vmin(24);
+  }
+}

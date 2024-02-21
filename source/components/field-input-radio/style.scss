@@ -1,0 +1,194 @@
+@import '../../scss/global/variables.scss';
+@import '../../scss/global/mixins.scss';
+
+.field-input-radio {
+  margin-bottom: 15px;
+  width: auto;
+  display: block;
+  position: relative;
+  text-align: left;
+  font-weight: normal;
+  cursor: pointer;
+  color: currentColor;
+  line-height: 1.1;
+
+  @include mobile {
+    margin-bottom: vmin(15);
+  }
+}
+.field-input-radio [class^='ico-'] {
+  margin-right: 6px;
+
+  @include mobile {
+    margin-right: vmin(6);
+  }
+}
+.field-input-radio i {
+  font-size: 12px;
+  color: #99a4ab;
+
+  @include mobile {
+    font-size: vmin(12);
+  }
+}
+.field-input-radio input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.field-input-radio input[type='radio'] + span {
+  padding: 0 0 0 38px;
+  display: inline-block;
+  line-height: 1.5;
+
+  @include mobile {
+    padding: 0 0 0 vmin(38);
+  }
+}
+.field-input-radio input[type='radio'] + span:before {
+  content: '';
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  background: #f4f4f8;
+  border-radius: 100%;
+  border: 1px solid #f4f4f8;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  @include mobile {
+    width: vmin(24);
+    height: vmin(24);
+    top: vmin(-2);
+    border-width: vmin(1);
+  }
+}
+.field-input-radio input[type='radio']:checked + span:before {
+  content: '';
+  background: #2858ff;
+  -webkit-box-shadow: inset 0 0 0 2px #2858ff, inset 0 0 0 5px #fff;
+  box-shadow: inset 0 0 0 2px #2858ff, inset 0 0 0 5px #fff;
+}
+.field-input-radio_red input[type='radio'] + span {
+  padding: 0 0 0 25px;
+  display: inline-block;
+  line-height: 1.1;
+
+  @include mobile {
+    padding: 0 0 0 vmin(25);
+  }
+}
+.field-input-radio_red input[type='radio'] + span:before {
+  background: #f3f3f3;
+  border: 1px solid #f3f3f3;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: background-color 300ms ease, border-color 300ms ease;
+  -o-transition: background-color 300ms ease, border-color 300ms ease;
+  transition: background-color 300ms ease, border-color 300ms ease;
+
+  @include mobile {
+    border-width: vmin(1);
+  }
+}
+.field-input-radio_red input[type='radio']:checked + span:before {
+  content: '';
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: #2858ff;
+  background-image: url('data:image/svg+xml,%3C?xml%20version%3D%221.0%22%20?%3E%3Csvg%20version%3D%221.1%22%20%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2278.369px%22%20height%3D%2278.369px%22%20viewBox%3D%220%200%2078.369%2078.369%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M78.049,19.015L29.458,67.606c-0.428,0.428-1.121,0.428-1.548,0L0.32,40.015c-0.427-0.426-0.427-1.119,0-1.547l6.704-6.704c0.428-0.427,1.121-0.427,1.548,0l20.113,20.112l41.113-41.113c0.429-0.427,1.12-0.427,1.548,0l6.703,6.704C78.477,17.894,78.477,18.586,78.049,19.015z%22/%3E%3C/svg%3E');
+  background-size: 12px 9px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-color: #fc4242;
+
+  @include mobile {
+    background-size: vmin(12) vmin(9);
+  }
+}
+.field-input-radio input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.field-input-radio input[type='checkbox'] + i + span,
+.field-input-radio input[type='checkbox'] + span {
+  @include b1;
+  padding: 0 0 0 38px;
+  display: inline-flex;
+
+  @include mobile {
+    font-size: vmin(12);
+    padding: 0 0 0 vmin(38);
+  }
+}
+.field-input-radio input[type='checkbox'] + i + span:before,
+.field-input-radio input[type='checkbox'] + span:before {
+  content: '';
+  margin: 0 0 0 0;
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  // border: 1px solid #f4f4f8;
+  // border-radius: 4px;
+  background: $grey250;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  transition: background-color 0.2s;
+
+  @include mobile {
+    width: vmin(24);
+    height: vmin(24);
+    top: vmin(-2);
+  }
+}
+
+.field-input-radio:hover input[type='checkbox'] + i + span:before,
+.field-input-radio:hover input[type='checkbox'] + span:before {
+  background-color: $grey300;
+}
+
+.field-input-radio input[type='checkbox']:checked + i + span:before,
+.field-input-radio input[type='checkbox']:checked + span:before {
+  background-color: $primary;
+  background-image: url('data:image/svg+xml,<svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.1783 0.265202C10.5841 0.639805 10.6094 1.27246 10.2348 1.67829L5.23482 7.17828C4.86993 7.57359 4.25768 7.60937 3.84923 7.25926L0.349227 4.25926C-0.0700991 3.89984 -0.118661 3.26854 0.240762 2.84921C0.600184 2.42989 1.23148 2.38133 1.65081 2.74075L4.41899 5.11347L8.76521 0.321725C9.13982 -0.0840959 9.77248 -0.109402 10.1783 0.265202Z" fill="white"/></svg>');
+  background-size: 12px 9px;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+
+  @include mobile {
+    background-size: vmin(12) vmin(9);
+  }
+}
+.field-input-radio input[type='checkbox'][disabled] + i + span,
+.field-input-radio input[type='checkbox'][disabled] + span {
+  color: #d1d8e1;
+  cursor: default;
+}
+.field-input-radio input[type='checkbox'][disabled] + i + span:before,
+.field-input-radio input[type='checkbox'][disabled] + span:before {
+  border-color: #f4f4f8;
+  background: #f4f4f8;
+}
+.field-input-radio input[type='checkbox'][disabled]:checked + i + span:before,
+.field-input-radio input[type='checkbox'][disabled]:checked + span:before {
+  border-color: #f4f4f8;
+  background-color: #f4f4f8;
+  background-image: url('data:image/svg+xml,%3C?xml%20version%3D%221.0%22%20?%3E%3Csvg%20version%3D%221.1%22%20%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2278.369px%22%20height%3D%2278.369px%22%20viewBox%3D%220%200%2078.369%2078.369%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M78.049,19.015L29.458,67.606c-0.428,0.428-1.121,0.428-1.548,0L0.32,40.015c-0.427-0.426-0.427-1.119,0-1.547l6.704-6.704c0.428-0.427,1.121-0.427,1.548,0l20.113,20.112l41.113-41.113c0.429-0.427,1.12-0.427,1.548,0l6.703,6.704C78.477,17.894,78.477,18.586,78.049,19.015z%22/%3E%3C/svg%3E');
+  background-size: 12px 9px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include mobile {
+    background-size: vmin(12) vmin(9);
+  }
+}

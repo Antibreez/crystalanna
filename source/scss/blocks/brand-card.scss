@@ -1,0 +1,475 @@
+.brand-card {
+  &__top {
+    position: relative;
+    aspect-ratio: 1200 / 550;
+    display: flex;
+
+    @include desktop-m {
+      aspect-ratio: 1000 / 460;
+    }
+
+    @include tablet {
+      aspect-ratio: 736 / 339;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      aspect-ratio: 328 / 200;
+    }
+  }
+
+  &__image-block {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &.is--kentatsu img {
+      @include tablet {
+        object-position: right -10px top 50%;
+      }
+
+      @include mobile {
+        object-position: center;
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    * + .brand-card__logo {
+      margin-top: auto;
+    }
+
+    @include desktop-m {
+      padding: 48px;
+    }
+
+    @include tablet {
+      padding: 36px;
+    }
+
+    @include mobile {
+      position: static;
+      height: auto;
+      text-align: center;
+      padding: vmin(24) vmin(24) 0;
+    }
+  }
+
+  &__title {
+    @include h4;
+    max-width: 415px;
+    margin-bottom: 32px;
+
+    &.is--axioma,
+    &.is--primera {
+      max-width: 530px;
+
+      @include tablet {
+        max-width: 320px;
+      }
+    }
+
+    &.is--ecoletta {
+      max-width: 350px;
+
+      @include desktop-m {
+        width: 260px;
+      }
+
+      @include tablet {
+        max-width: 220px;
+      }
+    }
+
+    &.is--white {
+      color: #fff;
+
+      @include mobile {
+        color: $main-text;
+      }
+    }
+
+    @include desktop-m {
+      max-width: 337px;
+      margin-bottom: 26px;
+      font-size: 24px;
+    }
+
+    @include tablet {
+      font-size: 18px;
+      max-width: 250px;
+      margin-bottom: 16px;
+    }
+
+    @include mobile {
+      font-size: vmin(16);
+      margin-bottom: vmin(16);
+      max-width: none;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__link {
+    @include tablet {
+      font-size: 12px;
+      padding-left: 22px;
+      padding-right: 22px;
+    }
+
+    @include mobile {
+      font-size: vmin(12);
+      padding-left: vmin(22);
+      padding-right: vmin(22);
+
+      &:nth-child(1) {
+        order: 1;
+        flex: 1;
+      }
+
+      &:nth-child(2) {
+        order: 3;
+        flex: 1;
+      }
+    }
+  }
+
+  &__btn-block {
+    display: flex;
+    gap: 16px;
+
+    @include tablet {
+      gap: 8px;
+    }
+
+    @include mobile {
+      display: inline-flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__btn-info {
+    padding-left: 12px;
+    padding-right: 12px;
+
+    svg {
+      margin-left: 0;
+    }
+
+    &.is--white {
+      // border-color: #fff;
+      // color: #fff;
+
+      // @include hover {
+      //   opacity: 0.8;
+      // }
+
+      @media (min-width: 768px) {
+        border-color: #fff;
+        color: #fff;
+        transition: opacity 0.2s;
+
+        @include hover {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    @include mobile {
+      padding-left: vmin(9.5);
+      padding-right: vmin(9.5);
+      order: 2;
+    }
+  }
+
+  &__logo {
+    height: auto;
+
+    & + * {
+      margin-top: auto;
+    }
+
+    @include desktop-m {
+      &.is--midea {
+        width: 144px;
+      }
+
+      &.is--daikin {
+        width: 159px;
+      }
+
+      &.is--kentatsu {
+        width: 228px;
+      }
+
+      &.is--bosch {
+        width: 187px;
+      }
+
+      &.is--axioma {
+        width: 195px;
+      }
+
+      &.is--daichi {
+        width: 185px;
+      }
+
+      &.is--airwave {
+        width: 189px;
+      }
+
+      &.is--ecoletta {
+        width: 189px;
+      }
+
+      &.is--primera {
+        width: 193px;
+      }
+
+      &.is--aurum {
+        width: 137px;
+      }
+    }
+
+    @include tablet {
+      &.is--midea {
+        width: 106px;
+      }
+
+      &.is--daikin {
+        width: 117px;
+      }
+
+      &.is--kentatsu {
+        width: 168px;
+      }
+
+      &.is--bosch {
+        width: 138px;
+      }
+
+      &.is--axioma {
+        width: 143px;
+      }
+
+      &.is--daichi {
+        width: 136px;
+      }
+
+      &.is--airwave {
+        width: 139px;
+      }
+
+      &.is--ecoletta {
+        width: 139px;
+      }
+
+      &.is--primera {
+        width: 142px;
+      }
+
+      &.is--aurum {
+        width: 101px;
+      }
+    }
+
+    @include mobile {
+      position: absolute;
+      top: vmin(16);
+      left: vmin(16);
+
+      &.is--midea {
+        width: vmin(98);
+      }
+
+      &.is--daikin {
+        width: vmin(110);
+      }
+
+      &.is--kentatsu {
+        width: vmin(134);
+      }
+
+      &.is--bosch {
+        width: vmin(138);
+      }
+
+      &.is--axioma {
+        width: vmin(143);
+      }
+
+      &.is--daichi {
+        width: vmin(111);
+      }
+
+      &.is--airwave {
+        width: vmin(109);
+      }
+
+      &.is--ecoletta {
+        width: vmin(109);
+      }
+
+      &.is--primera {
+        width: vmin(111);
+      }
+
+      &.is--aurum {
+        width: vmin(98);
+      }
+    }
+  }
+
+  &__bottom {
+    text-align: center;
+    padding-top: 24px;
+    overflow: hidden;
+
+    @include desktop-m {
+      padding-top: 20px;
+    }
+
+    @include tablet {
+      padding-top: 16px;
+    }
+
+    @include mobile {
+      padding-top: 0;
+    }
+  }
+
+  &__slider {
+    display: inline-block;
+    max-width: 100%;
+    overflow: visible !important;
+
+    @include mobile {
+      padding-top: vmin(34);
+      width: 100%;
+    }
+  }
+
+  &__slide {
+    width: 184px;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    @include hover {
+      .brand-card__slide-text {
+        color: $grey400;
+      }
+    }
+
+    @include desktop-m {
+      width: 153px;
+
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+    }
+
+    @include tablet {
+      width: 113px;
+
+      &:not(:last-child) {
+        margin-right: 12px;
+      }
+    }
+
+    @include mobile {
+      width: vmin(112);
+
+      &:not(:last-child) {
+        margin-right: vmin(12);
+      }
+    }
+  }
+
+  &__slider-pagination.swiper-pagination {
+    top: vmin(24);
+    background: $grey200;
+    height: vmin(2);
+    display: none;
+
+    @include mobile {
+      &:not(.swiper-pagination-lock) {
+        display: block;
+      }
+    }
+
+    .swiper-pagination-progressbar-fill {
+      background: $main-text;
+    }
+  }
+
+  &__slide-img-block {
+    height: 180px;
+    background-color: #fff;
+    // background-color: $grey200;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @include desktop-m {
+      height: 150px;
+    }
+
+    @include tablet {
+      height: 111px;
+    }
+
+    @include mobile {
+      height: vmin(110);
+    }
+  }
+
+  &__slide-text {
+    @include b1;
+    color: $main-text;
+    display: block;
+    text-align: center;
+    padding-top: 16px;
+    transition: color 0.2s;
+
+    @include desktop-m {
+      font-size: 12px;
+      padding-top: 14px;
+    }
+
+    @include tablet {
+      font-size: 10px;
+      padding-top: 10px;
+    }
+
+    @include mobile {
+      font-size: vmin(10);
+      padding-top: vmin(10);
+    }
+  }
+}

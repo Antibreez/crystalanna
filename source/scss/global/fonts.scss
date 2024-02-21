@@ -1,0 +1,40 @@
+// @include font-face('SuisseIntl', 'suisseintl-light', 300);
+// @include font-face('SuisseIntl', 'suisseintl-regular', 400);
+// @include font-face('SuisseIntl', 'suisseintl-medium', 500);
+// @include font-face('SuisseIntl', 'suisseintl-semibold', 600);
+
+@font-face {
+  font-family: 'SuisseIntl';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: local(''), url('../fonts/suisseIntl-light.woff2') format('woff2'),
+    /* Modern Browsers */ url('../fonts/suisseintl-light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SuisseIntl';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local(''), url('../fonts/suisseIntl-regular.woff2') format('woff2'),
+    /* Modern Browsers */ url('../fonts/suisseintl-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SuisseIntl';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: local(''), url('../fonts/suisseIntl-medium.woff2') format('woff2'),
+    /* Modern Browsers */ url('../fonts/suisseintl-medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SuisseIntl';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: local(''), url('../fonts/suisseIntl-semibold.woff2') format('woff2'),
+    /* Modern Browsers */ url('../fonts/suisseintl-semibold.woff') format('woff');
+}

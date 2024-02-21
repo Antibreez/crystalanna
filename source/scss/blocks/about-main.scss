@@ -1,0 +1,474 @@
+.about-main {
+  &__history-block {
+    padding-top: 46px;
+
+    @include desktop-m {
+      padding-top: 0;
+    }
+  }
+
+  &__benefits-block {
+    padding-top: 100px;
+
+    @include tablet {
+      padding-top: 64px;
+    }
+
+    @include mobile {
+      padding-top: vmin(52);
+    }
+  }
+
+  &__benefits-title {
+    @include h3;
+    margin: 0 0 48px;
+
+    @include tablet {
+      text-align: center;
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-size: vmin(24);
+      margin-bottom: vmin(40);
+    }
+  }
+
+  &__benefits-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+
+    @include tablet {
+      gap: 64px;
+    }
+
+    @include mobile {
+      gap: vmin(64);
+    }
+  }
+
+  &__benefit-item {
+    .info-block__image-block {
+      @include desktop-m {
+        aspect-ratio: 490 / 416;
+      }
+
+      @include tablet {
+        aspect-ratio: 736 / 300;
+      }
+
+      @include mobile {
+        aspect-ratio: 328 / 200;
+      }
+    }
+
+    .info-block__text-block {
+      @include tablet {
+        text-align: center;
+      }
+    }
+
+    &.is--services {
+      .info-block__image-block {
+        @include mobile {
+          position: relative;
+        }
+
+        img {
+          object-position: right bottom;
+          // position: absolute;
+          // bottom: 0;
+          // right: 0;
+          // width: 90.5%;
+          // height: auto;
+
+          @include mobile {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 138%;
+          }
+        }
+      }
+    }
+
+    &.is--vrf-segment {
+      .info-block__image-block {
+        @include mobile {
+          position: relative;
+        }
+
+        img {
+          @include tablet {
+            object-position: 50% 60%;
+          }
+
+          @include mobile {
+            position: absolute;
+            left: 0;
+            top: 47%;
+            transform: translateY(-50%);
+            height: 135%;
+            object-position: center;
+          }
+        }
+      }
+    }
+
+    &.is--r-and-d {
+      .info-block__image-block {
+        @include mobile {
+          position: relative;
+        }
+
+        img {
+          object-position: 34% 50%;
+
+          @include tablet {
+            object-position: center;
+          }
+
+          @include mobile {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            height: 110%;
+          }
+        }
+      }
+    }
+
+    &.is--daichi-business {
+      .info-block__image-block {
+        @include mobile {
+          position: relative;
+        }
+
+        img {
+          object-position: 46% 50%;
+
+          @include tablet {
+            object-position: center;
+          }
+
+          @include mobile {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            height: 110%;
+          }
+        }
+      }
+    }
+  }
+
+  &__vacancies-outer {
+    padding-top: 100px;
+
+    @include tablet {
+      padding-top: 64px;
+    }
+
+    @include mobile {
+      padding-top: vmin(64);
+    }
+  }
+
+  &__vacancies-block {
+    position: relative;
+    overflow: hidden;
+
+    @include mobile {
+      padding-top: vmin(320);
+    }
+  }
+
+  &__vacancies-block-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__vacancies {
+    position: relative;
+
+    @include mobile {
+      position: static;
+    }
+  }
+
+  &__vacancies-content {
+    position: relative;
+    z-index: 3;
+    padding: 100px 0;
+    max-width: 488px;
+
+    @include desktop-m {
+      padding: 72px 0 70px;
+    }
+
+    @include tablet {
+      padding: 32px 0 38px;
+      max-width: 50%;
+    }
+
+    @include mobile {
+      // position: static;
+      background-color: #fff;
+      max-width: none;
+      width: calc(100% + vmin(32));
+      margin-left: vmin(-16);
+      padding: vmin(24) vmin(16);
+    }
+
+    .info-block__benefit-check {
+      width: 100%;
+
+      @include tablet {
+        flex-direction: row;
+        align-items: flex-start;
+
+        &::before {
+          margin: 0 16px 0 0;
+        }
+      }
+    }
+  }
+
+  &__vacancies-title {
+    @include h3;
+    margin: 0 0 16px;
+
+    @include tablet {
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-size: vmin(24);
+      margin-bottom: vmin(16);
+    }
+  }
+
+  &__vacancies-desc {
+    @include h6;
+
+    @include mobile {
+      font-size: vmin(16);
+    }
+  }
+
+  &__vacancies-image {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 177.5%;
+    width: auto;
+
+    @include desktop-m {
+      height: 152%;
+      top: 43%;
+    }
+
+    @include tablet {
+      height: 136%;
+      top: 38%;
+      right: -6%;
+    }
+
+    @include mobile {
+      height: auto;
+      width: vmin(306);
+      top: vmin(-94);
+      right: 50%;
+      transform: translate(50%, 0);
+    }
+  }
+
+  &__certificates-block {
+    overflow: hidden;
+    padding-top: 100px;
+
+    @include tablet {
+      padding-top: 64px;
+    }
+
+    @include mobile {
+      padding-top: vmin(28);
+    }
+  }
+
+  &__certificates-title {
+    @include h3;
+    margin-bottom: 48px;
+
+    @include tablet {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    @include mobile {
+      font-size: vmin(24);
+      margin-bottom: vmin(40);
+    }
+  }
+
+  &__certificates-slides {
+    overflow: visible !important;
+  }
+
+  &__certificates-slide {
+    width: 387px;
+    padding: 40px;
+    border-radius: 24px;
+    background: $grey200;
+    overflow: hidden;
+    color: $main-text;
+    height: auto;
+
+    @include tablet {
+      width: 332px;
+    }
+
+    @include mobile {
+      width: vmin(264);
+      padding: vmin(24);
+      border-radius: vmin(24);
+    }
+
+    &:not(:last-child) {
+      margin-right: 20px;
+      @include mobile {
+        margin-right: vmin(16);
+      }
+    }
+
+    &-title {
+      font-size: 16px;
+      line-height: 150%;
+      font-weight: 600;
+      margin: 0 0 16px;
+
+      @include mobile {
+        font-size: vmin(16);
+        margin-bottom: vmin(16);
+      }
+    }
+
+    &-desc {
+      @include b1;
+      color: $grey400;
+
+      @include mobile {
+        font-size: vmin(12);
+      }
+    }
+
+    &-bottom {
+      width: 100%;
+      min-height: 293px;
+
+      @include tablet {
+        min-height: 202px;
+      }
+
+      @include mobile {
+        min-height: vmin(186);
+      }
+    }
+
+    picture {
+      position: absolute;
+      bottom: -68px;
+      left: 50%;
+      width: 233px;
+      max-height: 317px;
+      transform: translate(-50%, 0);
+      transition: bottom 0.3s ease-in-out;
+      aspect-ratio: 233 / 317;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &::after {
+        content: '';
+        display: block;
+        height: 68px;
+        width: 100%;
+      }
+
+      img {
+        flex-shrink: 0;
+      }
+
+      @include tablet {
+        bottom: -90px;
+        width: 187px;
+        max-height: 254px;
+
+        &::after {
+          height: 90px;
+        }
+      }
+
+      @include mobile {
+        bottom: vmin(-70);
+        width: vmin(159);
+        max-height: vmin(216);
+
+        &::after {
+          height: vmin(70);
+        }
+      }
+    }
+
+    @include hover {
+      cursor: pointer;
+
+      picture {
+        bottom: -32px;
+      }
+    }
+  }
+
+  &__objects-block {
+    padding-top: 100px;
+
+    @include tablet {
+      padding-top: 64px;
+    }
+
+    @include mobile {
+      padding-top: vmin(64);
+    }
+
+    .objects-slider {
+      padding-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__news-articles.news-articles {
+    padding-top: 100px;
+    padding-bottom: 0;
+
+    @include tablet {
+      padding-top: 64px;
+    }
+  }
+}

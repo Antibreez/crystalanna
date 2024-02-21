@@ -1,0 +1,128 @@
+.no-page {
+  margin: 0;
+
+  &__container {
+    height: calc(100vh - 154px);
+    padding-top: 125px;
+    position: relative;
+    max-height: 820px;
+
+    @include desktop-m {
+      padding-top: 120px;
+      height: 687px;
+      max-height: none;
+    }
+
+    @include tablet {
+      padding-top: 433px;
+      height: 716px;
+    }
+
+    @include mobile {
+      height: vmin(528);
+      padding-top: vmin(320);
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__image {
+    position: absolute;
+
+    &-1 {
+      width: 700px;
+      top: -10px;
+      right: -28px;
+
+      @include desktop-m {
+        width: 582px;
+        top: 2px;
+        right: -45px;
+      }
+
+      @include tablet {
+        top: -73px;
+        right: 82px;
+      }
+
+      @include mobile {
+        width: vmin(389);
+        top: vmin(-40);
+        right: vmin(-22);
+        max-width: none;
+      }
+    }
+
+    &-2 {
+      width: 155px;
+      top: 205px;
+      right: -274px;
+
+      @include tablet {
+        top: 350px;
+        right: -62px;
+      }
+
+      @include mobile {
+        width: vmin(94);
+        top: vmin(266);
+        right: vmin(-48);
+      }
+    }
+
+    &-3 {
+      width: 149px;
+      top: 20px;
+      left: -354px;
+
+      @include desktop-m {
+        width: 100px;
+        left: -38px;
+        top: -16px;
+      }
+
+      @include tablet {
+        left: -51px;
+        top: 286px;
+      }
+
+      @include mobile {
+        width: vmin(73);
+        top: vmin(226);
+        left: vmin(-36);
+      }
+    }
+
+    &-4 {
+      width: 156px;
+      top: 385px;
+      left: -153px;
+    }
+  }
+
+  &__title {
+    @include h1;
+    margin-bottom: 36px;
+    max-width: 590px;
+
+    @include desktop-m {
+      font-size: 48px;
+      max-width: 490px;
+    }
+
+    @include mobile {
+      font-size: vmin(24);
+      margin-bottom: vmin(24);
+      max-width: vmin(320);
+    }
+  }
+
+  &__link {
+    @include mobile {
+      width: 100%;
+    }
+  }
+}

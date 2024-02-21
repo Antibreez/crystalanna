@@ -1,0 +1,68 @@
+.policy {
+  padding-top: 24px;
+
+  @include mobile {
+    padding-top: vmin(24);
+  }
+
+  &__inner-title {
+    @include h7;
+    margin-bottom: 16px;
+
+    &.is--indent {
+      padding-left: 40px;
+
+      @include mobile {
+        padding-left: vmin(24);
+      }
+    }
+
+    @include mobile {
+      font-size: vmin(16);
+      margin-bottom: vmin(16);
+    }
+  }
+
+  &__inner-subtitle {
+    @include h8;
+    font-size: 14px;
+    margin: 0 0 8px;
+
+    &.is--indent {
+      padding-left: 40px;
+
+      @include mobile {
+        padding-left: vmin(24);
+      }
+    }
+
+    @include mobile {
+      font-size: vmin(14);
+      margin-bottom: vmin(8);
+    }
+  }
+
+  &__text {
+    @include b1;
+    margin-bottom: 24px;
+    color: $grey400;
+
+    &.is--indent {
+      text-indent: 40px;
+
+      @include mobile {
+        text-indent: vmin(24);
+      }
+    }
+
+    @include mobile {
+      font-size: vmin(12);
+      margin-bottom: vmin(24);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+}

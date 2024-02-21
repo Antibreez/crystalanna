@@ -1,0 +1,267 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+
+  &.focused {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% + 8px);
+      height: calc(100% + 8px);
+      border: 2px solid $primary;
+      transform: translate(-4px, -4px);
+      border-radius: 4px;
+      pointer-events: none;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  // display: flex;
+}
+
+.reset-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: inherit;
+
+  &.focused {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% + 8px);
+      height: calc(100% + 8px);
+      border: 2px solid $primary;
+      transform: translate(-4px, -4px);
+      border-radius: 12px;
+      pointer-events: none;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}
+
+input:not([type='checkbox']):not([type='radio']),
+textarea,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+body {
+  font-family: $font;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-decoration-skip: objects;
+  text-rendering: optimizeLegibility;
+  color: $main-text;
+  min-width: $mobile;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &.js-no-scroll {
+    overflow: hidden;
+  }
+}
+
+main {
+  flex-grow: 1;
+  min-height: 300px;
+  flex-shrink: 0;
+  // overflow: hidden;
+  //padding-top: 124px;
+
+  // @include tablet {
+  //   padding-top: 104px;
+  // }
+
+  // @include mobile {
+  //   padding-top: 64px;
+  // }
+}
+
+section {
+  margin-bottom: 160px;
+
+  @include tablet {
+    margin-bottom: 80px;
+  }
+
+  @include mobile {
+    margin-bottom: vmin(64);
+  }
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+  color: $main-text;
+  margin: 0 0 40px;
+
+  @include mobile {
+    font-size: 24px;
+    line-height: 29px;
+    margin: 0 0 24px;
+  }
+}
+
+.container {
+  max-width: $desktop-inner;
+  min-width: $mobile;
+  margin: 0 auto;
+  padding-left: $desktop-gap;
+  padding-right: $desktop-gap;
+
+  @include desktop-m {
+    padding-left: $tablet-gap;
+    padding-right: $tablet-gap;
+  }
+
+  @include tablet {
+    padding-left: $mobile-gap;
+    padding-right: $mobile-gap;
+  }
+}
+
+.container-large {
+  max-width: $desktop-outer;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.h1 {
+  @include h1;
+}
+
+.h2 {
+  @include h2;
+}
+
+.h3 {
+  @include h3;
+}
+
+.h4 {
+  @include h4;
+}
+
+.h5 {
+  @include h5;
+}
+
+.h6 {
+  @include h6;
+}
+
+.h7 {
+  @include h7;
+}
+
+.h8 {
+  @include h8;
+}
+
+.b1 {
+  @include b1;
+}
+
+.b2 {
+  @include b2;
+}
+
+.b3 {
+  @include b3;
+}
+
+.mobile-only {
+  @media (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.tablet-only {
+  @media (min-width: $desktop-m) {
+    display: none;
+  }
+}
+
+.desktop-only {
+  @media (max-width: ($desktop-m - 1)) {
+    display: none;
+  }
+}
+
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+.mb-t-64 {
+  @include tablet {
+    margin-bottom: 64px;
+  }
+}
+
+.mb-m-64 {
+  @include mobile {
+    margin-bottom: vmin(64);
+  }
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+.mt-t-64 {
+  @include tablet {
+    margin-top: 64px;
+  }
+}
+
+.mt-m-64 {
+  @include mobile {
+    margin-top: vmin(64);
+  }
+}

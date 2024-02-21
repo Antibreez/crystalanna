@@ -1,0 +1,1101 @@
+.promo-vrf {
+  &__main {
+    margin-bottom: 0;
+  }
+
+  &__about-subtitle {
+    // @include b1;
+    // color: $grey400;
+    // margin: 0 0 16px;
+    // text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__about-title {
+    // @include h3;
+    margin: 0 0 48px;
+    text-align: center;
+
+    @include desktop-m {
+      font-size: 40px;
+    }
+
+    @include tablet {
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-size: vmin(24);
+    }
+  }
+
+  &__about-cards-inner {
+    display: flex;
+    gap: 20px;
+
+    & > .promo-vrf__about-card {
+      display: none;
+
+      @include tablet {
+        display: block;
+      }
+    }
+
+    @include tablet {
+      flex-wrap: wrap;
+    }
+
+    @include mobile {
+      gap: vmin(20);
+    }
+  }
+
+  &__about-cards-main {
+    width: 36.7%;
+    flex-shrink: 0;
+    display: flex;
+
+    @include desktop-m {
+      width: calc((100% - 40px) / 3);
+    }
+
+    @include tablet {
+      width: calc((100% - 20px) / 2);
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__about-cards-others {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @include tablet {
+      width: calc((100% - 20px) / 2);
+
+      .promo-vrf__about-card {
+        &:nth-child(n + 3) {
+          display: none;
+        }
+      }
+    }
+
+    @include mobile {
+      width: 100%;
+      gap: vmin(20);
+    }
+  }
+
+  &__about-card {
+    flex: 1 1 calc((100% - 20px) / 2);
+    padding: 40px;
+    background: $grey200;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+
+    @include tablet {
+      flex: 1 1 100%;
+      padding: 24px;
+    }
+
+    @include mobile {
+      padding: vmin(24);
+      border-radius: vmin(16);
+    }
+
+    &--main {
+      @include mobile {
+        min-height: vmin(281);
+      }
+
+      .promo-vrf__about-card-title {
+        background: -webkit-linear-gradient(0deg, #3593ff, #eb91fa 90%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @include desktop-m {
+          font-size: 18px;
+        }
+
+        @include mobile {
+          font-size: vmin(18);
+        }
+      }
+    }
+  }
+
+  &__about-card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__about-card-title {
+    @include h5;
+    margin: 0 0 8px;
+    position: relative;
+    z-index: 1;
+
+    @include tablet {
+      font-size: 18px;
+    }
+
+    @include mobile {
+      font-size: vmin(16);
+      margin-bottom: vmin(8);
+    }
+  }
+
+  &__about-card-desc {
+    @include b1;
+    color: $grey400;
+    position: relative;
+    z-index: 1;
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+  }
+
+  &__about-cards-notes {
+    @include b2;
+    padding-top: 24px;
+    color: $grey400;
+
+    @include mobile {
+      padding-top: vmin(24);
+      font-size: vmin(10);
+    }
+  }
+
+  &__about-slider-block {
+    position: relative;
+
+    .main-slider__controls {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .main-slider__control {
+      background: $grey200;
+    }
+  }
+
+  &__about-details {
+    padding-top: 80px;
+
+    @include tablet {
+      padding-top: 64px;
+    }
+
+    @include mobile {
+      padding-top: vmin(48);
+    }
+  }
+
+  &__about-details-inner {
+    padding: 40px 34px;
+    border: 1.5px solid $grey250;
+    border-radius: 16px;
+
+    @include desktop-m {
+      padding: 40px 22px;
+    }
+
+    @include tablet {
+      padding: 24px 22px;
+    }
+
+    @include mobile {
+      padding: vmin(24);
+      border-width: vmin(1.5);
+      border-radius: vmin(16);
+    }
+  }
+
+  &__about-details-nav {
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 32px;
+    justify-content: center;
+    margin-bottom: 28px;
+
+    @include desktop-m {
+      padding: 16px 0;
+      width: calc((100% + 2px));
+      margin-left: -1px;
+    }
+
+    @include tablet {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 24px;
+    }
+
+    @include mobile {
+      padding: 0;
+      margin-bottom: vmin(16);
+      flex-direction: column;
+      gap: vmin(16);
+    }
+  }
+
+  &__about-details-nav-button {
+    @include b1;
+    color: $grey400;
+    padding: 0 0 4px 0;
+    transition: color 0.2s;
+    width: calc((100% - 64px) / 3);
+
+    @include hover {
+      cursor: pointer;
+      color: $primary;
+    }
+
+    &.active {
+      font-weight: 600;
+      position: relative;
+      color: $primary;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1.5px;
+        width: 100%;
+        background: $primary;
+      }
+    }
+
+    @include mobile {
+      width: 100%;
+      padding-bottom: vmin(4);
+      font-size: vmin(12);
+
+      &.active {
+        &::after {
+          height: vmin(1.5);
+        }
+      }
+    }
+  }
+
+  &__about-slider {
+    width: 88.1%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 52px;
+
+    @include desktop-m {
+      width: 82.9%;
+      padding-top: 80px;
+    }
+
+    @include tablet {
+      width: calc(100% + 44px);
+      margin-left: -22px;
+      padding-bottom: 74px;
+    }
+
+    @include mobile {
+      width: calc(100% + vmin(46));
+      margin-left: vmin(-23);
+      padding-top: vmin(35);
+      padding-bottom: vmin(35);
+    }
+  }
+
+  &__about-slide {
+    font-size: 0;
+    line-height: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__about-details-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 24px;
+
+    @include mobile {
+      gap: vmin(20);
+      padding-top: vmin(24);
+    }
+  }
+
+  &__about-details-card {
+    padding: 40px;
+    background: $grey200;
+    border-radius: 16px;
+    flex: 1 1 calc((100% - 40px) / 3);
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex: 1 1 100%;
+      padding: 24px;
+    }
+
+    @include mobile {
+      padding: vmin(24);
+      border-radius: vmin(16);
+    }
+
+    &--main {
+      flex: unset;
+      flex-shrink: 0;
+      width: 28.2%;
+      background: #e6f3fb;
+
+      @include desktop-m {
+        width: auto;
+        flex: 1 1 calc((100% - 40px) / 3);
+      }
+
+      .promo-vrf__about-details-card-title {
+        @include h5;
+        margin: auto 0;
+
+        @include tablet {
+          font-size: 18px;
+        }
+
+        @include mobile {
+          font-size: vmin(16);
+        }
+      }
+    }
+
+    &-title {
+      @include h6;
+
+      & + p {
+        margin-top: 8px;
+
+        @include mobile {
+          margin-top: vmin(8);
+        }
+      }
+
+      @include mobile {
+        font-size: vmin(16);
+        margin-bottom: vmin(8);
+      }
+    }
+
+    &-desc {
+      @include b1;
+      color: $grey400;
+
+      & + * {
+        margin-top: 8px;
+
+        @include mobile {
+          margin-top: vmin(8);
+        }
+      }
+
+      @include mobile {
+        font-size: vmin(12);
+      }
+    }
+  }
+
+  &__areas-block {
+    padding-top: 160px;
+
+    @include tablet {
+      padding-top: 80px;
+    }
+
+    @include mobile {
+      padding-top: vmin(80);
+    }
+  }
+
+  &__areas-header {
+    display: flex;
+    gap: 48px;
+
+    @include tablet {
+      gap: 20px;
+    }
+
+    @include mobile {
+      gap: vmin(8);
+      flex-direction: column;
+    }
+  }
+
+  &__areas-title-block {
+    width: 388px;
+    flex-shrink: 0;
+
+    @include tablet {
+      width: 295px;
+    }
+
+    @include mobile {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__areas-subtitle {
+    // @include b1;
+    // color: $grey400;
+    // text-transform: uppercase;
+    // margin: 0 0 16px;
+  }
+
+  &__areas-title {
+    margin: 0;
+
+    @include desktop-m {
+      font-size: 40px;
+    }
+
+    @include tablet {
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-size: vmin(24);
+    }
+  }
+
+  &__areas-desc {
+    @include b1;
+    color: $grey400;
+    padding-top: 36px;
+    max-width: 692px;
+    margin-left: auto;
+
+    @include mobile {
+      padding-top: 0;
+      font-size: vmin(12);
+      max-width: none;
+      text-align: center;
+    }
+  }
+
+  &__areas-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 36px;
+
+    @include tablet {
+      padding-top: 32px;
+      gap: 0 20px;
+      margin-top: -20px;
+    }
+
+    @include mobile {
+      padding-top: vmin(32);
+      gap: 0 vmin(20);
+      margin-top: vmin(-20);
+    }
+
+    .divider {
+      display: none;
+
+      @include tablet {
+        display: block;
+        height: 0;
+        width: 100%;
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__areas-card {
+    position: relative;
+    flex: 1 1 calc((100% - 100px) / 6);
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex: 1 1 calc((100% - 60px) / 4);
+      margin-top: 20px;
+    }
+
+    @include mobile {
+      flex: unset;
+      width: calc((100% - vmin(20)) / 2);
+      margin-top: vmin(20);
+    }
+
+    &.is--big {
+      flex: unset;
+      width: calc((100% - 40px) / 3);
+      flex-shrink: 0;
+      min-height: 200px;
+
+      & + .promo-vrf__areas-card {
+        .promo-vrf__areas-card-title {
+          padding-bottom: 12px;
+
+          @include mobile {
+            padding-bottom: 0;
+          }
+        }
+      }
+
+      @include tablet {
+        width: calc((100% - 20px) / 2);
+      }
+
+      @include mobile {
+        width: 100%;
+        min-height: vmin(194);
+      }
+
+      .promo-vrf__areas-card-image-block {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+
+        @include tablet {
+          min-height: auto;
+        }
+      }
+
+      .promo-vrf__areas-card-title {
+        margin: auto 0 24px 22px;
+        color: #fff;
+        max-width: 170px;
+        font-size: 16px;
+        // font-weight: 500;
+        line-height: 120%;
+        padding-bottom: 0;
+
+        @include mobile {
+          margin: auto 0 vmin(24) vmin(24);
+          font-size: vmin(16);
+        }
+      }
+    }
+
+    &-image-block {
+      position: relative;
+      min-height: 142px;
+      border-radius: 8px;
+      overflow: hidden;
+
+      @include tablet {
+        min-height: 18.5vw;
+      }
+
+      @include mobile {
+        min-height: vmin(142);
+        border-radius: vmin(8);
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    &-title {
+      position: relative;
+      @include b1;
+      z-index: 2;
+      margin-top: 16px;
+      // padding-bottom: 12px;
+
+      @include mobile {
+        font-size: vmin(12);
+        margin-top: vmin(16);
+        padding-bottom: 0;
+      }
+    }
+
+    &:nth-last-child(2) {
+      .promo-vrf__areas-card-title {
+        padding-bottom: 12px;
+
+        @include mobile {
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    // &:has(+ .promo-vrf__areas-card.is--big) {
+    //   .promo-vrf__areas-card-title {
+    //     padding-bottom: 12px;
+
+    //     @include mobile {
+    //       padding-bottom: 0;
+    //     }
+    //   }
+    // }
+  }
+
+  &__catalog-block {
+    padding-top: 160px;
+
+    @include tablet {
+      padding-top: 135px;
+    }
+
+    @include mobile {
+      padding-top: vmin(80);
+    }
+  }
+
+  &__catalog-title {
+    text-align: center;
+  }
+
+  &__catalog-subtitle {
+    text-align: center;
+    margin-bottom: 92px;
+
+    @include desktop-m {
+      font-size: 40px;
+    }
+
+    @include tablet {
+      font-size: 32px;
+      margin-bottom: 64px;
+    }
+
+    @include mobile {
+      font-size: vmin(24);
+      margin-bottom: vmin(48);
+    }
+  }
+
+  &__catalog-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+
+    @include tablet {
+      gap: 64px;
+    }
+
+    @include mobile {
+      gap: vmin(48);
+    }
+  }
+
+  &__catalog-card {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+
+    @include tablet {
+      flex-direction: column-reverse;
+      gap: 48px;
+    }
+
+    @include mobile {
+      gap: vmin(24);
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      @include tablet {
+        flex-direction: column-reverse;
+      }
+
+      @include desktop-m {
+        .promo-vrf__catalog-card-content {
+          padding-right: 0;
+          padding-left: 24px;
+          margin-right: auto;
+
+          @include tablet {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__catalog-card-content {
+    max-width: 488px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include desktop-m {
+      padding-right: 24px;
+    }
+
+    @include tablet {
+      align-items: center;
+      max-width: none;
+      padding-right: 0;
+      text-align: center;
+    }
+  }
+
+  &__catalog-card-image {
+    width: calc((100% - 20px) / 2);
+    min-height: 398px;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+
+    @include tablet {
+      width: 100%;
+      min-height: 51.8vw;
+    }
+
+    @include mobile {
+      min-height: vmin(221);
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__catalog-card-desc {
+    @include b1;
+    color: $grey400;
+
+    & + * {
+      margin-top: 24px;
+
+      @include mobile {
+        margin-top: vmin(24);
+      }
+    }
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+  }
+
+  &__catalog-card-title {
+    @include h6;
+
+    & + * {
+      margin-top: 16px;
+
+      @include mobile {
+        margin-top: vmin(8);
+      }
+    }
+
+    @include mobile {
+      font-size: vmin(16);
+    }
+  }
+
+  &__catalog-card-logo {
+    width: 200px;
+    height: auto;
+
+    & + * {
+      margin-top: 48px;
+
+      @include mobile {
+        margin-top: vmin(24);
+      }
+    }
+
+    @include mobile {
+      width: vmin(153);
+    }
+  }
+
+  &__catalog-card-buttons {
+    display: flex;
+    gap: 16px;
+
+    @include mobile {
+      flex-direction: column;
+      gap: vmin(8);
+      width: 100%;
+    }
+  }
+
+  &__objects-block-container {
+    .pagination {
+      margin-top: 24px;
+
+      @include mobile {
+        margin-top: vmin(24);
+      }
+
+      .pagination__container {
+        padding-left: 0;
+        padding-right: 0;
+        min-width: auto;
+      }
+    }
+  }
+
+  &__objects-block {
+    padding-top: 160px;
+
+    @include tablet {
+      padding-top: 80px;
+    }
+
+    @include mobile {
+      padding-top: vmin(80);
+    }
+
+    .objects-slider {
+      padding-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__objects-title {
+    text-align: center;
+  }
+
+  &__objects-subtitle {
+    text-align: center;
+    margin-bottom: 48px;
+
+    @include desktop-m {
+      font-size: 40px;
+    }
+
+    @include tablet {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    @include mobile {
+      font-size: vmin(24);
+      margin-bottom: vmin(40);
+    }
+  }
+
+  &__objects-pagination {
+    margin-top: 24px;
+
+    @include mobile {
+      margin-top: vmin(24);
+    }
+  }
+
+  &__request-block {
+    padding-top: 160px;
+    padding-bottom: 270px;
+    position: relative;
+
+    @include tablet {
+      padding-top: 80px;
+    }
+
+    @include desktop-m {
+      padding-bottom: 245px;
+    }
+
+    @include mobile {
+      padding-top: vmin(80);
+      padding-bottom: vmin(125);
+    }
+  }
+
+  &__request-bg-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 573px;
+
+    @include mobile {
+      height: vmin(528);
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__request-title {
+    text-align: center;
+    margin-bottom: 56px;
+
+    @include desktop-m {
+      font-size: 40px;
+    }
+
+    @include tablet {
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-size: vmin(24);
+      margin-bottom: vmin(32);
+    }
+  }
+
+  &__request-stages {
+    display: flex;
+    gap: 90px;
+    margin-bottom: 56px;
+
+    @include mobile {
+      flex-direction: column;
+      gap: vmin(24);
+      margin-bottom: vmin(32);
+    }
+  }
+
+  &__request-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc((100% - 180px) / 3);
+    position: relative;
+
+    @include mobile {
+      width: 100%;
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: calc(50% + 57px);
+      height: 1px;
+      width: calc(50% - 57px + 45px);
+      background: $grey200;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &::before {
+      left: auto;
+      right: calc(50% + 57px);
+    }
+
+    &:first-child {
+      &::before {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__request-stage-num {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: $grey200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include h5;
+    color: $grey400;
+    flex-shrink: 0;
+
+    @include mobile {
+      width: vmin(32);
+      height: vmin(32);
+      font-size: vmin(16);
+    }
+  }
+
+  &__request-stage-text {
+    @include b1;
+    color: $grey400;
+    margin-top: 24px;
+
+    @include mobile {
+      margin-top: 0;
+      margin-left: vmin(16);
+      font-size: vmin(12);
+    }
+  }
+
+  &__request-form {
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+
+    @include tablet {
+      box-shadow: none;
+      border: 1px solid $grey250;
+    }
+
+    .form__fields-section-title {
+      @include h5;
+      margin-bottom: 24px;
+
+      @include mobile {
+        font-size: vmin(16);
+        margin-bottom: vmin(16);
+        text-align: center;
+      }
+    }
+
+    .form__fields-section + .form__fields-section {
+      margin-top: 48px;
+
+      @include mobile {
+        margin-top: vmin(24);
+      }
+    }
+  }
+}

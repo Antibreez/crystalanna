@@ -1,0 +1,101 @@
+.article-card {
+  display: block;
+  position: relative;
+}
+.article-card__link ~ .article-card__image-block:hover, .article-card__link ~ .article-card__content:hover {
+  cursor: pointer;
+}
+.article-card__image-block {
+  position: relative;
+  width: 100%;
+  padding-top: 69.8%;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.article-card__image-block img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.article-card__content {
+  padding-top: 25px;
+}
+@media (max-width: 767px) {
+  .article-card__content {
+    padding-top: 6.9444444444vmin;
+  }
+}
+.article-card__date {
+  margin: 0;
+  font-size: 12px;
+  line-height: 150%;
+  font-weight: 400;
+  display: inline-block;
+  color: #6c7684;
+  margin: 0 0 10px;
+}
+@media (max-width: 767px) {
+  .article-card__date {
+    font-size: 3.3333333333vmin;
+    margin-bottom: 2.7777777778vmin;
+  }
+}
+.article-card__title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 120%;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: #151515;
+}
+@media (max-width: 767px) {
+  .article-card__title {
+    font-size: 4.4444444444vmin;
+    margin-bottom: 2.7777777778vmin;
+  }
+}
+.article-card__tags-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: -4px;
+}
+@media (max-width: 767px) {
+  .article-card__tags-list {
+    margin-top: -1.1111111111vmin;
+  }
+}
+.article-card__tag-item {
+  margin: 0;
+  font-size: 12px;
+  line-height: 150%;
+  font-weight: 400;
+  margin-right: 15px;
+}
+.article-card__tag-item a {
+  color: #6c7684;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+@media (min-width: 1024px) {
+  .article-card__tag-item a:hover {
+    color: #151515;
+  }
+}
+@media (max-width: 767px) {
+  .article-card__tag-item {
+    font-size: 3.3333333333vmin;
+    margin-right: 4.1666666667vmin;
+  }
+}

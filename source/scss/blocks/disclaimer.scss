@@ -1,0 +1,53 @@
+.disclaimer {
+  padding-top: 24px;
+
+  @include mobile {
+    padding-top: vmin(24);
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include mobile {
+      gap: vmin(24);
+    }
+
+    li {
+      position: relative;
+      @include b1;
+      padding-left: 24px;
+
+      @include mobile {
+        padding-left: vmin(16);
+        font-size: vmin(12);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 4px;
+        height: 4px;
+        background: $primary;
+        border-radius: 50%;
+
+        @include mobile {
+          top: vmin(6);
+          width: vmin(4);
+          height: vmin(4);
+        }
+      }
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}

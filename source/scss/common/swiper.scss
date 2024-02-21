@@ -1,0 +1,34 @@
+.slider-scroll-indicator {
+  position: absolute;
+  top: -68px;
+  right: 0;
+  width: 78px;
+  height: 48px;
+  margin-top: -48px;
+  // background-image: url('../img/touch-slider.svg');
+  // background-size: contain;
+  // background-repeat: no-repeat;
+  z-index: 2;
+  pointer-events: none;
+
+  @include tablet {
+    display: none;
+  }
+
+  @include mobile {
+    top: vmin(-16);
+    width: vmin(78);
+    height: vmin(48);
+    margin-top: vmin(-48);
+  }
+}
+
+.swiper-pagination-lock + .swiper {
+  .slider-scroll-indicator {
+    display: none;
+  }
+}
+
+.swiper-scrollbar-lock ~ .slider-scroll-indicator {
+  display: none;
+}

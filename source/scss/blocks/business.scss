@@ -1,0 +1,282 @@
+.business {
+  margin-bottom: 0;
+  position: relative;
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+
+  &__promo {
+    padding-bottom: 397px;
+    background: linear-gradient(0deg, #f4f4f8 0%, rgba(255, 255, 255, 0) 100%);
+    background-color: #fff;
+    position: sticky;
+    top: 254px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      width: 100%;
+      height: 500px;
+      background-color: #fff;
+      z-index: -1;
+    }
+
+    @include desktop-m {
+      position: static;
+      // top: auto;
+      // margin-bottom: 18.36vw;
+      padding-bottom: 38.76vw;
+    }
+
+    @include tablet {
+      // margin-bottom: 13.15vw;
+      padding-bottom: 40.36vw;
+    }
+
+    @include mobile {
+      // margin-bottom: vmin(64);
+      padding-bottom: vmin(161);
+    }
+  }
+
+  &__promo-container {
+    text-align: center;
+  }
+
+  &__logo {
+    margin: 0 0 32px;
+
+    @include tablet {
+      width: 141px;
+      height: auto;
+    }
+
+    @include mobile {
+      width: vmin(196);
+      margin-bottom: vmin(24);
+    }
+  }
+
+  &__slogan {
+    @include h2;
+    margin: 0 0 24px;
+
+    span {
+      color: $additional3;
+    }
+
+    @include desktop-m {
+      font-size: 48px;
+    }
+
+    @include tablet {
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-size: vmin(24);
+      margin-bottom: vmin(16);
+    }
+  }
+
+  &__desc {
+    @include b1;
+    color: $grey400;
+    margin: 0 auto;
+    max-width: 900px;
+
+    @include desktop-m {
+      max-width: 85.3%;
+    }
+
+    @include tablet {
+      // margin-bottom: 48px;
+    }
+
+    @include mobile {
+      font-size: vmin(12);
+      // margin-bottom: vmin(34);
+    }
+  }
+
+  &__image {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin-top: -310px;
+    margin-bottom: 42px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include desktop-m {
+      width: 96.1%;
+      // margin-bottom: -16.5vw;
+      margin-top: -33.52vw;
+      margin-bottom: 36px;
+    }
+
+    @include tablet {
+      width: 89.93%;
+      margin-bottom: 22px;
+      margin-top: -34.11vw;
+    }
+
+    @include mobile {
+      width: vmin(328);
+      margin-bottom: 36px;
+      margin-top: vmin(-143);
+    }
+  }
+
+  &__benefits {
+    background-color: #fff;
+    border-top: 16px solid $additional3;
+
+    @include mobile {
+      border-top-width: vmin(16);
+    }
+  }
+
+  &__benefits-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -20px;
+
+    @include mobile {
+      margin-top: vmin(-16);
+    }
+  }
+
+  &__benefits-item {
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid $grey250;
+    width: calc((100% - 40px) / 3);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: background-color 0.2s;
+
+    &:not(:nth-child(3n)) {
+      margin-right: 20px;
+    }
+
+    @include desktop-m {
+      width: calc((100% - 20px) / 2);
+
+      &:nth-child(n) {
+        margin-right: 0;
+      }
+
+      &:not(:nth-child(2n)) {
+        margin-right: 20px;
+      }
+    }
+
+    @include mobile {
+      width: 100%;
+      margin-top: vmin(16);
+      padding: vmin(24);
+      border-radius: vmin(16);
+
+      &:not(:nth-child(2n)) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__benefit-icon-block {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(40, 88, 255, 0.1);
+    margin: 0 0 24px;
+    transition: background-color 0.2s;
+
+    svg {
+      width: 36px;
+      height: 36px;
+      color: $additional3;
+    }
+
+    @include mobile {
+      width: vmin(48);
+      height: vmin(48);
+      margin-bottom: vmin(24);
+
+      svg {
+        width: vmin(27);
+        height: vmin(27);
+      }
+    }
+  }
+
+  &__benefit-title {
+    @include h5;
+    margin: 0 0 16px;
+    transition: color 0.2s;
+    color: $main-text;
+
+    @include tablet {
+      font-size: 18px;
+    }
+
+    @include mobile {
+      font-size: vmin(16);
+      margin-bottom: vmin(8);
+    }
+  }
+
+  &__benefit-desc {
+    @include b1;
+    color: $grey400;
+    margin: 0 0 24px;
+    transition: color 0.2s;
+
+    @include mobile {
+      font-size: vmin(12);
+      margin-bottom: vmin(24);
+    }
+  }
+
+  &__benefit-link {
+    margin-top: auto;
+    background-color: $additional3;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__benefits-item {
+    @include hover {
+      background-color: $additional3;
+
+      .business__benefit-icon-block {
+        background-color: #fff;
+      }
+
+      .business__benefit-title {
+        color: #fff;
+      }
+
+      .business__benefit-desc {
+        color: #fff;
+      }
+
+      .business__benefit-link {
+        background-color: #fff;
+        color: $primary;
+      }
+    }
+  }
+}

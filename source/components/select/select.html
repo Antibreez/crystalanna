@@ -1,0 +1,237 @@
+<h3>Селект</h3>
+<div class="select-field">
+  <select name="select" id="select">
+    <option value="Value 1">Value 1</option>
+    <option value="Value 2">Value 2</option>
+    <option value="Value 3">Value 3</option>
+    <option value="Value 4">Value 4</option>
+    <option value="Value 5">Value 5</option>
+    <option value="Value 6">Value 6</option>
+    <option value="Value 7">Value 7</option>
+    <option value="Value 8">Value 8</option>
+    <option value="Value 9">Value 9</option>
+    <option value="Value 10">Value 10</option>
+    <option value="Value 11">Value 11</option>
+  </select>
+  <label>Выберите что-то</label>
+  <div class="select-field__outline"></div>
+
+  <a class="select-field__mobile-button" href="#select-mobile" data-fancybox></a>
+
+  <div style="display: none">
+    <div class="select-field__modal" id="select-mobile">
+      <div class="select-field__modal-title">
+        <button class="select-field__modal-title-close-button" type="button" data-fancybox-close>
+          <svg>
+            <use xlink:href="./img/sprite.svg#arrow-right"></use>
+          </svg>
+        </button>
+        <span>Выберите тип оборудования</span>
+      </div>
+      <div class="select-field__modal-body">
+        <!-- <div class="select-field__modal-search input-field is--search">
+          <div class="input-field__icon">
+            <svg>
+              <use xlink:href="./img/sprite.svg#search"></use>
+            </svg>
+          </div>
+          <input type="text" name="name1" id="name1" placeholder="Поиск">
+          <span class="input-field__outline"></span>
+          <button type="button" class="input-field__clear-button">
+            <svg>
+              <use xlink:href="./img/sprite.svg#close"></use>
+            </svg>
+          </button>
+        </div> -->
+
+        <ul class="select-field__modal-search-list">
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link active" href="#">Value 1</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 2</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 3</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 4</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 5</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 6</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 7</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 8</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 9</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 10</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 11</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<br /><br />
+<h3>Селект с поиском, есть атрибут data-search</h3>
+<div class="select-field">
+  <select name="select1" id="select1" data-search>
+    <option value="Value 1">Value 1</option>
+    <option value="Value 2">Value 2</option>
+    <option value="Value 3">Value 3</option>
+    <option value="Value 4">Value 4</option>
+    <option value="Value 5">Value 5</option>
+    <option value="Value 6">Value 6</option>
+    <option value="Value 7">Value 7</option>
+    <option value="Value 8">Value 8</option>
+    <option value="Value 9">Value 9</option>
+    <option value="Value 10">Value 10</option>
+  </select>
+  <label>Выберите что-то</label>
+  <div class="select-field__outline"></div>
+
+  <a class="select-field__mobile-button" href="#select-mobile-2" data-fancybox></a>
+
+  <div style="display: none">
+    <div class="select-field__modal" id="select-mobile-2">
+      <div class="select-field__modal-title">
+        <button class="select-field__modal-title-close-button" type="button" data-fancybox-close>
+          <svg>
+            <use xlink:href="./img/sprite.svg#arrow-right"></use>
+          </svg>
+        </button>
+        <span>Выберите тип оборудования</span>
+      </div>
+      <div class="select-field__modal-body">
+        <div class="select-field__modal-search input-field is--search">
+          <div class="input-field__icon">
+            <svg>
+              <use xlink:href="./img/sprite.svg#search"></use>
+            </svg>
+          </div>
+          <input type="text" name="name1" id="name1" placeholder="Поиск">
+          <span class="input-field__outline"></span>
+          <button type="button" class="input-field__clear-button">
+            <svg>
+              <use xlink:href="./img/sprite.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+
+        <ul class="select-field__modal-search-list">
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link active" href="#">Value 1</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 2</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 3</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 4</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 5</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 6</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 7</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 8</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 9</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 10</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<br /><br />
+<h3>Селект неактивный</h3>
+<div class="select-field">
+  <select name="select2" id="select2" disabled>
+    <option value="1">Value 1</option>
+    <option value="2">Value 2</option>
+    <option value="3">Value 3</option>
+    <option value="4">Value 4</option>
+  </select>
+  <label>Выберите что-то</label>
+  <div class="select-field__outline"></div>
+</div>
+<br /><br />
+<h3>Селект с изначально пустым полем, есть атрибут data-empty</h3>
+<div class="select-field">
+  <select name="select3" id="select3" data-empty>
+    <option value="Value 1">Value 1</option>
+    <option value="Value 2">Value 2</option>
+    <option value="Value 3">Value 3</option>
+    <option value="Value 4">Value 4</option>
+  </select>
+  <label>Выберите что-то</label>
+  <div class="select-field__outline"></div>
+
+  <a class="select-field__mobile-button" href="#select-mobile-3" data-fancybox></a>
+
+  <div style="display: none">
+    <div class="select-field__modal" id="select-mobile-3">
+      <div class="select-field__modal-title">
+        <button class="select-field__modal-title-close-button" type="button" data-fancybox-close>
+          <svg>
+            <use xlink:href="./img/sprite.svg#arrow-right"></use>
+          </svg>
+        </button>
+        <span>Выберите тип оборудования</span>
+      </div>
+      <div class="select-field__modal-body">
+        <!-- <div class="select-field__modal-search input-field is--search">
+          <div class="input-field__icon">
+            <svg>
+              <use xlink:href="./img/sprite.svg#search"></use>
+            </svg>
+          </div>
+          <input type="text" name="name1" id="name1" placeholder="Поиск">
+          <span class="input-field__outline"></span>
+          <button type="button" class="input-field__clear-button">
+            <svg>
+              <use xlink:href="./img/sprite.svg#close"></use>
+            </svg>
+          </button>
+        </div> -->
+
+        <ul class="select-field__modal-search-list">
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 1</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 2</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 3</a>
+          </li>
+          <li class="select-field__modal-search-item">
+            <a class="select-field__modal-search-link" href="#">Value 4</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

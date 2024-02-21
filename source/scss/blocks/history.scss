@@ -1,0 +1,360 @@
+.history {
+  &__dates {
+    padding-top: 64px;
+
+    @include desktop-m {
+      padding-top: 48px;
+    }
+
+    @include mobile {
+      padding-top: vmin(24);
+    }
+  }
+
+  &__dates-inner {
+    padding-left: 64px;
+    padding-right: 64px;
+    position: relative;
+
+    @include mobile {
+      padding-left: vmin(64);
+      padding-right: vmin(64);
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.3s;
+
+      @include mobile {
+        width: vmin(50);
+      }
+    }
+
+    &::before {
+      left: 64px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+
+      @include mobile {
+        left: vmin(64);
+      }
+    }
+
+    &::after {
+      right: 64px;
+      background: linear-gradient(270deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+
+      @include mobile {
+        right: vmin(64);
+      }
+    }
+
+    &:has(.history__dates-nav--prev.swiper-button-disabled)::before {
+      opacity: 0;
+    }
+
+    &.is--swiped-left::before {
+      opacity: 0;
+    }
+
+    &:has(.history__dates-nav--next.swiper-button-disabled)::after {
+      opacity: 0;
+    }
+
+    &.is--swiped-right::after {
+      opacity: 0;
+    }
+  }
+
+  &__dates-slider {
+    padding: 0 1px;
+  }
+
+  &__dates-slide {
+    @include b1;
+    color: $grey400;
+    padding: 13px 15px 11px;
+    border: 1px solid $grey250;
+    border-radius: 8px;
+    width: max-content;
+    transition: color 0.2s, border-color 0.2s;
+    height: auto;
+
+    @include mobile {
+      font-size: vmin(12);
+      padding: vmin(15) vmin(15) vmin(13);
+      border-width: vmin(1);
+      border-radius: vmin(8);
+    }
+
+    &:not(:last-child) {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: calc(100% + 1px);
+        height: 1px;
+        width: 8px;
+        background: $grey250;
+
+        @include mobile {
+          left: calc(100% + vmin(1));
+          height: vmin(1);
+        }
+      }
+    }
+
+    span {
+      &:last-child {
+        display: none;
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        color: #fff;
+        @include h7;
+        border: none;
+        padding: 16px 0 12px;
+        border-radius: 8px;
+        text-align: center;
+        background: linear-gradient(90deg, $gradient1-start, $gradient1-end);
+
+        @include mobile {
+          font-size: vmin(12);
+          top: vmin(-1);
+          left: vmin(-1);
+          height: calc(100% + vmin(2));
+          width: calc(100% + vmin(2));
+          padding: vmin(18) 0 vmin(12);
+          border-radius: vmin(8);
+        }
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $primary;
+      border-color: $grey300;
+    }
+
+    &.active {
+      cursor: default;
+
+      span {
+        &:last-child {
+          display: block;
+        }
+      }
+      // color: #fff;
+      // @include h7;
+      // border: none;
+      // padding: 16px 15px 12px;
+      // background: linear-gradient(90deg, $gradient1-start, $gradient1-end);
+      // cursor: default;
+      // transition: none;
+    }
+  }
+
+  &__dates-nav,
+  &__dates-btn {
+    position: absolute;
+    top: 0;
+    height: 48px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $grey200;
+    border-radius: 12px;
+    color: $grey400;
+    transition: color 0.2s;
+
+    @include mobile {
+      height: vmin(48);
+      width: vmin(48);
+    }
+
+    @include hover {
+      cursor: pointer;
+      color: $primary;
+    }
+
+    &.swiper-button-disabled {
+      color: $grey300;
+      cursor: default;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+
+      @include mobile {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+
+    &--prev {
+      left: 0;
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    &--next {
+      right: 0;
+    }
+  }
+
+  &__dates-nav {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    @include mobile {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: unset;
+    }
+
+    // &--prev.swiper-button-disabled ~ .history__dates-btn--prev {
+    //   color: $grey300;
+    //   cursor: default;
+    //   pointer-events: none;
+    // }
+
+    // &--next.swiper-button-disabled ~ .history__dates-btn--next {
+    //   color: $grey300;
+    //   cursor: default;
+    //   pointer-events: none;
+    // }
+  }
+
+  &__dates-btn {
+    @include mobile {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      z-index: -1;
+    }
+  }
+
+  &__dates-inner:has(.history__dates-slide:last-child.active) .history__dates-btn--next,
+  &__dates-inner:has(.history__dates-slide:first-child.active) .history__dates-btn--prev {
+    color: $grey300;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &__dates-inner.is--right-slide .history__dates-btn--next,
+  &__dates-inner.is--left-slide .history__dates-btn--prev {
+    color: $grey300;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &__cards {
+    padding-top: 64px;
+
+    @include mobile {
+      padding-top: vmin(48);
+    }
+  }
+
+  &__cards-section {
+    display: none;
+
+    @include tablet {
+      max-width: 484px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__cards-inner {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 64px;
+
+    @include desktop-m {
+      gap: 64px 40px;
+    }
+
+    @include mobile {
+      gap: vmin(40);
+    }
+  }
+
+  &__card {
+    width: calc((100% - 64px) / 2);
+
+    @include desktop-m {
+      width: calc((100% - 40px) / 2);
+    }
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__card-image {
+    width: 100%;
+    aspect-ratio: 568 / 326;
+    border-radius: 24px;
+    margin: 0 0 48px;
+    overflow: hidden;
+
+    @include desktop-m {
+      margin-bottom: 24px;
+    }
+
+    @include mobile {
+      aspect-ratio: 328 / 200;
+      margin-bottom: vmin(16);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__card-title {
+    font-size: 32px;
+    line-height: 120%;
+    font-weight: 600;
+    margin: 0 0 16px;
+    text-align: center;
+
+    @include desktop-m {
+      font-size: 24px;
+    }
+
+    @include mobile {
+      font-size: vmin(18);
+      margin-bottom: vmin(16);
+    }
+  }
+
+  &__card-desc {
+    @include b1;
+    color: $grey400;
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+  }
+}

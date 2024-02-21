@@ -1,0 +1,343 @@
+@import '../../scss/global/variables.scss';
+@import '../../scss/global/mixins.scss';
+
+.input-field {
+  @include b1;
+  color: $primary;
+  position: relative;
+
+  @include mobile {
+    font-size: vmin(14);
+  }
+
+  &__textarea-underlayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 30px;
+    width: 100%;
+    pointer-events: none;
+    background-color: $grey200;
+    transition: background-color 0.2s;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    @include mobile {
+      height: vmin(30);
+      border-top-left-radius: vmin(5);
+      border-top-right-radius: vmin(5);
+    }
+  }
+
+  // &__input {
+  //   position: relative;
+  // }
+
+  input,
+  textarea {
+    @include b1;
+    border: none;
+    background-color: $grey200;
+    border-radius: 5px;
+    padding: 30px 16px 12px;
+    width: 100%;
+    height: 64px;
+    transition: background-color 0.2s;
+
+    &:not(:disabled) {
+      @include hover {
+        background-color: $grey250;
+
+        & ~ .input-field__textarea-underlayer {
+          background-color: $grey250;
+        }
+      }
+    }
+
+    &:disabled {
+      color: $grey300;
+
+      & ~ label,
+      & ~ .input-field__note {
+        color: $grey300;
+      }
+
+      & ~ .input-field__error {
+        opacity: 0.5;
+      }
+    }
+
+    @include mobile {
+      padding: vmin(30) vmin(16) vmin(12);
+      height: vmin(64);
+      border-radius: vmin(5);
+      font-size: vmin(12);
+    }
+  }
+
+  textarea {
+    height: 128px;
+    resize: none;
+
+    @include mobile {
+      height: vmin(128);
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 22px;
+    left: 16px;
+    transition: font-size 0.2s, top 0.2s, color 0.2s;
+    z-index: 2;
+
+    span {
+      color: $fail;
+    }
+
+    @include mobile {
+      top: vmin(22);
+      left: vmin(16);
+    }
+  }
+
+  &__note {
+    @include b2;
+    padding-left: 16px;
+    color: $grey400;
+    display: block;
+    margin-top: 8px;
+
+    &:empty {
+      margin: 0;
+    }
+
+    @include mobile {
+      font-size: vmin(12);
+      padding-left: vmin(16);
+      margin-top: vmin(8);
+    }
+  }
+
+  &__error {
+    @include b2;
+    padding-left: 16px;
+    color: $fail;
+    margin-top: 8px;
+    display: none;
+
+    @include mobile {
+      font-size: vmin(12);
+      padding-left: vmin(16);
+      margin-top: vmin(8);
+    }
+  }
+
+  &.is--phone {
+    label {
+      @include b2;
+      top: 12px;
+      color: $grey400;
+
+      @include mobile {
+        font-size: vmin(12);
+        top: vmin(12);
+      }
+    }
+
+    input {
+      color: transparent;
+      caret-color: $main-text;
+      user-select: none;
+    }
+
+    .input-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 64px;
+      width: 100%;
+      @include b1;
+      padding: 30px 16px 12px;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+
+      span {
+        white-space: pre;
+        margin-bottom: -2px;
+
+        &:last-child {
+          color: $grey400;
+        }
+      }
+
+      @include mobile {
+        padding: vmin(30) vmin(16) vmin(12);
+        height: vmin(64);
+        border-radius: vmin(5);
+        font-size: vmin(12);
+      }
+
+    }
+
+    &.is--filled {
+
+      &:not(.is--focused) {
+        .input-overlay {
+          span {
+            &:last-child {
+              visibility: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.active {
+    label {
+      @include b2;
+      top: 12px;
+      color: $grey400;
+
+      @include mobile {
+        font-size: vmin(12);
+        top: vmin(12);
+      }
+    }
+  }
+
+  &__outline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    height: calc(64px + 8px);
+    width: calc(100% + 8px);
+    transform: translate(-4px, -4px);
+    border: 2px solid $primary;
+    border-radius: 9px;
+    pointer-events: none;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      height: calc(vmin(64) + 8px);
+      border-radius: vmin(9);
+    }
+  }
+
+  textarea ~ .input-field__outline {
+    height: calc(128px + 8px);
+
+    @include mobile {
+      height: calc(vmin(128) + 8px);
+    }
+  }
+
+  input.focused ~ .input-field__outline,
+  textarea.focused ~ .input-field__outline {
+    display: block;
+  }
+
+  &.is--invalid {
+    label {
+      color: $fail;
+    }
+
+    .input-field__error {
+      display: block;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 11px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+    color: $grey400;
+    padding: 0;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    & + input {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-left: 56px;
+      height: 46px;
+    }
+
+    & ~ .input-field__outline {
+      height: calc(46px + 8px);
+    }
+
+    @include mobile {
+      top: vmin(11);
+      left: vmin(16);
+      width: vmin(24);
+      height: vmin(24);
+
+      svg {
+        width: vmin(24);
+        height: vmin(24);
+      }
+
+      & + input {
+        padding-top: vmin(12);
+        padding-bottom: vmin(12);
+        padding-left: vmin(56);
+        height: vmin(46);
+      }
+
+      & ~ .input-field__outline {
+        height: calc(vmin(46) + 8px);
+      }
+    }
+  }
+
+  &__clear-button {
+    position: absolute;
+    top: 11px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    color: $grey400;
+    transition: color 0.2s;
+    display: none;
+    padding: 0;
+
+    &.focused {
+      position: absolute;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    @include hover {
+      color: $main-text;
+      cursor: pointer;
+    }
+
+    @include mobile {
+      top: vmin(11);
+      right: vmin(16);
+      width: vmin(24);
+      height: vmin(24);
+
+      svg {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+  }
+}

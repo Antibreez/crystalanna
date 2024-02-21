@@ -1,0 +1,61 @@
+<h3>Блок ввода ".input-field"</h3>
+<div class="input-field">
+  <input type="text" name="name" id="name" />
+  <label for="name">Label <span>*</span></label>
+  <span class="input-field__error">Текст ошибки</span>
+  <span class="input-field__note">Подсказка описание для поля ввода</span>
+  <span class="input-field__outline"></span>
+</div>
+<br>
+<div class="input-field is--phone">
+  <input type="text" name="name" id="name" />
+  <label for="name">Label</label>
+  <span class="input-field__error">Текст ошибки</span>
+  <span class="input-field__note">Подсказка описание для поля ввода</span>
+  <span class="input-field__outline"></span>
+</div>
+<br />
+<h3>Блок ввода ".input-field" с ошибкой</h3>
+<div class="input-field is--invalid">
+  <input type="text" name="name1" id="name1" value="Name 1" />
+  <label for="name1">Label</label>
+  <span class="input-field__error">Текст ошибки</span>
+  <span class="input-field__note">Подсказка описание для поля ввода</span>
+  <span class="input-field__outline"></span>
+</div>
+<br />
+<h3>Блок ввода ".input-field" disabled</h3>
+<div class="input-field is--invalid">
+  <input type="text" name="name2" id="name2" value="Name 2" disabled />
+  <label for="name2">Label</label>
+  <span class="input-field__error">Текст ошибки</span>
+  <span class="input-field__note">Подсказка описание для поля ввода</span>
+  <span class="input-field__outline"></span>
+</div>
+<br />
+<h3>Поиск ".input-field is--search" disabled</h3>
+<div class="input-field is--search">
+  <button class="input-field__icon">
+    <svg>
+      <use xlink:href="./img/sprite.svg#search"></use>
+    </svg>
+  </button>
+  <input type="text" name="name2" id="name2" placeholder="Поиск" />
+  <span class="input-field__error">Текст ошибки</span>
+  <span class="input-field__note">Подсказка описание для поля ввода</span>
+  <span class="input-field__outline"></span>
+  <button class="input-field__clear-button">
+    <svg>
+      <use xlink:href="./img/sprite.svg#close"></use>
+    </svg>
+  </button>
+</div>
+<h3>Область ввода ".input-field"</h3>
+<div class="input-field">
+  <textarea name="name" id="name"></textarea>
+  <label for="name">Label <span>*</span></label>
+  <span class="input-field__error">Текст ошибки</span>
+  <span class="input-field__note">Подсказка описание для поля ввода</span>
+  <span class="input-field__outline"></span>
+  <span class="input-field__textarea-underlayer"></span>
+</div>

@@ -1,0 +1,34 @@
+.brands-page {
+  &__nav-panel {
+    margin-bottom: 100px;
+    margin-top: -20px;
+
+    @include desktop-m {
+      margin-bottom: 84px;
+    }
+
+    @include tablet {
+      margin-bottom: 68px;
+    }
+
+    @include mobile {
+      margin-bottom: vmin(50);
+    }
+  }
+
+  &__cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__cards-item {
+    &:not(:last-child) {
+      margin-bottom: 80px;
+
+      @include tablet {
+        margin-bottom: 64px;
+      }
+    }
+  }
+}

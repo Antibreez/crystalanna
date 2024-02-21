@@ -1,0 +1,64 @@
+@import '../../scss/global/variables.scss';
+@import '../../scss/global/mixins.scss';
+
+.function-card {
+  display: flex;
+  padding: 24px;
+  border: 1.5px solid $grey250;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  color: $primary;
+
+  @include mobile {
+    bottom: vmin(24);
+    border-radius: vmin(8);
+    border-width: vmin(1.5);
+  }
+
+  &__icon {
+    width: 48px;
+    height: auto;
+    flex-shrink: 0;
+
+    @include mobile {
+      width: vmin(48);
+    }
+  }
+
+  &__text {
+    @include h8;
+    flex-grow: 1;
+    margin: 0 16px;
+    align-self: center;
+    text-align: left;
+
+    @include mobile {
+      font-size: vmin(12);
+      margin: 0 vmin(16);
+    }
+  }
+
+  &__info {
+    width: 24px;
+    height: 24px;
+    color: $grey400;
+    flex-shrink: 0;
+    margin-top: 12px;
+    transition: color 0.2s;
+
+    @include mobile {
+      width: vmin(24);
+      height: vmin(24);
+      margin-top: vmin(12);
+    }
+  }
+
+  @include hover {
+    cursor: pointer;
+    background-color: $grey200;
+
+    .function-card__info {
+      color: $primary;
+    }
+  }
+}

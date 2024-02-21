@@ -1,0 +1,24 @@
+.catalog-products {
+  &__products {
+    padding-top: 36px;
+  }
+
+  .products__item {
+    &:first-child {
+      align-self: flex-start;
+      aspect-ratio: 490 / 246;
+
+      @include tablet {
+        aspect-ratio: 484 / 243;
+        order: 200;
+        flex: 1 1 63%;
+        margin-bottom: 0;
+      }
+
+      @include mobile {
+        flex: 1 1 100%;
+        aspect-ratio: 328 / 165;
+      }
+    }
+  }
+}

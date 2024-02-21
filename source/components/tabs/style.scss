@@ -1,0 +1,57 @@
+@import '../../scss/global/variables.scss';
+@import '../../scss/global/mixins.scss';
+
+.tabs {
+  overflow: hidden;
+
+  &__slider {
+    overflow: visible !important;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    width: auto;
+    display: block;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+
+      @include mobile {
+        margin-right: vmin(10);
+      }
+    }
+  }
+
+  &__link {
+    @include b1;
+    color: $grey400;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    background-color: $grey200;
+    display: block;
+    transition: background-color 0.2s, color 0.2s;
+
+    @include mobile {
+      font-size: vmin(12);
+      padding: vmin(12) vmin(16);
+      border-radius: vmin(8);
+    }
+
+    @include hover {
+      cursor: pointer;
+      background-color: $grey250;
+      color: $main-text;
+    }
+
+    &.active {
+      color: #fff;
+      background-color: $main-text;
+    }
+  }
+}

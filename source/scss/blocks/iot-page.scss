@@ -1,0 +1,1748 @@
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+// .iot-page__main {
+//   .page__promo-bg-image {
+//     object-fit: contain;
+
+//     @media (max-width: 1920px) {
+//       object-fit: cover;
+//     }
+//   }
+// }
+
+.iot-page {
+  &__main {
+    margin-bottom: 0;
+
+    .page__promo-image {
+      object-fit: cover;
+
+      @include mobile {
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__about {
+    margin-bottom: 100px;
+
+    @include tablet {
+      margin-bottom: 80px;
+    }
+
+    @include mobile {
+      margin-bottom: vmin(64);
+    }
+  }
+
+  &__about-subtitle,
+  &__about-title {
+    text-align: center;
+  }
+
+  &__about-desc {
+    @include b1;
+    color: $grey400;
+    text-align: center;
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+
+    & + .iot-page__about-desc {
+      margin-top: 8px;
+
+      @include mobile {
+        margin-top: vmin(8);
+      }
+    }
+  }
+
+  &__about-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 48px;
+
+    @include tablet {
+      gap: 16px;
+    }
+
+    @include mobile {
+      padding-top: vmin(24);
+      gap: vmin(16);
+    }
+  }
+
+  &__about-benefits-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @include tablet {
+      gap: 16px;
+    }
+
+    @include mobile {
+      gap: vmin(16);
+    }
+
+    .iot-page__about-card {
+      &:first-child {
+        width: 36.67%;
+
+        @include tablet {
+          width: 40.76%;
+        }
+
+        @include mobile {
+          width: 100%;
+        }
+      }
+
+      &:last-child {
+        width: calc(63.33% - 20px);
+
+        @include tablet {
+          width: calc(59.24% - 16px);
+        }
+
+        @include mobile {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__about-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    height: 300px;
+
+    @include desktop-m {
+      height: 250px;
+    }
+
+    @include tablet {
+      height: 200px;
+      border-radius: 16px;
+    }
+
+    @include mobile {
+      height: vmin(200);
+      border-radius: vmin(16);
+    }
+
+    &.is--custom-height {
+      height: auto;
+    }
+  }
+
+  &__about-card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__about-card-content {
+    position: relative;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+
+    @include desktop-m {
+      padding: 32px;
+    }
+
+    @include tablet {
+      padding: 24px;
+    }
+
+    @include mobile {
+      padding: vmin(24);
+    }
+  }
+
+  &__about-card-text {
+    @include h5;
+    color: #fff;
+
+    @include desktop-m {
+      font-size: 18px;
+    }
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: vmin(16);
+    }
+
+    &.is--large {
+      font-size: 32px;
+
+      @include desktop-m {
+        font-size: 24px;
+      }
+
+      @include tablet {
+        font-size: 18px;
+      }
+
+      @include mobile {
+        font-size: vmin(18);
+      }
+    }
+
+    .highlight {
+      color: #f3abff;
+    }
+
+    &.is--bottom {
+      margin-top: auto;
+    }
+  }
+
+  &__about-benefits-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @include tablet {
+      gap: 16px;
+    }
+
+    @include mobile {
+      gap: vmin(16);
+    }
+
+    .iot-page__about-benefits-bottom-part {
+      &:last-child {
+        width: 36.67%;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include tablet {
+          width: 40.76%;
+        }
+
+        @include mobile {
+          width: 100%;
+          height: vmin(320);
+        }
+      }
+
+      &:first-child {
+        width: calc(63.33% - 20px);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include tablet {
+          gap: 16px;
+          width: calc(59.24% - 16px);
+        }
+
+        @include mobile {
+          gap: vmin(16);
+          width: 100%;
+
+          .iot-page__about-card .iot-page__about-card-text {
+            max-width: vmin(190);
+          }
+        }
+      }
+    }
+  }
+
+  &__about-card-icon {
+    align-self: flex-start;
+
+    @include tablet {
+      width: 48px;
+      height: 48px;
+    }
+
+    @include mobile {
+      width: vmin(48);
+      height: vmin(48);
+    }
+  }
+
+  &__promo {
+    background: #020202;
+    position: relative;
+    overflow: hidden;
+
+    // &.is--loaded {
+    //   .iot-page__promo-inner-bg {
+    //     display: none;
+    //   }
+    // }
+  }
+
+  &__promo-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 100px;
+    z-index: 2;
+
+    @include tablet {
+      padding-top: 80px;
+    }
+
+    @include mobile {
+      padding-top: vmin(64);
+    }
+
+    &.is--loaded::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 45%;
+      background-color: $main-text;
+    }
+
+    &-title {
+      text-align: center;
+      color: #fff;
+    }
+
+    &-subtitle {
+      text-align: center;
+      color: #fff;
+      font-size: 48px;
+
+      @include tablet {
+        font-size: 40px;
+      }
+
+      @include mobile {
+        font-size: vmin(32);
+      }
+    }
+  }
+
+  &__promo-inner {
+    position: relative;
+    width: 100%;
+    height: 1080px;
+    background: #020202;
+
+    @include tablet {
+      height: 881px;
+    }
+
+    @include mobile {
+      height: vmin(744);
+      // max-height: 864px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 100%;
+      max-width: 1600px;
+      height: 500px;
+      transform: translateX(-50%);
+      background: linear-gradient(0deg, rgba(2, 2, 2, 1) 0%, rgba(2, 2, 2, 0) 10%, rgba(2, 2, 2, 0) 100%),
+        linear-gradient(90deg, rgba(2, 2, 2, 1) 0%, rgba(2, 2, 2, 0) 10%, rgba(2, 2, 2, 0) 100%),
+        linear-gradient(270deg, rgba(2, 2, 2, 1) 0%, rgba(2, 2, 2, 0) 10%, rgba(2, 2, 2, 0) 100%);
+
+      @include desktop-m {
+        background: linear-gradient(0deg, rgba(2, 2, 2, 1) 0%, rgba(2, 2, 2, 0) 10%, rgba(2, 2, 2, 0) 100%);
+      }
+    }
+
+    spline-viewer {
+      width: 1920px;
+      height: 1080px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: default !important;
+
+      @include tablet {
+        height: 881px;
+        transform: translate(-50%, calc(-50% - 80px));
+      }
+
+      @include mobile {
+        height: 740px;
+        transform: translate(-50%, calc(-50% - 140px)) scale(0.8);
+        // max-height: 864px;
+      }
+    }
+  }
+
+  &__promo-inner-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    max-width: 1600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__promo-inner-text {
+    @include h4;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 100px;
+    z-index: 2;
+    text-align: center;
+
+    br {
+      display: none;
+    }
+
+    @include tablet {
+      padding-bottom: 80px;
+      font-size: 24px;
+    }
+
+    @include mobile {
+      padding-bottom: vmin(56);
+      padding-left: 16px;
+      padding-right: 16px;
+      font-size: vmin(20);
+      min-height: vmin(104);
+
+      br {
+        display: inline-block;
+      }
+    }
+
+    .blink,
+    .main {
+      color: #f3abff;
+    }
+
+    .blink {
+      animation: blink 0.7s infinite;
+    }
+  }
+
+  &__promo-benefits {
+    padding-bottom: 100px;
+
+    @include tablet {
+      padding-bottom: 80px;
+    }
+
+    @include mobile {
+      padding-bottom: vmin(64);
+    }
+  }
+
+  &__promo-benefits-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 21px;
+
+    @include tablet {
+      gap: 20px;
+    }
+
+    @include mobile {
+      gap: vmin(20);
+    }
+  }
+
+  &__promo-benefits-item {
+    width: calc((100% - 42px) / 3);
+    min-height: 460px;
+    position: relative;
+    display: flex;
+    border-radius: 24px;
+    overflow: hidden;
+
+    @include desktop-m {
+      min-height: 384px;
+    }
+
+    @include tablet {
+      width: calc((100% - 20px) / 2);
+      min-height: 428px;
+      order: 1;
+
+      &:nth-child(5) {
+        order: 2;
+      }
+
+      &:nth-child(4) {
+        order: 3;
+      }
+    }
+
+    @include mobile {
+      width: 100%;
+      min-height: vmin(384);
+      border-radius: vmin(24);
+    }
+
+    &.is--wide {
+      width: calc((100% - 42px) / 3 * 2 + 21px);
+
+      @include tablet {
+        width: 100%;
+      }
+
+      @include mobile {
+        min-height: vmin(644);
+      }
+
+      .iot-page__promo-benefits-item-text {
+        max-width: 286px;
+        text-align: left;
+
+        @include mobile {
+          max-width: none;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &__promo-benefits-item-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__promo-benefits-item-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px 50px;
+
+    @include desktop-m {
+      padding: 32px 22px;
+    }
+
+    @include tablet {
+      padding: 36px;
+    }
+
+    @include mobile {
+      padding: vmin(32) vmin(44);
+    }
+  }
+
+  &__promo-benefits-item-text {
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    line-height: 150%;
+    margin: 0;
+    font-weight: 300;
+
+    @include desktop-m {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: vmin(16);
+    }
+  }
+
+  &__promo-benefits-item-title {
+    @include h4;
+    color: #fff;
+    margin-bottom: 12px;
+
+    @include desktop-m {
+      font-size: 28px;
+    }
+
+    @include mobile {
+      font-size: vmin(20);
+      margin-bottom: vmin(10);
+      text-align: center;
+    }
+  }
+
+  &__promo-benefits-bottom {
+    position: relative;
+    width: 100%;
+    padding: 40px;
+    border-radius: 16px;
+    overflow: hidden;
+
+    @include tablet {
+      order: 4;
+      padding: 32px;
+    }
+
+    @include mobile {
+      padding: vmin(32) vmin(24);
+      border-radius: vmin(16);
+    }
+
+    .iot-page__promo-benefits-item-content {
+      padding: 0;
+      display: flex;
+      align-items: center;
+
+      @include tablet {
+        flex-direction: column;
+      }
+    }
+
+    .iot-page__promo-benefits-item-bg {
+      object-position: 50% 0;
+    }
+  }
+
+  &__promo-benefits-bottom-icon {
+    margin-right: 32px;
+
+    @include tablet {
+      margin: 0 0 16px;
+    }
+
+    @include mobile {
+      width: vmin(56);
+      height: vmin(56);
+      margin-bottom: vmin(18);
+    }
+  }
+
+  &__promo-benefits-bottom-text {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 120%;
+    color: #fff;
+    padding-right: 16px;
+    margin: 0;
+
+    @include tablet {
+      padding-right: 0;
+      margin: 0 0 32px;
+    }
+
+    @include mobile {
+      font-size: vmin(16);
+      margin-bottom: vmin(24);
+      text-align: center;
+    }
+  }
+
+  &__promo-benefits-bottom-buttons {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+
+    @include tablet {
+      margin-left: 0;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: vmin(8);
+      width: 100%;
+    }
+  }
+
+  &__promo-benefits-bottom-link {
+    background-color: $main-text;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    @include mobile {
+      border-radius: vmin(8);
+      width: 100%;
+
+      img {
+        height: vmin(64);
+        width: auto;
+      }
+    }
+  }
+
+  &__rnd {
+    padding-top: 100px;
+    overflow: hidden;
+    padding-bottom: 155px;
+    background: #f5f5f7;
+
+    @include desktop-m {
+      padding-bottom: 181px;
+    }
+
+    @include tablet {
+      padding-top: 80px;
+      padding-bottom: 186px;
+    }
+
+    @include mobile {
+      padding-top: vmin(64);
+      padding-bottom: vmin(64);
+    }
+
+    &-title,
+    &-subtitle {
+      text-align: center;
+    }
+
+    &-desc {
+      @include b1;
+      color: $grey400;
+      text-align: center;
+
+      @include mobile {
+        font-size: vmin(14);
+      }
+    }
+
+    &-controllers {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      padding-top: 124px;
+      margin-right: -150px;
+      // width: 100%;
+
+      @include desktop-m {
+        padding-top: 167px;
+      }
+
+      @include tablet {
+        padding-top: 292px;
+        // margin-right: -180px;
+      }
+
+      @include mobile {
+        padding-top: vmin(361);
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0;
+        // margin-left: vmin(-20);
+      }
+
+      // &::before {
+      //   content: '';
+      //   position: absolute;
+      //   top: 0;
+      //   right: 55px;
+      //   width: 1171px;
+      //   height: 100%;
+      // }
+    }
+
+    &-controllers-label {
+      position: absolute;
+      top: 80px;
+      left: 0;
+      background: #fff;
+      display: flex;
+      border-radius: 20px;
+      align-items: center;
+
+      @include tablet {
+        left: calc(50% - 75px);
+        transform: translateX(-50%);
+      }
+
+      @include mobile {
+        left: 50%;
+        top: vmin(93);
+        width: vmin(328);
+        text-align: center;
+      }
+    }
+
+    &-controllers-label-icon {
+      margin-right: 24px;
+      font-size: 0;
+      line-height: 0;
+
+      @include mobile {
+        position: absolute;
+        top: vmin(-55);
+        left: 50%;
+        transform: translateX(-50%);
+        margin-right: 0;
+
+        img {
+          width: vmin(80);
+          height: vmin(80);
+        }
+      }
+    }
+
+    &-controllers-label-text {
+      @include b1;
+      padding: 19px 24px 19px 0;
+
+      @include mobile {
+        font-size: vmin(14);
+        padding: vmin(36) vmin(18) vmin(20);
+      }
+    }
+
+    &-device-image {
+      position: relative;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    &-controller-1,
+    &-controller-2,
+    &-controller-3 {
+      flex-shrink: 0;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        pointer-events: none;
+        box-shadow: 15.67144px 15.67144px 48.75558px 0px rgba(0, 0, 0, 0.16),
+          61.81511px 61.81511px 87.93417px 0px rgba(0, 0, 0, 0.14),
+          140.1723px 140.1723px 118.40641px 0px rgba(0, 0, 0, 0.08),
+          248.13109px 248.13109px 140.1723px 0px rgba(0, 0, 0, 0.02),
+          388.30338px 388.30338px 154.10246px 0px rgba(0, 0, 0, 0);
+
+        @include mobile {
+          box-shadow: vmin(15.67144) vmin(15.67144) vmin(48.75558) 0 rgba(0, 0, 0, 0.16),
+            vmin(61.81511) vmin(61.81511) vmin(87.93417) 0 rgba(0, 0, 0, 0.14),
+            vmin(140.1723) vmin(140.1723) vmin(118.40641) 0 rgba(0, 0, 0, 0.08),
+            vmin(248.13109) vmin(248.13109) vmin(140.1723) 0 rgba(0, 0, 0, 0.02),
+            vmin(388.30338) vmin(388.30338) vmin(154.10246) 0 rgba(0, 0, 0, 0);
+        }
+      }
+    }
+
+    &-controller-1 {
+      display: flex;
+      position: relative;
+      width: 194px;
+      margin-bottom: 68px;
+      margin-right: 58px;
+      margin-top: auto;
+
+      @include desktop-m {
+        width: 137px;
+        margin-bottom: 49px;
+        margin-right: 40px;
+      }
+
+      @include tablet {
+        width: 97px;
+        margin-bottom: 34px;
+        margin-right: 29px;
+      }
+
+      @include mobile {
+        width: vmin(119);
+        margin-bottom: vmin(41);
+        margin-right: 0;
+      }
+
+      &::before {
+        width: 84%;
+        height: 74%;
+        border-radius: 28px;
+
+        @include tablet {
+          height: 72%;
+        }
+      }
+
+      .iot-page__rnd-device-link {
+        bottom: calc(100% + 34px);
+        left: -45px;
+
+        @include desktop-m {
+          bottom: calc(100% + 29px);
+          left: -129px;
+        }
+
+        @include tablet {
+          bottom: calc(100% + 46px);
+          left: -115px;
+        }
+
+        @include mobile {
+          bottom: calc(100% + vmin(28));
+          left: vmin(-62);
+          width: vmin(286);
+        }
+      }
+
+      .iot-page__rnd-device-shadow {
+        top: 22px;
+        left: 18px;
+
+        @include desktop-m {
+          width: 221px;
+          height: auto;
+          top: 15px;
+          left: 13px;
+        }
+
+        @include tablet {
+          width: 157px;
+          top: 10px;
+          left: 9px;
+        }
+
+        @include mobile {
+          width: vmin(192);
+          top: vmin(13);
+          left: vmin(11);
+        }
+      }
+
+      .iot-page__rnd-device-arrow {
+        right: calc(100% + 8px);
+        bottom: 64px;
+
+        @include desktop-m {
+          right: calc(100% + 22px);
+          bottom: -15px;
+        }
+
+        @include tablet {
+          right: calc(100% + 21px);
+          bottom: -26px;
+        }
+
+        @include mobile {
+          right: calc(100% + vmin(31));
+          bottom: vmin(47);
+          width: vmin(74);
+        }
+      }
+    }
+
+    &-controller-2 {
+      display: flex;
+      position: relative;
+      width: 302px;
+      margin-top: auto;
+      margin-bottom: 76px;
+      margin-right: 17px;
+
+      @include desktop-m {
+        width: 214px;
+        margin-bottom: 54px;
+        margin-right: 12px;
+      }
+
+      @include tablet {
+        width: 152px;
+        margin-bottom: 38px;
+        margin-right: 9px;
+      }
+
+      @include mobile {
+        width: vmin(186);
+        margin-bottom: vmin(205);
+        margin-right: 0;
+      }
+
+      &::before {
+        width: 96%;
+        height: 85%;
+        border-radius: 16px;
+
+        @include tablet {
+          height: 82%;
+        }
+      }
+
+      .iot-page__rnd-device-link {
+        top: calc(100% + 52px);
+        left: 8px;
+
+        @include desktop-m {
+          top: calc(100% + 57px);
+          left: -69px;
+        }
+
+        @include tablet {
+          top: calc(100% + 66px);
+          left: -136px;
+        }
+
+        @include mobile {
+          top: calc(100% + vmin(23));
+          left: vmin(-71);
+          width: vmin(265);
+        }
+      }
+
+      .iot-page__rnd-device-shadow {
+        top: 16px;
+        left: 11px;
+
+        @include desktop-m {
+          width: 404px;
+          top: 11px;
+          left: 8px;
+        }
+
+        @include tablet {
+          width: 287px;
+          top: 9px;
+          left: 5px;
+        }
+
+        @include mobile {
+          width: vmin(351);
+          top: vmin(11);
+          left: vmin(6);
+        }
+      }
+
+      .iot-page__rnd-device-arrow {
+        bottom: -76px;
+        right: -61px;
+
+        @include desktop-m {
+          right: auto;
+          left: 100%;
+          bottom: auto;
+          top: 85%;
+        }
+
+        @include tablet {
+          left: 147px;
+          top: 79px;
+        }
+
+        @include mobile {
+          width: vmin(58);
+          left: calc(100% + vmin(10));
+          top: vmin(82);
+        }
+      }
+    }
+
+    &-controller-3 {
+      display: flex;
+      position: relative;
+      width: 683px;
+
+      @include desktop-m {
+        width: 482px;
+      }
+
+      @include tablet {
+        width: 342px;
+      }
+
+      @include mobile {
+        width: vmin(419);
+      }
+
+      &::before {
+        width: 67%;
+        height: 55%;
+        border-radius: 16px;
+      }
+
+      .iot-page__rnd-device-link {
+        top: -44px;
+        right: 100px;
+
+        @include desktop-m {
+          top: auto;
+          bottom: calc(100% + 9px);
+          right: 14px;
+        }
+
+        @include tablet {
+          bottom: 100%;
+          right: 8px;
+        }
+
+        @include mobile {
+          bottom: auto;
+          top: vmin(-66);
+          right: vmin(48);
+          width: vmin(242);
+        }
+      }
+
+      .iot-page__rnd-device-arrow {
+        top: -30px;
+        left: 206px;
+
+        @include desktop-m {
+          top: -73px;
+          left: 87px;
+        }
+
+        @include tablet {
+          top: -63px;
+          left: -47px;
+        }
+
+        @include mobile {
+          width: vmin(73);
+          top: vmin(-45);
+          left: vmin(39);
+        }
+      }
+
+      .iot-page__rnd-device-shadow {
+        top: 118px;
+        left: 116px;
+
+        @include desktop-m {
+          width: 649px;
+          top: 83px;
+          left: 82px;
+        }
+
+        @include tablet {
+          width: 461px;
+          top: 59px;
+          left: 57px;
+        }
+
+        @include mobile {
+          width: vmin(564);
+          top: vmin(73);
+          left: vmin(70);
+        }
+      }
+    }
+
+    &-device-link,
+    &-device-shadow,
+    &-device-arrow {
+      position: absolute;
+    }
+
+    &-device-link {
+      padding: 20px 58px 20px 24px;
+      @include h7;
+      color: $main-text;
+      border: 1.5px solid $grey300;
+      background-color: #f5f5f7;
+      width: 285px;
+      border-radius: 8px;
+      transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+
+      @include mobile {
+        font-size: vmin(16);
+        padding: vmin(20) vmin(58) vmin(20) vmin(24);
+        border-width: vmin(1.5);
+        width: vmin(265);
+        border-radius: vmin(8);
+      }
+
+      @include hover {
+        color: #fff;
+        background-color: $main-text;
+        border-color: $main-text;
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 50%;
+        right: 24px;
+        transform: translateY(-50%);
+
+        @include mobile {
+          width: vmin(24);
+          height: vmin(24);
+          right: vmin(24);
+        }
+      }
+    }
+
+    &-device-shadow {
+      max-width: none;
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
+  &__smart-home {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%);
+      z-index: 1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 170px;
+      background: linear-gradient(0deg, #151515 0%, rgba(21, 21, 21, 0) 100%);
+    }
+
+    &-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+
+      @include tablet {
+        height: 110%;
+        object-position: top center;
+      }
+    }
+
+    &-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    &-animation {
+      width: 633px;
+      height: 633px;
+      position: absolute;
+      top: -140px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+
+      @include mobile {
+        width: vmin(461);
+        height: vmin(461);
+        top: vmin(-146);
+      }
+    }
+
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 84px;
+      padding-bottom: 100px;
+
+      @include tablet {
+        padding-top: 84px;
+        padding-bottom: 81px;
+      }
+
+      @include mobile {
+        padding-top: vmin(51);
+        padding-bottom: vmin(64);
+      }
+    }
+
+    &-device-container {
+      width: 350px;
+      height: 196px;
+      position: relative;
+      margin-bottom: 83px;
+      z-index: 2;
+
+      @include tablet {
+        margin-bottom: 88px;
+      }
+
+      @include mobile {
+        width: vmin(213);
+        height: vmin(120);
+        margin-bottom: vmin(32);
+      }
+    }
+
+    &-device {
+      position: absolute;
+      top: 0;
+      right: 0;
+      max-width: none;
+      width: 120%;
+    }
+
+    &-cloud-icon {
+      margin-bottom: 24px;
+
+      @include mobile {
+        width: vmin(132);
+        height: auto;
+        margin-bottom: vmin(24);
+      }
+    }
+
+    &-title {
+      @include h3;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 16px;
+
+      @include tablet {
+        font-size: 32px;
+      }
+
+      @include mobile {
+        font-size: vmin(24);
+        margin-bottom: vmin(16);
+      }
+    }
+
+    &-desc {
+      @include b1;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 24px;
+      max-width: 650px;
+
+      @include mobile {
+        font-size: vmin(14);
+        margin-bottom: vmin(24);
+      }
+    }
+
+    &-link {
+      margin-bottom: 97px;
+
+      @include tablet {
+        margin-bottom: 85px;
+      }
+
+      @include mobile {
+        margin-bottom: vmin(48);
+      }
+    }
+
+    &-benefits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      @include mobile {
+        gap: vmin(20);
+      }
+    }
+
+    &-benefit {
+      position: relative;
+      width: calc((100% - 60px) / 4);
+      padding: 111px 24px 24px 24px;
+      color: #fff;
+      @include b1;
+      background-color: rgba(41, 35, 52, 0.4);
+      border-radius: 16px;
+      backdrop-filter: blur(32px);
+      transition: background-color 0.2s;
+
+      @include tablet {
+        width: calc((100% - 20px) / 2);
+      }
+
+      @include mobile {
+        width: 100%;
+        padding: vmin(111) vmin(24) vmin(24) vmin(24);
+        font-size: vmin(14);
+        border-radius: vmin(16);
+
+        &:first-child {
+          .iot-page__smart-home-benefit-image {
+            width: vmin(144);
+          }
+        }
+      }
+
+      @include hover {
+        background-color: rgba(122, 112, 138, 0.4);
+
+        svg {
+          color: #fff;
+        }
+      }
+
+      svg {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        width: 24px;
+        height: 24px;
+        color: $grey400;
+        transition: color 0.2s;
+
+        @include mobile {
+          top: vmin(24);
+          right: vmin(24);
+          width: vmin(24);
+          height: vmin(24);
+        }
+      }
+    }
+
+    &-benefit-text {
+      margin: 0;
+    }
+
+    &-benefit-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(calc(-50% + 56px), calc(-50% + 56px));
+
+      @include mobile {
+        width: vmin(128);
+        height: auto;
+        transform: translate(calc(-50% + vmin(56)), calc(-50% + vmin(56)));
+      }
+    }
+  }
+
+  &__controllers {
+    padding-top: 100px;
+    background-color: #f5f5f7;
+    overflow: hidden;
+
+    @include tablet {
+      padding-top: 80px;
+    }
+
+    @include mobile {
+      padding-top: vmin(64);
+    }
+
+    &-container {
+      text-align: center;
+    }
+
+    &-title,
+    &-subtitle {
+      text-align: center;
+    }
+
+    &-desc {
+      @include b1;
+      color: $grey400;
+      text-align: center;
+      margin-bottom: 24px;
+
+      @include mobile {
+        font-size: vmin(14);
+        margin-bottom: vmin(24);
+      }
+    }
+
+    &-link {
+      margin: 0 auto 32px;
+
+      @include mobile {
+        margin-bottom: vmin(32);
+      }
+    }
+
+    &-content {
+      position: relative;
+      padding-top: 122px;
+      padding-bottom: 232px;
+
+      @include desktop-m {
+        padding-top: 91px;
+        padding-bottom: 123px;
+      }
+
+      @include tablet {
+        padding-top: 32px;
+        padding-bottom: 431px;
+      }
+
+      @include mobile {
+        padding-top: vmin(16);
+        padding-bottom: vmin(367);
+      }
+    }
+
+    &-benefits {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &-benefits-column {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
+      @include tablet {
+        width: 100%;
+      }
+
+      &:nth-child(2n) {
+        .iot-page__controllers-benefit-inner {
+          margin-left: auto;
+          text-align: right;
+
+          @include tablet {
+            text-align: left;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    &-benefit-inner {
+      max-width: 285px;
+      text-align: left;
+      padding: 24px 0;
+      border-top: 1.5px solid $grey300;
+
+      @include tablet {
+        max-width: 100%;
+      }
+
+      @include mobile {
+        padding: vmin(24) 0;
+        border-width: vmin(1.5);
+      }
+    }
+
+    &-benefit-title {
+      @include h7;
+      margin: 0 0 8px;
+
+      &.is--main {
+        display: inline-block;
+        background: -webkit-linear-gradient(0deg, #3593ff 0%, #eb91fa 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      @include mobile {
+        font-size: vmin(16);
+        margin-bottom: vmin(8);
+      }
+    }
+
+    &-benefit-desc {
+      @include b1;
+      color: $grey400;
+
+      @include mobile {
+        font-size: vmin(14);
+      }
+    }
+
+    &-device-image {
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 365px);
+      width: 1028px;
+      height: auto;
+      pointer-events: none;
+
+      @include desktop-m {
+        width: 809px;
+        left: calc(50% - 290px);
+      }
+
+      @include tablet {
+        max-width: none;
+        // width: 900px;
+        bottom: -74px;
+        left: calc(50% - 285px);
+      }
+
+      @include mobile {
+        width: vmin(570);
+        left: calc(50% - vmin(223));
+        bottom: vmin(-25);
+      }
+    }
+
+    &-image {
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 85px);
+      width: 641px;
+      height: auto;
+      pointer-events: none;
+
+      @include desktop-m {
+        width: 482px;
+        left: calc(50% - 82px);
+      }
+
+      @include tablet {
+        left: calc(50% - 55px);
+        bottom: -63px;
+      }
+
+      @include mobile {
+        width: vmin(367);
+        left: calc(50% - vmin(55));
+        bottom: vmin(-10);
+      }
+    }
+  }
+
+  &__climate-online {
+    background: $main-text;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &-content {
+      padding-top: 100px;
+      min-height: 1080px;
+      position: relative;
+      z-index: 2;
+
+      @include tablet {
+        padding-top: 72px;
+        min-height: 970px;
+      }
+
+      @include mobile {
+        padding-top: vmin(64);
+        min-height: vmin(840);
+      }
+    }
+
+    &-bg {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      max-width: none;
+      transform: translateX(-50%);
+      filter: blur(10px);
+
+      @include tablet {
+        bottom: -228px;
+      }
+
+      @include mobile {
+        bottom: vmin(-358);
+        top: auto;
+        width: vmin(1193);
+        height: vmin(882);
+      }
+    }
+
+    &-logo {
+      margin-bottom: 32px;
+
+      @include mobile {
+        width: vmin(168);
+        margin-bottom: vmin(24);
+      }
+    }
+
+    &-title {
+      @include h3;
+      margin-bottom: 16px;
+      color: #fff;
+
+      @include tablet {
+        font-size: 32px;
+      }
+
+      @include mobile {
+        font-size: vmin(24);
+        margin-bottom: vmin(16);
+      }
+    }
+
+    &-desc {
+      @include b1;
+      color: #fff;
+      margin-bottom: 24px;
+
+      @include mobile {
+        font-size: vmin(14);
+        margin-bottom: vmin(24);
+      }
+
+      br {
+        @include tablet {
+          display: none;
+        }
+      }
+    }
+
+    &-link {
+      margin-bottom: 36px;
+    }
+
+    &-devices {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 612px;
+      height: auto;
+      transform: translateX(-50%);
+      max-width: none;
+
+      @include tablet {
+        width: 503px;
+      }
+
+      @include mobile {
+        width: vmin(380);
+      }
+    }
+  }
+}

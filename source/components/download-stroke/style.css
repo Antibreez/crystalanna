@@ -1,0 +1,138 @@
+.download-stroke {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px 16px;
+  border: 1.5px solid #e6e6ef;
+  border-radius: 8px;
+  position: relative;
+  background-color: #fff;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+@media (max-width: 767px) {
+  .download-stroke {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: vmin(15) vmin(16);
+    border-width: vmin(1.5);
+    border-radius: vmin(8);
+  }
+}
+.download-stroke__icon {
+  width: 48px;
+  height: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-right: 24px;
+  background-color: #f4f4f8;
+  border-radius: 8px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+@media (max-width: 767px) {
+  .download-stroke__icon {
+    width: vmin(48);
+    height: vmin(48);
+    margin: 0 0 vmin(16);
+    border-radius: vmin(8);
+  }
+}
+.download-stroke__icon svg {
+  width: 24px;
+  height: 24px;
+  color: #6c7684;
+}
+@media (max-width: 767px) {
+  .download-stroke__icon svg {
+    width: vmin(24);
+    height: vmin(24);
+  }
+}
+.download-stroke__content {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding-right: 24px;
+}
+@media (max-width: 767px) {
+  .download-stroke__content {
+    padding-right: 0;
+  }
+}
+.download-stroke__name {
+  margin: 0;
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 400;
+  display: block;
+  margin: 0 0 8px;
+  color: #151515;
+}
+@media (max-width: 767px) {
+  .download-stroke__name {
+    font-size: vmin(12);
+    margin: 0 0 vmin(8);
+  }
+}
+.download-stroke__info {
+  margin: 0;
+  font-size: 12px;
+  line-height: 150%;
+  font-weight: 400;
+  display: block;
+  color: #6c7684;
+}
+@media (max-width: 767px) {
+  .download-stroke__info {
+    font-size: vmin(10);
+  }
+}
+.download-stroke__save-icon {
+  -ms-flex-item-align: center;
+      align-self: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+@media (max-width: 767px) {
+  .download-stroke__save-icon {
+    position: absolute;
+    top: vmin(15);
+    right: vmin(16);
+  }
+}
+.download-stroke__save-icon svg {
+  width: 24px;
+  height: 24px;
+  color: #6c7684;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+@media (max-width: 767px) {
+  .download-stroke__save-icon svg {
+    width: vmin(24);
+    height: vmin(24);
+  }
+}
+@media (min-width: 1024px) {
+  .download-stroke:hover {
+    background-color: #f4f4f8;
+  }
+  .download-stroke:hover .download-stroke__save-icon svg {
+    color: #151515;
+  }
+  .download-stroke:hover .download-stroke__icon {
+    background-color: #fff;
+  }
+}

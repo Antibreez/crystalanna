@@ -1,0 +1,72 @@
+@import '../../scss/global/variables.scss';
+@import '../../scss/global/mixins.scss';
+@import '../../scss/global/functions.scss';
+
+.breadcrumbs {
+  margin-bottom: 4px;
+
+  @include desktop-m {
+    margin-bottom: 8px;
+  }
+
+  @include mobile {
+    margin-bottom: 0;
+  }
+
+  &__container {
+    overflow: hidden;
+  }
+
+  &__nav {
+    overflow: visible !important;
+  }
+
+  &__nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    // display: flex;
+    // flex-wrap: wrap;
+  }
+
+  &__nav-item {
+    margin-bottom: 8px;
+    width: auto;
+
+    @include mobile {
+      margin-bottom: vmin(8);
+    }
+
+    a,
+    span {
+      @include b2;
+      color: $grey400;
+
+      @include mobile {
+        font-size: vmin(10);
+      }
+    }
+
+    a {
+      margin-right: 8px;
+      transition: color 0.2s;
+
+      @include mobile {
+        margin-right: vmin(8);
+      }
+
+      @include hover {
+        color: $primary;
+      }
+
+      &::after {
+        content: '→';
+        margin-left: 8px;
+
+        @include mobile {
+          margin-left: vmin(8);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@import '../../scss/global/variables.scss';
+@import '../../scss/global/mixins.scss';
+
+.chip {
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1.5px solid $grey250;
+  border-radius: 40px;
+  transition: border-color 0.2s;
+
+  @include mobile {
+    height: vmin(46);
+    padding: vmin(8) vmin(16);
+    border-width: vmin(1.5);
+    border-radius: vmin(40);
+  }
+
+  @include hover {
+    border-color: $grey400;
+    cursor: pointer;
+
+    .chip__icon {
+      color: $main-text;
+    }
+  }
+
+  &__text {
+    @include b1;
+    color: $main-text;
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    color: $grey400;
+    margin-right: 16px;
+    transition: color 0.2s;
+
+    @include mobile {
+      width: vmin(24);
+      height: vmin(24);
+      margin-right: vmin(16);
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+
+      @include mobile {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+  }
+}

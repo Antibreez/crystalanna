@@ -1,0 +1,556 @@
+/* !!!!! Требуется кастомное свойство --vh и обработчик события resize (js/common/height-resize.js)
+В некоторых браузерах на мобильных устройствах при скролле страницы появляются дополнительные области снизу или сверху браузера, которые перекрывают контент,
+поэтому нужен обработчик события, который обновляет кастомное свойство --vh при ресайзе окна, за счет которого меняется высота блоков, которые зависят от viewport height
+*/
+
+@import '../../scss/global/variables.scss';
+@import '../../scss/global/mixins.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // visibility: hidden;
+  transform: translateY(0);
+  transition: transform 0.5s, visibility 0s 0.5s, max-height 0.5s;
+  z-index: 12;
+  opacity: 1;
+
+  &.is--hidden-on-top {
+    transform: translateY(-100%);
+    @include tablet {
+      transform: translateY(0);
+    }
+  }
+
+  @include tablet {
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  &.is--visible {
+    visibility: visible;
+    transform: translateY(0);
+    transition: transform 0.5s, visibility 0s 0s, max-height 0.5s, opacity 0.5s;
+  }
+
+  &.is--hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.5s, visibility 0s 0.5s, max-height 0.5s, opacity 0.5s;
+
+    @include mobile {
+      transition: none;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    max-width: $desktop-outer;
+    padding: 0 $desktop-gap;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include desktop-m {
+      padding: 0 $tablet-gap;
+    }
+
+    @include mobile {
+      padding: 0 $mobile-gap;
+    }
+  }
+
+  &__inner {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0px 0px 24px 24px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 24px 32px;
+    // display: flex;
+    // flex-wrap: wrap;
+    // align-items: center;
+    // width: 100%;
+    // padding: 24px 32px;
+    // background-color: #fff;
+    // border-radius: 0px 0px 24px 24px;
+    // box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+
+    // @include desktop-m {
+    //   padding-top: 28px;
+    //   padding-bottom: 28px;
+    // }
+
+    @include desktop-m {
+      padding-top: 0;
+      padding-bottom: 0;
+      // box-shadow: none;
+    }
+
+    @include mobile {
+      padding-left: vmin(28);
+      padding-right: vmin(28);
+      border-radius: 0px 0px vmin(24) vmin(24);
+      box-shadow: 0px vmin(4) vmin(30) rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__inner-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+
+    @include desktop-m {
+      padding-top: 28px;
+      padding-bottom: 28px;
+    }
+
+    @include mobile {
+      padding-top: vmin(20);
+      padding-bottom: vmin(20);
+    }
+  }
+
+  &__menu-button {
+    display: none;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    color: $main-text;
+
+    svg {
+      width: 24px;
+      height: 24px;
+
+      &:last-child {
+        display: none;
+      }
+    }
+
+    @include desktop-m {
+      display: block;
+    }
+
+    @include mobile {
+      width: vmin(24);
+      height: vmin(24);
+
+      svg {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+  }
+
+  &__logo {
+    font-size: 0;
+    line-height: 0;
+    margin-right: 16px;
+
+    @include desktop-m {
+      margin: 0 auto;
+
+      img {
+        width: auto;
+        height: 24px;
+      }
+    }
+
+    @include mobile {
+      img {
+        height: vmin(16);
+      }
+    }
+  }
+
+  &__nav {
+    margin-left: auto;
+    margin-right: 24px;
+
+    @include desktop-m {
+      display: none;
+    }
+  }
+
+  &__nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
+  &__nav-item {
+    &:not(:last-child) {
+      margin-right: 24px;
+
+      @media (max-width: 1400px) {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  &__nav-link {
+    @include b1;
+    color: $grey400;
+    transition: color 0.2s;
+
+    @include hover {
+      color: $main-text;
+    }
+
+    &.active {
+      color: $main-text;
+    }
+  }
+
+  &__location-link {
+    @include b1;
+    color: $grey400;
+    display: flex;
+    margin-right: 24px;
+    align-items: center;
+    transition: color 0.2s;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+
+    @include hover {
+      color: $main-text;
+    }
+
+    @include desktop-m {
+      @include h7;
+      color: $main-text;
+      font-weight: 600;
+
+      &.is--for-desktop {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      font-size: vmin(16);
+
+      svg {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+  }
+
+  &__search-button {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    color: $grey400;
+    margin-right: 24px;
+    transition: color 0.2s;
+
+    svg {
+      height: 24px;
+      width: 24px;
+    }
+
+    @include hover {
+      color: $main-text;
+      cursor: pointer;
+    }
+
+    @include desktop-m {
+      color: $main-text;
+      margin-right: 0;
+    }
+
+    @include mobile {
+      width: vmin(24);
+      height: vmin(24);
+
+      svg {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+  }
+
+  &__partnership-button {
+    @include desktop-m {
+      display: none;
+    }
+  }
+
+  &__menu-mobile {
+    width: 100%;
+    padding-left: $tablet-gap;
+    padding-right: $tablet-gap;
+    padding-bottom: 0px;
+    padding-bottom: 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    // max-height: 116px;
+    overflow: hidden;
+    // transition: max-height 0.2s;
+    // display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0s 0.5s;
+    pointer-events: none;
+
+    @include desktop-m {
+      visibility: visible;
+      opacity: 1;
+      transition-property: opacity, visibility;
+      transition-delay: 0.5s;
+      transition-duration: 0s;
+    }
+
+    @include mobile {
+      padding-left: $mobile-gap;
+      padding-right: $mobile-gap;
+      padding-bottom: vmin(32);
+    }
+
+    // transition: padding 0.2s, max-height 0.2s;
+
+    &-container {
+      display: flex;
+      width: 100%;
+      max-height: 79px;
+      overflow: hidden;
+      padding-top: 0;
+      padding-left: 32px;
+      padding-right: 32px;
+      background-color: #fff;
+      border-radius: 0 0 24px 24px;
+      box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+      transition: max-height 0.4s ease, padding 0.5s 0.2s ease;
+      // transition: max-height 1s ease, padding 0.8s ease;
+
+      @include mobile {
+        position: relative;
+        flex-direction: column;
+        padding-left: vmin(28);
+        padding-right: vmin(28);
+        max-height: vmin(64);
+        border-radius: 0 0 vmin(24) vmin(24);
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #fff;
+          border-radius: 0 0 vmin(24) vmin(24);
+          visibility: visible;
+          transition-property: visibility;
+          transition-duration: 0s;
+          transition-delay: 1s;
+        }
+      }
+    }
+
+    &-column {
+      flex: 1;
+      padding-right: 36px;
+
+      @include mobile {
+        &:not(:last-child) {
+          margin-bottom: vmin(32);
+        }
+      }
+    }
+
+    &-catalog-title {
+      margin: 0 0 16px;
+
+      @include mobile {
+        font-size: vmin(12);
+        margin-bottom: vmin(16);
+      }
+    }
+
+    &-catalog-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    &-catalog-item {
+      &:not(:last-child) {
+        margin-bottom: 12px;
+
+        @include mobile {
+          margin-bottom: vmin(12);
+        }
+      }
+    }
+
+    &-catalog-link {
+      @include b2;
+      color: $grey400;
+
+      @include mobile {
+        font-size: vmin(12);
+      }
+    }
+
+    &-nav-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    &-nav-item {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+
+        @include mobile {
+          margin-bottom: vmin(16);
+        }
+      }
+    }
+
+    &-nav-link {
+      @include h7;
+      color: $main-text;
+      font-weight: 600;
+
+      @include mobile {
+        font-size: vmin(12);
+      }
+    }
+
+    &-contact {
+      margin-bottom: 16px;
+
+      @include mobile {
+        margin-bottom: vmin(16);
+      }
+    }
+
+    &-contact-title {
+      @include b2;
+      color: $grey400;
+      margin-bottom: 8px;
+
+      @include mobile {
+        font-size: vmin(12);
+        margin-bottom: vmin(8);
+      }
+    }
+
+    &-contact-link {
+      @include h7;
+      color: $main-text;
+      font-weight: 600;
+
+      @include mobile {
+        font-size: vmin(16);
+      }
+    }
+
+    &-socials {
+      display: flex;
+      margin-top: 24px;
+      margin-bottom: 32px;
+
+      @include mobile {
+        margin-top: vmin(24);
+        margin-bottom: vmin(32);
+      }
+    }
+
+    &-social-link {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: $grey200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:not(:last-child) {
+        margin-right: 8px;
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+        color: $grey400;
+      }
+
+      @include mobile {
+        width: vmin(48);
+        height: vmin(48);
+        border-radius: vmin(12);
+
+        &:not(:last-child) {
+          margin-right: vmin(8);
+        }
+
+        svg {
+          width: vmin(24);
+          height: vmin(24);
+        }
+      }
+    }
+  }
+
+  &:not(.is--visible) ~ .header__menu-mobile {
+    visibility: hidden;
+    opacity: 0;
+    transition-delay: 0s;
+
+    @include tablet {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.header.opened {
+  .header__menu-button {
+    svg {
+      &:first-child {
+        display: none;
+      }
+
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+
+  & ~ .header__menu-mobile {
+    max-height: calc(var(--vh, 1vh) * 100);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: unset;
+
+    .header__menu-mobile-container {
+      padding-top: 112px;
+      padding-bottom: 48px;
+      max-height: 2000px;
+      // transition: max-height 1s ease, padding 0.8s ease;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+
+      @include mobile {
+        padding-top: vmin(88);
+        padding-bottom: vmin(32);
+
+        &::after {
+          visibility: hidden;
+          transition-delay: 0s;
+        }
+      }
+    }
+  }
+}

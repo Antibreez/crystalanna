@@ -1,0 +1,49 @@
+.content {
+  &__row {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 36px;
+    }
+  }
+
+  &__item {
+    &.w-50 {
+      width: calc((100% - 20px) / 2);
+    }
+
+    &.w-25 {
+      width: calc((100% - 60px) / 4);
+    }
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__title {
+    @include b1;
+    color: $grey400;
+    margin: 0 0 16px;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: vmin(12);
+      margin-bottom: vmin(8);
+    }
+  }
+
+  &__subtitle {
+    @include h3;
+    margin: 0 0 24px;
+
+    @include desktop-m {
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-size: vmin(24);
+      margin-bottom: vmin(16);
+    }
+  }
+}

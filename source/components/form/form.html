@@ -1,0 +1,288 @@
+<form class="form" action="" id="form-example">
+  <h2 class="form__title">
+    Стать партнёром
+  </h2>
+
+  <div class="form__fields">
+    <div class="col-100">
+      <div class="input-field">
+        <input type="text" name="name" id="name" data-required pattern="^(?!\s*$).+" />
+        <label for="name">ФИО <span>*</span></label>
+        <!-- <span class="input-field__error">Поле не может быть пустым</span> -->
+        <span class="input-field__note"></span>
+        <span class="input-field__outline"></span>
+      </div>
+    </div>
+
+    <div class="col-50">
+      <div class="input-field is--phone">
+        <input type="text" name="phone" id="phone" data-required />
+        <label for="phone">Телефон <span>*</span></label>
+        <span class="input-field__error">Введите корректный номер телефона</span>
+        <span class="input-field__note"></span>
+        <span class="input-field__outline"></span>
+      </div>
+    </div>
+
+    <div class="col-50">
+      <div class="input-field">
+        <input type="email" name="email" id="email" data-required />
+        <label for="email">Email <span>*</span></label>
+        <!-- <span class="input-field__error">Введите корректный email</span> -->
+        <span class="input-field__note"></span>
+        <span class="input-field__outline"></span>
+      </div>
+    </div>
+
+    <div class="col-50">
+      <div class="input-field">
+        <input type="text" name="company" id="company" />
+        <label for="company">Наименование компании</label>
+        <!-- <span class="input-field__error"></span> -->
+        <span class="input-field__note"></span>
+        <span class="input-field__outline"></span>
+      </div>
+    </div>
+
+    <div class="col-50">
+      <div class="input-field">
+        <input type="text" name="city" id="city" />
+        <label for="city">Город</label>
+        <!-- <span class="input-field__error"></span> -->
+        <span class="input-field__note"></span>
+        <span class="input-field__outline"></span>
+      </div>
+    </div>
+
+    <div class="col-100">
+      <div class="input-field">
+        <input type="text" name="inn" id="inn" />
+        <label for="inn">ИНН</label>
+        <!-- <span class="input-field__error"></span> -->
+        <span class="input-field__note"></span>
+        <span class="input-field__outline"></span>
+      </div>
+    </div>
+    <div class="col-100">
+      <div class="select-field">
+        <select name="select1" id="select1" data-search data-empty data-required>
+          <option value="Value 1">Value 1</option>
+          <option value="Value 2">Value 2</option>
+          <option value="Value 3">Value 3</option>
+          <option value="Value 4">Value 4</option>
+          <option value="Value 5">Value 5</option>
+          <option value="Value 6">Value 6</option>
+          <option value="Value 7">Value 7</option>
+          <option value="Value 8">Value 8</option>
+          <option value="Value 9">Value 9</option>
+          <option value="Value 10">Value 10</option>
+        </select>
+        <label>Выберите что-то <span>*</span></label>
+        <div class="select-field__outline"></div>
+
+        <a class="select-field__mobile-button" href="#modal-select" data-fancybox></a>
+
+        <div style="display: none">
+          <div class="select-field__modal" id="modal-select">
+            <div class="select-field__modal-title">
+              <button class="select-field__modal-title-close-button" type="button" data-fancybox-close>
+                <svg>
+                  <use xlink:href="./img/sprite.svg#arrow-right"></use>
+                </svg>
+              </button>
+              <span>Выберите что-то</span>
+            </div>
+            <div class="select-field__modal-body">
+              <div class="select-field__modal-search input-field is--search">
+                <div class="input-field__icon">
+                  <svg>
+                    <use xlink:href="./img/sprite.svg#search"></use>
+                  </svg>
+                </div>
+                <input type="text" name="name1" id="name1" placeholder="Поиск">
+                <span class="input-field__outline"></span>
+                <button type="button" class="input-field__clear-button">
+                  <svg>
+                    <use xlink:href="./img/sprite.svg#close"></use>
+                  </svg>
+                </button>
+              </div>
+
+              <ul class="select-field__modal-search-list">
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 1</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 2</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 3</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 4</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 5</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 6</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 7</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 8</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 9</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 10</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-100">
+      <div class="select-field">
+        <select name="select2" id="select2" data-search data-empty>
+          <option value="Value 1">Value 1</option>
+          <option value="Value 2">Value 2</option>
+          <option value="Value 3">Value 3</option>
+          <option value="Value 4">Value 4</option>
+          <option value="Value 5">Value 5</option>
+          <option value="Value 6">Value 6</option>
+          <option value="Value 7">Value 7</option>
+          <option value="Value 8">Value 8</option>
+          <option value="Value 9">Value 9</option>
+          <option value="Value 10">Value 10</option>
+        </select>
+        <label>Выберите что-то</label>
+        <div class="select-field__outline"></div>
+
+        <a class="select-field__mobile-button" href="#modal-select-2" data-fancybox></a>
+
+        <div style="display: none">
+          <div class="select-field__modal" id="modal-select-2">
+            <div class="select-field__modal-title">
+              <button class="select-field__modal-title-close-button" type="button" data-fancybox-close>
+                <svg>
+                  <use xlink:href="./img/sprite.svg#arrow-right"></use>
+                </svg>
+              </button>
+              <span>Выберите что-то</span>
+            </div>
+            <div class="select-field__modal-body">
+              <div class="select-field__modal-search input-field is--search">
+                <div class="input-field__icon">
+                  <svg>
+                    <use xlink:href="./img/sprite.svg#search"></use>
+                  </svg>
+                </div>
+                <input type="text" name="name1" id="name1" placeholder="Поиск">
+                <span class="input-field__outline"></span>
+                <button type="button" class="input-field__clear-button">
+                  <svg>
+                    <use xlink:href="./img/sprite.svg#close"></use>
+                  </svg>
+                </button>
+              </div>
+
+              <ul class="select-field__modal-search-list">
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 1</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 2</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 3</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 4</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 5</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 6</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 7</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 8</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 9</a>
+                </li>
+                <li class="select-field__modal-search-item">
+                  <a class="select-field__modal-search-link" href="#">Value 10</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-100">
+      <div class="file-input">
+        <label>
+          <input type="file" class="visually-hidden" accept="image/jpeg,image/png" name="vacancy-file"
+            data-max-bytes="5242880" data-required>
+          <div class="file-input__card">
+            <div class="file-input__card-icon">
+              <svg>
+                <use xlink:href="img/sprite.svg#download"></use>
+              </svg>
+            </div>
+            <div class="file-input__card-text">
+              <span class="file-input__card-text-label">
+                Прикрепите резюме *<br>
+                Формат: txt, doc, docx, pdf, rtf максимальный размер: 5 мб.
+              </span>
+              <span class="file-input__card-text-error"></span>
+            </div>
+
+            <button class="file-input__clear-btn  file-input__clear-btn--error" type="button">
+              <svg>
+                <use xlink:href="img/sprite.svg#close"></use>
+              </svg>
+            </button>
+
+            <div class="file-input__progress">
+              <div class="file-input__progress-bar">
+                <div class="file-input__progress-current"></div>
+              </div>
+              <div class="file-input__progress-value"></div>
+            </div>
+
+            <div class="file-input__result">
+              <div class="file-input__result-image">
+                <img>
+              </div>
+              <div class="file-input__result-name"></div>
+              <button class="file-input__clear-btn" type="button">
+                <svg>
+                  <use xlink:href="img/sprite.svg#close"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </label>
+        <!-- <p class="input-field__error">Поле не может быть пустым</p> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="form__bottom">
+    <p class="form__policy">
+      Нажимая кнопку &laquo;Отправить&raquo;, я&nbsp;соглашаюсь с&nbsp;<a href="/policy">политикой конфиденциальности
+        и&nbsp;пользовательским соглашением</a>
+    </p>
+    <button class="form__submit button" type="submit">Отправить</button>
+  </div>
+</form>

@@ -1,0 +1,310 @@
+.company-map {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  background-position: center;
+  background-size: 100% auto;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+@media (max-width: 767px) {
+  .company-map {
+    background-size: 100% auto;
+    background-attachment: unset;
+    background-position: top vmin(-90) center;
+  }
+}
+.company-map__underlayer {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  z-index: -100;
+}
+.company-map__underlayer img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+.company-map__underlayer-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  pointer-events: none;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+}
+.company-map__underlayer-text span {
+  font-size: 80px;
+  line-height: 120%;
+  font-weight: 600;
+  display: block;
+}
+.company-map__underlayer-text span:nth-child(2) {
+  font-size: 22px;
+}
+.company-map__underlayer-text span:first-child {
+  margin-bottom: -18px;
+}
+.company-map__underlayer-text.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+@media (max-width: 1023px) {
+  .company-map__underlayer-text {
+    position: absolute;
+    top: 65%;
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+    -webkit-transform: translate(-50%, -50%) scale(0.7);
+        -ms-transform: translate(-50%, -50%) scale(0.7);
+            transform: translate(-50%, -50%) scale(0.7);
+  }
+}
+@media (max-width: 767px) {
+  .company-map__underlayer-text {
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .company-map__underlayer-text span {
+    font-size: vmin(28);
+  }
+  .company-map__underlayer-text span:nth-child(2) {
+    font-size: vmin(8);
+  }
+  .company-map__underlayer-text span:first-child {
+    margin-bottom: vmin(-6);
+  }
+}
+.company-map.is--no-parallax {
+  background-attachment: unset;
+}
+.company-map.is--no-parallax .company-map__underlayer-text {
+  position: absolute;
+  top: 65%;
+}
+.company-map__overlayer {
+  width: calc(100% + 2px);
+  max-width: calc(100% + 2px);
+  margin-left: -1px;
+  margin-top: -1px;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+@media (max-width: 1023px) {
+  .company-map__places {
+    display: none;
+  }
+}
+.company-map__place {
+  position: absolute;
+  z-index: 3;
+}
+.company-map__pin-btn {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  color: #151515;
+}
+.company-map__pin-btn svg {
+  width: 24px;
+  height: 24px;
+  -webkit-transition: color 0.2s, -webkit-transform 0.2s;
+  transition: color 0.2s, -webkit-transform 0.2s;
+  transition: color 0.2s, transform 0.2s;
+  transition: color 0.2s, transform 0.2s, -webkit-transform 0.2s;
+  -webkit-transform-origin: 50% 100%;
+      -ms-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+}
+.company-map__pin-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 36px;
+  height: 16px;
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+  -webkit-transform: translateX(-50%) scale(0);
+      -ms-transform: translateX(-50%) scale(0);
+          transform: translateX(-50%) scale(0);
+  background-image: url('data:image/svg+xml;utf8,<svg width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M31.5561 0.32959L15.9997 15.8859L0.443359 0.32959H31.5561Z" fill="white"/></svg>');
+  z-index: 3;
+  visibility: hidden;
+  -webkit-transition: visibility 0s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: visibility 0s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, visibility 0s ease-in-out;
+  transition: transform 0.2s ease-in-out, visibility 0s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+@media (min-width: 1024px) {
+  .company-map__pin-btn:hover {
+    cursor: pointer;
+  }
+  .company-map__pin-btn:hover svg {
+    color: #f25248;
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+.company-map__popup {
+  position: absolute;
+  bottom: calc(100% + 13px);
+  left: 50%;
+  padding: 24px;
+  background-color: #fff;
+  width: 250px;
+  -webkit-transform: translateX(-50%) scale(0);
+      -ms-transform: translateX(-50%) scale(0);
+          transform: translateX(-50%) scale(0);
+  -webkit-filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
+  z-index: 2;
+  visibility: hidden;
+  -webkit-transition: visibility 0s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: visibility 0s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, visibility 0s ease-in-out;
+  transition: transform 0.4s ease-in-out, visibility 0s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform-origin: 50% 105%;
+      -ms-transform-origin: 50% 105%;
+          transform-origin: 50% 105%;
+  border-radius: 16px;
+}
+.company-map__place.opened {
+  z-index: 10;
+}
+.company-map__place.opened .company-map__popup {
+  -webkit-transform: translateX(-50%) scale(1);
+      -ms-transform: translateX(-50%) scale(1);
+          transform: translateX(-50%) scale(1);
+  visibility: visible;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.company-map__place.opened .company-map__pin-btn::after {
+  -webkit-transform: translateX(-50%) scale(1);
+      -ms-transform: translateX(-50%) scale(1);
+          transform: translateX(-50%) scale(1);
+  visibility: visible;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.company-map__popup-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  color: #6c7684;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.company-map__popup-close svg {
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 1024px) {
+  .company-map__popup-close:hover {
+    color: #151515;
+    cursor: pointer;
+  }
+}
+.company-map__popup-header {
+  width: 130px;
+  display: inline-block;
+  text-align: right;
+  margin-bottom: 24px;
+}
+.company-map__popup-header img {
+  width: 129px;
+  min-width: 129px;
+  height: auto;
+}
+.company-map__popup-city {
+  display: block;
+  width: 100%;
+  margin: 0;
+  font-size: 12px;
+  line-height: 120%;
+  font-weight: 600;
+  margin-top: 4px;
+}
+.company-map__popup-item:not(:last-child) {
+  margin-bottom: 16px;
+}
+.company-map__popup-label {
+  margin: 0;
+  font-size: 10px;
+  line-height: 150%;
+  font-weight: 400;
+  color: #6c7684;
+  margin: 0 0 4px;
+  display: block;
+}
+.company-map__popup-text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 150%;
+  font-weight: 400;
+  display: block;
+}
+.company-map__popup-text a {
+  color: #151515;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+@media (min-width: 1024px) {
+  .company-map__popup-text a:hover {
+    color: #6c7684;
+  }
+}
+.company-map__popup-bottom {
+  text-align: right;
+  margin-top: 24px;
+}
+.company-map__popup-about-link {
+  margin: 0;
+  font-size: 12px;
+  line-height: 120%;
+  font-weight: 600;
+  color: #151515;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+@media (min-width: 1024px) {
+  .company-map__popup-about-link:hover {
+    color: #6c7684;
+  }
+}

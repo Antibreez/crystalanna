@@ -1,0 +1,162 @@
+.brands {
+  background-color: #fff;
+  margin-bottom: 0;
+  padding-bottom: 160px;
+  padding-top: 160px;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+
+  @include tablet {
+    padding-bottom: 80px;
+    padding-top: 80px;
+  }
+
+  @include mobile {
+    padding-bottom: vmin(64);
+    padding-top: vmin(64);
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    height: 540px;
+    overflow: hidden;
+
+    @include desktop-m {
+      height: 43.94vw;
+    }
+
+    @include mobile {
+      height: vmin(500);
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+
+      @include mobile {
+        object-position: bottom center;
+      }
+    }
+  }
+
+  &__bg-brand-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px;
+
+    @include desktop-m {
+      padding: 6.25vw;
+    }
+
+    @include mobile {
+      width: 100%;
+      padding: vmin(36) vmin(24);
+      text-align: center;
+    }
+  }
+
+  &__title,
+  &__subtitle {
+    color: #fff;
+  }
+
+  &__title {
+    @include mobile {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__subtitle {
+    b {
+      display: inline-block;
+      position: relative;
+    }
+
+    &-main {
+      position: relative;
+      z-index: 2;
+    }
+
+    &-line {
+      display: block;
+      width: 100%;
+      height: 12px;
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      background: linear-gradient(90deg, #5ea9ff 0%, #d5d3ff 100%);
+    }
+
+    @include tablet {
+      font-size: 24px;
+
+      &-line {
+        height: 7px;
+        bottom: 3px;
+      }
+    }
+
+    @include mobile {
+      &:not(.brands__subtitle--mobile) {
+        display: none;
+      }
+
+      font-size: vmin(24);
+      margin-bottom: vmin(16);
+      max-width: vmin(260);
+      margin-left: auto;
+      margin-right: auto;
+
+      &-line {
+        height: 7px;
+        bottom: 3px;
+      }
+    }
+  }
+
+  &__link {
+    margin-top: auto;
+
+    @include mobile {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+  }
+}

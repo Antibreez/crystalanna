@@ -1,0 +1,870 @@
+/* !!!!! Требуется кастомное свойство --vh и обработчик события resize (js/common/height-resize.js)
+В некоторых браузерах на мобильных устройствах при скролле страницы появляются дополнительные области снизу или сверху браузера, которые перекрывают контент,
+поэтому нужен обработчик события, который обновляет кастомное свойство --vh при ресайзе окна, за счет которого меняется высота блоков, которые зависят от viewport height
+*/
+
+.fancybox-bg {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.fancybox-slide--html .fancybox-close-small {
+  height: 42px;
+  width: 42px;
+  padding: 5px;
+  top: 21px;
+  right: 21px;
+  color: $grey400;
+
+  &.focused {
+    position: absolute;
+  }
+
+  @include hover {
+    color: $main-text;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.fancybox-slide--html {
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  @include mobile {
+    padding: 0;
+  }
+}
+
+.fancybox-slide {
+  overflow: hidden;
+}
+
+.fancybox-slide--image-view {
+  padding: 0;
+}
+
+.modal-custom {
+  z-index: 11;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  visibility: hidden;
+  transition: visibility 0s 0.5s;
+
+  &.is--opened {
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0s 0.5s;
+
+    &.is--visible {
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0s;
+    }
+  }
+}
+
+.modal {
+  width: 95%;
+  max-width: 690px;
+  padding: 28px 24px 44px;
+  border-radius: 10px;
+
+  &--city {
+    min-height: 545px;
+  }
+
+  @include mobile {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    padding: 0 16px 32px;
+    min-height: 100%;
+  }
+
+  &__body {
+    padding-top: 24px;
+
+    &--centered {
+      text-align: center;
+    }
+
+    @include mobile {
+      padding-top: vmin(80);
+    }
+  }
+
+  &__brand-image {
+    position: relative;
+    width: 690px;
+    margin-left: -24px;
+    aspect-ratio: 690 / 317;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    & + .modal__subtitle {
+      margin-top: 36px;
+    }
+
+    @include mobile {
+      width: 100vw;
+      aspect-ratio: 360 / 166;
+      margin-left: -16px;
+      margin-top: vmin(-25);
+
+      & + .modal__subtitle {
+        margin-top: vmin(24);
+      }
+    }
+
+    .brand-card__logo {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      height: auto;
+      width: auto;
+
+      @include mobile {
+        top: vmin(20);
+        left: vmin(20);
+        height: 100%;
+        max-height: vmin(36);
+        width: 100%;
+        max-width: vmin(120);
+        object-fit: contain;
+        object-position: top left;
+      }
+    }
+  }
+
+  &__title {
+    padding-right: 48px;
+
+    @include mobile {
+      padding-right: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      z-index: 10;
+      padding: vmin(16) 16px;
+      width: 100%;
+      display: flex;
+      font-size: vmin(16);
+      box-shadow: 0px vmin(4) vmin(30) rgba(0, 0, 0, 0.1);
+
+      span {
+        padding-top: vmin(4);
+      }
+    }
+  }
+
+  &__subtitle {
+    @include h5;
+    display: block;
+
+    & + .modal__desc {
+      margin-top: 16px;
+    }
+
+    & + .modal__alert {
+      margin-top: 4px;
+    }
+
+    @include mobile {
+      font-size: vmin(16);
+
+      & + .modal__desc {
+        margin-top: vmin(16);
+      }
+
+      & + .modal__alert {
+        margin-top: vmin(4);
+      }
+    }
+  }
+
+  &__desc {
+    @include b1;
+    color: $grey400;
+
+    & + .modal__btn-block-fullwidth {
+      margin-top: 36px;
+    }
+
+    @include mobile {
+      font-size: vmin(12);
+
+      & + .modal__btn-block-fullwidth {
+        margin-top: vmin(24);
+      }
+    }
+  }
+
+  &__btn-block-fullwidth {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    @include mobile {
+      gap: vmin(8);
+    }
+
+    .modal__btn {
+      flex: 1 1 calc((100% - 16px) / 2);
+
+      @include mobile {
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  &__title-close-button {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin-right: 16px;
+    color: $primary;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      transform: rotate(180deg);
+    }
+
+    @include mobile {
+      width: vmin(24);
+      height: vmin(24);
+      margin-right: vmin(16);
+
+      svg {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+  }
+
+  &__city-search {
+    margin-bottom: 24px;
+
+    @include mobile {
+      margin-bottom: vmin(24);
+    }
+  }
+
+  &__city-list {
+    margin: 0;
+    padding: 0;
+    padding-right: 10px;
+    list-style: none;
+    position: relative;
+    max-height: 350px;
+    overflow: hidden;
+    width: calc(100% + 10px);
+
+    @include mobile {
+      max-height: none;
+    }
+  }
+
+  &__city-item {
+    padding: 7px 0;
+
+    &.is--hidden {
+      display: none;
+    }
+
+    @include mobile {
+      padding: 0;
+
+      &:first-child {
+        .modal__city-link {
+          border-top: vmin(2) solid $grey250;
+        }
+      }
+    }
+  }
+
+  &__city-link {
+    @include b1;
+    display: block;
+    color: $grey400;
+    transition: color 0.2s;
+
+    @include hover {
+      color: $main-text;
+    }
+
+    &.active {
+      color: $main-text;
+      font-weight: 600;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: -2px;
+        width: 24px;
+        height: 24px;
+        background: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6.5L9 17.5L4 12.5" stroke="rgba(50, 50, 50, 1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        @include mobile {
+          top: 50%;
+          transform: translateY(-50%);
+          width: vmin(24);
+          height: vmin(24);
+        }
+      }
+    }
+
+    @include mobile {
+      font-size: vmin(12);
+      padding: vmin(10) vmin(40) vmin(10) 0;
+      border-bottom: vmin(2) solid $grey250;
+    }
+  }
+
+  &__city-no-result {
+    @include b1;
+    color: $grey400;
+    display: none;
+
+    &.is--visible {
+      display: block;
+    }
+
+    @include mobile {
+      font-size: vmin(14);
+    }
+  }
+
+  &--search {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    max-width: calc(100% - $desktop-gap - $desktop-gap);
+    transform: translate(-50%, calc(-100% + 80px));
+    border-radius: 0px 0px 24px 24px;
+    padding: 24px 32px;
+    background-color: #fff;
+    z-index: 100;
+    transition: transform 0.5s ease;
+
+    .fancybox-close-small {
+      display: none;
+    }
+
+    .modal__body {
+      padding-top: 0;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    &.is--opened {
+      transform: translate(-50%, 0);
+
+      .modal__body {
+        opacity: 1;
+      }
+    }
+
+    @include desktop-m {
+      max-width: calc(100% - $tablet-gap - $tablet-gap);
+    }
+
+    @include mobile {
+      left: 0;
+      max-width: calc(100% - $mobile-gap - $mobile-gap);
+      transform: none;
+      max-width: 100%;
+      border-radius: 0;
+      // height: 100%;
+      min-height: 100%;
+      padding: 0 16px vmin(64);
+      z-index: 8;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s 0.5s, opacity 0.5s;
+
+      &.is--opened {
+        transform: none;
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  &__search-main-row {
+    display: flex;
+
+    @include mobile {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 16px;
+      background-color: #fff;
+      width: 100%;
+      z-index: 2;
+    }
+  }
+
+  &__search-main {
+    flex-grow: 1;
+  }
+
+  &__search-main-close {
+    margin-left: 24px;
+    flex-shrink: 0;
+
+    @include mobile {
+      padding-left: 0;
+      padding-right: 0;
+      background-color: #fff;
+      margin-left: vmin(16);
+    }
+  }
+
+  &__search-main-result {
+    padding-top: 24px;
+
+    @include mobile {
+      padding-top: vmin(86);
+    }
+  }
+
+  &__search-main-result-title {
+    margin-bottom: 16px;
+
+    @include mobile {
+      font-size: vmin(12);
+      margin-bottom: vmin(16);
+    }
+  }
+
+  &__search-main-result-list {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: -12px;
+    // max-height: 330px;
+    overflow: hidden;
+    @include hide-scrollbar;
+
+    @include mobile {
+      margin-top: 0;
+    }
+  }
+
+  &__search-main-result-item {
+    margin-top: 12px;
+
+    @include mobile {
+      margin-top: 0;
+
+      &:first-child {
+        .modal__search-main-result-link {
+          border-top: 2px solid $grey250;
+
+          @include mobile {
+            border-width: vmin(2);
+          }
+        }
+      }
+    }
+  }
+
+  &__search-main-result-link {
+    @include b1;
+    color: $grey400;
+
+    .match {
+      color: $main-text;
+      font-weight: 600;
+    }
+
+    @include mobile {
+      display: block;
+      padding-top: vmin(15);
+      padding-bottom: vmin(14);
+      padding-right: vmin(40);
+      font-size: vmin(12);
+      border-bottom: vmin(2) solid $grey250;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: vmin(24);
+        height: vmin(24);
+        transform: translateY(-50%);
+        @include bg-svg(
+          '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 16L14 12L10 8" stroke="rgba(21, 21, 21, 1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+        );
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+
+  &__status-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: $grey200;
+
+    @include mobile {
+      margin: 0 auto vmin(24);
+      width: vmin(56);
+      height: vmin(56);
+    }
+
+    svg {
+      width: 26px;
+      height: 26px;
+
+      @include mobile {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+
+    &--success {
+      background-color: $success;
+    }
+
+    &--fail {
+      background-color: $fail;
+    }
+  }
+
+  &__bottom {
+    margin-top: 24px;
+
+    @include mobile {
+      margin-top: vmin(24);
+    }
+
+    .button--fullwidth {
+      width: 100%;
+    }
+  }
+
+  &__certificate-image {
+    background: url('../img/certificate-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: calc(100% + 48px);
+    margin-left: -24px;
+  }
+
+  &__alert {
+    @include h6;
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+
+    &--fail {
+      color: $fail;
+    }
+
+    &--success {
+      color: $success;
+    }
+
+    & + * {
+      margin-top: 16px;
+
+      @include mobile {
+        margin-top: vmin(16);
+      }
+    }
+  }
+
+  &__info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include mobile {
+      gap: vmin(8);
+    }
+  }
+
+  &__info-item-title {
+    @include b2;
+    display: block;
+    margin: 0 0 2px;
+    color: $grey400;
+
+    @include mobile {
+      font-size: vmin(10);
+      margin-bottom: vmin(2);
+    }
+  }
+
+  &__info-item-value {
+    @include b1;
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+
+    &.alert {
+      color: $fail;
+    }
+  }
+}
+
+.modal--image-view {
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  // margin-left: -6px;
+  border-radius: 0;
+  padding: 0;
+
+  .modal__body {
+    padding-top: 0;
+    height: 100%;
+  }
+
+  .fancybox-close-small {
+    @include mobile {
+      display: block;
+    }
+  }
+}
+
+.fancybox-slide:has(#product-card__image-view) {
+  padding: 0;
+}
+
+.fancybox-container.is--fullscreen {
+  .fancybox-slide {
+    padding: 0;
+  }
+}
+
+.modal--function-card {
+  .modal__function-icon {
+    text-align: center;
+    margin-bottom: 24px;
+    padding-top: 8px;
+
+    @include mobile {
+      margin-bottom: vmin(24);
+    }
+
+    img {
+      width: 80px;
+
+      @include mobile {
+        width: vmin(80);
+      }
+    }
+  }
+
+  .modal__desc {
+    @include b1;
+    text-align: left;
+    margin: 0;
+    color: $main-text;
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+  }
+}
+
+.modal--status {
+  .modal__title:not(:has(span)) {
+    display: none;
+
+    & ~ .fancybox-close-small {
+      display: block;
+    }
+  }
+
+  .modal__title.is--hidden {
+    display: none;
+
+    & ~ .fancybox-close-small {
+      display: block;
+    }
+  }
+
+  @include mobile {
+    .modal__body {
+      margin: 100px 0;
+    }
+  }
+}
+
+.modal--certificate-check {
+  .modal__desc {
+    margin-bottom: 24px;
+
+    @include mobile {
+      margin-bottom: vmin(24);
+    }
+  }
+
+  input {
+    padding-top: 12px;
+
+    @include mobile {
+      padding-top: vmin(12);
+    }
+  }
+
+  .modal__body {
+    @include mobile {
+      padding-top: vmin(51.2);
+    }
+  }
+}
+
+.modal--branch-info {
+  .modal__body {
+    @include mobile {
+      padding-top: vmin(103);
+    }
+  }
+
+  .modal__branch-logo {
+    width: 129px;
+    height: auto;
+
+    @include mobile {
+      width: vmin(129);
+    }
+  }
+
+  .modal__branch-name {
+    display: block;
+    @include h8;
+    margin-left: 17px;
+    margin-top: 4px;
+
+    @include mobile {
+      padding-top: 0;
+      font-size: vmin(12);
+      margin-left: vmin(17);
+      margin-top: vmin(4);
+    }
+  }
+
+  .modal__branch-info-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 16px;
+
+    @include mobile {
+      gap: vmin(16);
+    }
+  }
+
+  .modal__branch-info-item {
+    width: calc((100% - 16px) / 2);
+
+    @include mobile {
+      width: 100%;
+    }
+
+    & > span:first-child {
+      display: block;
+      @include b1;
+      color: $grey400;
+      margin-bottom: 4px;
+
+      @include mobile {
+        font-size: vmin(10);
+        margin-bottom: vmin(4);
+      }
+    }
+  }
+}
+
+.modal__vacancy-card {
+  padding: 24px;
+  border: 1.5px solid $grey250;
+  border-radius: 16px;
+  margin-bottom: 24px;
+
+  @include mobile {
+    padding: vmin(24);
+    border-width: vmin(1.5);
+    border-radius: vmin(16);
+    margin-bottom: vmin(24);
+  }
+
+  &-title {
+    @include h6;
+    font-size: 16px;
+    margin: 0 0 4px;
+
+    @include mobile {
+      font-size: vmin(16);
+      margin-bottom: vmin(4);
+    }
+  }
+
+  &-desc {
+    @include b1;
+    color: $grey400;
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+  }
+
+  &-price {
+    @include h5;
+    font-size: 18px;
+    margin-top: 8px;
+
+    @include mobile {
+      font-size: vmin(18);
+      margin-top: vmin(8);
+    }
+  }
+}

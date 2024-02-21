@@ -1,0 +1,332 @@
+@import '../../scss/global/variables.scss';
+@import '../../scss/global/mixins.scss';
+
+.ymap-block {
+  position: relative;
+
+  @include mobile {
+    width: 100vw;
+    margin-left: -16px;
+  }
+}
+
+.ymap {
+  width: 100%;
+  height: 460px;
+
+  @include mobile {
+    height: vmin(460);
+    width: 100%;
+  }
+
+  &__popup {
+    background-color: #fff;
+    padding: 24px;
+    width: 320px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    position: absolute;
+    top: 24px;
+    left: 40px;
+    min-height: calc(100% - 48px);
+
+    @include mobile {
+      top: vmin(24);
+      left: vmin(20);
+      width: calc(100% - vmin(40));
+      padding: vmin(24);
+      min-height: calc(100% - vmin(48));
+      box-shadow: 0px vmin(4) vmin(30) rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &__popup-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 6px;
+    height: 36px;
+  }
+
+  &__popup-title {
+    @include h6;
+    padding-right: 16px;
+    padding-top: 3px;
+
+    @include mobile {
+      font-size: vmin(18);
+      padding-right: vmin(16);
+      padding-top: vmin(3);
+    }
+  }
+
+  &__popup-logo {
+    margin-bottom: 16px;
+
+    @include mobile {
+      margin-bottom: vmin(16);
+    }
+
+    & ~ * {
+      padding-left: 17px;
+
+      @include mobile {
+        padding-left: vmin(17);
+      }
+    }
+
+    img {
+      width: 130px;
+      height: auto;
+
+      @include mobile {
+        width: vmin(130);
+      }
+    }
+
+    span {
+      @include h8;
+      display: block;
+      padding-left: 17px;
+
+      @include mobile {
+        font-size: vmin(12);
+        padding-left: vmin(17);
+      }
+    }
+  }
+
+  &__popup-back-link {
+    @include b1;
+    padding: 0;
+    color: $grey400;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 16px;
+      transform: rotate(180deg);
+    }
+
+    @include hover {
+      cursor: pointer;
+      color: $main-text;
+    }
+
+    @include mobile {
+      font-size: vmin(14);
+
+      svg {
+        width: vmin(24);
+        height: vmin(24);
+        margin-right: vmin(16);
+      }
+    }
+  }
+
+  &__popup-close {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    color: $grey400;
+    transition: color 0.2s;
+    flex-shrink: 0;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    @include hover {
+      cursor: pointer;
+      color: $main-text;
+    }
+
+    @include mobile {
+      width: vmin(24);
+      height: vmin(24);
+
+      svg {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+  }
+
+  &__popup-body {
+    padding-top: 24px;
+
+    @include mobile {
+      padding-top: vmin(24);
+    }
+  }
+
+  &__popup-addresses {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__popup-address {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+
+      @include mobile {
+        margin-bottom: vmin(24);
+      }
+    }
+  }
+
+  &__popup-address-pin {
+    width: 24px;
+    height: 24px;
+    color: $main-text;
+    flex-shrink: 0;
+    margin-right: 16px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    @include mobile {
+      width: vmin(24);
+      height: vmin(24);
+      margin-right: vmin(16);
+
+      svg {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+  }
+
+  &__popup-cities {
+    @include b2;
+    color: $grey400;
+    margin-bottom: 16px;
+
+    @include mobile {
+      font-size: vmin(12);
+      margin-bottom: vmin(16);
+    }
+  }
+
+  &__popup-text-item {
+    margin: 0;
+    &:not(:last-child) {
+      margin-bottom: 16px;
+
+      @include mobile {
+        margin-bottom: vmin(16);
+      }
+    }
+  }
+
+  &__popup-text {
+    @include b2;
+    display: block;
+    white-space: pre-wrap;
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+
+    & + .ymap__popup-external-link {
+      margin-top: 8px;
+
+      @include mobile {
+        margin-top: vmin(8);
+      }
+    }
+  }
+
+  &__popup-subtitle {
+    @include b3;
+    color: $grey400;
+    margin-bottom: 4px;
+    display: block;
+
+    @include mobile {
+      font-size: vmin(10);
+      margin-bottom: vmin(4);
+    }
+  }
+
+  &__popup-external-link {
+    @include h8;
+    color: $main-text;
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+
+    @include hover {
+      cursor: pointer;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      margin-top: -2px;
+      margin-left: 8px;
+    }
+
+    @include mobile {
+      font-size: vmin(12);
+
+      svg {
+        width: vmin(16);
+        height: vmin(16);
+        margin-top: vmin(-2);
+        margin-left: vmin(8);
+      }
+    }
+  }
+}
+
+a.ymap__popup-text {
+  @include h8;
+  color: $main-text;
+
+  @include hover {
+    cursor: pointer;
+    color: $additional2;
+  }
+
+  @include mobile {
+    font-size: vmin(12);
+  }
+}
+
+.ymap__map-marker {
+  display: block;
+  width: 48px;
+  height: 48px;
+  transition: color 0.2s;
+  transform: translate(-50%, -100%);
+
+  svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  &.is--hovered,
+  &.is--active {
+    color: $fail;
+  }
+
+  // @include mobile {
+  //   width: vmin(48);
+  //   height: vmin(48);
+
+  //   svg {
+  //     width: vmin(48);
+  //     height: vmin(48);
+  //   }
+  // }
+}

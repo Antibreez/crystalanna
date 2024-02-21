@@ -1,0 +1,66 @@
+.policy-popup {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  width: 100%;
+  max-width: 600px;
+  transform: translateX(-50%);
+  background: #fff;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  z-index: 11;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0s 0.3s;
+
+  @include mobile {
+    width: calc(100% - vmin(32));
+    max-width: none;
+    bottom: vmin(16);
+    gap: vmin(16);
+    padding: vmin(16);
+    border-radius: vmin(8);
+    box-shadow: 0px vmin(4) vmin(30) 0px rgba(0, 0, 0, 0.1);
+  }
+
+  &.is--visible {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  &__button {
+    flex-shrink: 0;
+    font-size: 12px;
+    line-height: 14px;
+
+    @include hover {
+      cursor: pointer;
+    }
+
+    @include mobile {
+      font-size: vmin(12);
+      line-height: vmin(14);
+    }
+  }
+
+  &__text {
+    @include b2;
+    color: $grey400;
+    flex-grow: 1;
+
+    @include mobile {
+      font-size: vmin(10);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+  }
+}

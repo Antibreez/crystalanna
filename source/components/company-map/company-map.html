@@ -1,0 +1,72 @@
+<div class="company-map" style="background: url('img/map-underlayer-text.png'), url('img/map-underlayer.png')">
+  <!-- <div class="company-map__mirror-container"></div>
+  <div class="company-map__underlayer">
+    <img class="parallax-slider" src="./img/map-underlayer.png" alt="Карта" />
+  </div> -->
+  <img class="company-map__overlayer" src="./img/map-overlayer.png" alt="Карта" />
+
+  <div class="company-map__places"></div>
+
+  <template id="map-place">
+    <div class="company-map__place">
+      <button class="company-map__pin-btn">
+        <svg>
+          <use xlink:href="./img/sprite.svg#map-pin"></use>
+        </svg>
+      </button>
+      <div class="company-map__popup">
+        <button class="company-map__popup-close">
+          <svg>
+            <use xlink:href="img/sprite.svg#close"></use>
+          </svg>
+        </button>
+        <div class="company-map__popup-header">
+          <img src="./img/daichi-logo.svg" alt="Daichi" />
+          <span class="company-map__popup-city"></span>
+        </div>
+        <div class="company-map__popup-items">
+          <div class="company-map__popup-item">
+            <span class="company-map__popup-label">Адрес</span>
+            <span class="company-map__popup-text"></span>
+          </div>
+          <div class="company-map__popup-item">
+            <span class="company-map__popup-label">Телефон</span>
+            <span class="company-map__popup-text">
+              <a href=""></a>
+            </span>
+          </div>
+          <div class="company-map__popup-item">
+            <span class="company-map__popup-label">Почта</span>
+            <span class="company-map__popup-text">
+              <a href=""></a>
+            </span>
+          </div>
+        </div>
+        <div class="company-map__popup-bottom">
+          <a href="#" class="company-map__popup-about-link">Подробнее →</a>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    const companyMapBranches = [
+      {
+        x: 19.17,
+        y: 34.54,
+        name: 'Нижний Новгород',
+        address: '603116 г. Нижний Новгород, ул. Маршала Казакова д. 5',
+        telephone: '+7&nbsp;831&nbsp;216-37-08',
+        email: 'info@nnov.daichi.ru',
+      },
+      {
+        x: 15.58,
+        y: 38.9,
+        name: 'Москва',
+        address: 'Москва',
+        telephone: '+7&nbsp;495&nbsp;737-37-33',
+        email: 'info@daichi.ru',
+      },
+    ]
+  </script>
+</div>

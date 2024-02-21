@@ -1,0 +1,211 @@
+@import '../../scss/global/variables.scss';
+@import '../../scss/global/mixins.scss';
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  @include tablet {
+    display: block;
+  }
+
+  tbody {
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    width: 100%;
+    padding: 24px 0;
+    min-height: 120px;
+    border-bottom: 1px solid $grey250;
+    gap: 48px;
+
+    &--title {
+      min-height: auto;
+      padding-top: 0;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &:nth-child(n + 3) {
+      .table__row-cell-title {
+        display: none;
+      }
+    }
+
+    @include tablet {
+      width: calc((100% - 20px) / 2);
+      flex-direction: column;
+      gap: 16px;
+      padding: 24px;
+      border: 1px solid $grey250;
+      border-radius: 16px;
+
+      &:nth-child(n) {
+        .table__row-cell-title {
+          display: block;
+        }
+      }
+    }
+
+    @include mobile {
+      gap: vmin(16);
+      width: 100%;
+      padding: vmin(24);
+      border-radius: vmin(16);
+      border-width: vmin(1);
+    }
+  }
+
+  &__title-cell,
+  &__row-cell {
+    flex: 1;
+    flex-shrink: 0;
+    text-align: left;
+    padding: 0;
+
+    &--right {
+      text-align: right;
+    }
+
+    &--shrinked {
+      flex: unset;
+    }
+
+    @include tablet {
+      flex: unset;
+    }
+  }
+
+  &__row-cell {
+    position: relative;
+  }
+
+  &__title-cell {
+    @include b2;
+    color: $grey400;
+    visibility: hidden;
+  }
+
+  &__text {
+    @include b1;
+    display: block;
+
+    & + .table__text {
+      margin-top: 4px;
+    }
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+
+    &--main {
+      @include h7;
+
+      @include mobile {
+        font-size: vmin(12);
+      }
+    }
+
+    &--light {
+      color: $grey400;
+
+      @include tablet {
+        color: $primary;
+      }
+    }
+
+    a {
+      color: $primary;
+      transition: color 0.2s;
+
+      @include hover {
+        color: $additional2;
+      }
+    }
+  }
+
+  &__row-cell-title {
+    @include b2;
+    color: $grey400;
+    position: absolute;
+    bottom: calc(100% + 48px);
+    left: 0;
+
+    @include tablet {
+      position: static;
+      font-size: 10px;
+      margin: 0 0 4px;
+    }
+
+    @include mobile {
+      font-size: vmin(10);
+      margin-bottom: vmin(4);
+    }
+  }
+}
+
+.table-block__not-found {
+  // display: none;
+  @include b1;
+  color: $grey400;
+
+  @include mobile {
+    font-size: vmin(12);
+  }
+}
+
+.table-block {
+  .pagination {
+    margin-top: 36px;
+
+    @include desktop-m {
+      margin-top: 24px;
+    }
+
+    @include mobile {
+      margin-top: vmin(24);
+    }
+
+    .pagination__container {
+      padding-left: 0;
+      padding-right: 0;
+      min-width: auto;
+    }
+  }
+}
+
+.table-block__pagination {
+  margin-top: 36px;
+
+  @include desktop-m {
+    margin-top: 24px;
+  }
+
+  @include mobile {
+    margin-top: vmin(24);
+  }
+}
+
+.table-block:not(:has(.table)) {
+  .table-block__not-found {
+    display: block;
+  }
+
+  .table-block__pagination {
+    display: none;
+  }
+}
+
+.table-block {
+  .table ~ .table-block__not-found {
+    display: none;
+  }
+}

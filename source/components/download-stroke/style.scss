@@ -1,0 +1,116 @@
+@import '../../scss/global/variables.scss';
+@import '../../scss/global/mixins.scss';
+
+.download-stroke {
+  display: flex;
+  padding: 15px 16px;
+  border: 1.5px solid $grey250;
+  border-radius: 8px;
+  position: relative;
+  background-color: #fff;
+  transition: background-color 0.2s;
+
+  @include mobile {
+    flex-direction: column;
+    padding: vmin(15) vmin(16);
+    border-width: vmin(1.5);
+    border-radius: vmin(8);
+  }
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 24px;
+    background-color: $grey200;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+
+    @include mobile {
+      width: vmin(48);
+      height: vmin(48);
+      margin: 0 0 vmin(16);
+      border-radius: vmin(8);
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      color: $grey400;
+
+      @include mobile {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+    padding-right: 24px;
+
+    @include mobile {
+      padding-right: 0;
+    }
+  }
+
+  &__name {
+    @include b1;
+    display: block;
+    margin: 0 0 8px;
+    color: $primary;
+
+    @include mobile {
+      font-size: vmin(12);
+      margin: 0 0 vmin(8);
+    }
+  }
+
+  &__info {
+    @include b2;
+    display: block;
+    color: $grey400;
+
+    @include mobile {
+      font-size: vmin(10);
+    }
+  }
+
+  &__save-icon {
+    align-self: center;
+    flex-shrink: 0;
+
+    @include mobile {
+      position: absolute;
+      top: vmin(15);
+      right: vmin(16);
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      color: $grey400;
+      transition: color 0.2s;
+
+      @include mobile {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+  }
+
+  @include hover {
+    background-color: $grey200;
+
+    .download-stroke__save-icon svg {
+      color: $primary;
+    }
+
+    .download-stroke__icon {
+      background-color: #fff;
+    }
+  }
+}

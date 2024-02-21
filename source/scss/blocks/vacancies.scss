@@ -1,0 +1,498 @@
+.vacancies {
+  &__title-block-wrapper {
+    padding-top: 52px;
+
+    @include tablet {
+      padding-top: 16px;
+    }
+
+    @include mobile {
+      padding-top: vmin(40);
+    }
+  }
+
+  &__title-block {
+    text-align: center;
+  }
+
+  &__title {
+    @include h3;
+    margin-bottom: 24px;
+
+    @include tablet {
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-size: vmin(24);
+      margin-bottom: vmin(24);
+    }
+  }
+
+  &__title-block-desc {
+    @include b1;
+    color: $grey400;
+    margin-bottom: 24px;
+    max-width: 660px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mobile {
+      font-size: vmin(12);
+      margin-bottom: vmin(24);
+    }
+  }
+
+  &__stats-block {
+    padding-top: 64px;
+
+    @include tablet {
+      padding-top: 48px;
+    }
+
+    @include mobile {
+      padding-top: vmin(40);
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @include mobile {
+      gap: vmin(20);
+    }
+  }
+
+  &__stat-card {
+    width: calc((100% - 20px) / 2);
+    display: flex;
+    min-height: 266px;
+    border-radius: 16px;
+    border: 1.5px solid $grey200;
+    overflow: hidden;
+
+    @include tablet {
+      width: 100%;
+      min-height: 240px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      min-height: auto;
+    }
+  }
+
+  &__stat-image-block {
+    position: relative;
+    flex-shrink: 0;
+    height: 100%;
+    width: 48.5%;
+    overflow: hidden;
+
+    @include tablet {
+      width: 235px;
+    }
+
+    @include mobile {
+      width: 100%;
+      height: vmin(266);
+    }
+  }
+
+  &__stat-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+
+    @include tablet {
+      height: 110.8%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @include mobile {
+      height: 100%;
+      object-position: left top;
+    }
+  }
+
+  &__stat-icon {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    width: 58px;
+    height: auto;
+
+    @include tablet {
+      bottom: 12px;
+    }
+
+    @include mobile {
+      width: vmin(58);
+      bottom: vmin(24);
+      right: vmin(24);
+    }
+  }
+
+  &__stat-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+
+    @include tablet {
+      padding: 24px 40px;
+    }
+
+    @include mobile {
+      width: 100%;
+      padding: vmin(24);
+    }
+  }
+
+  &__stat-value {
+    @include h3;
+    display: inline-block;
+    background: -webkit-linear-gradient(0deg, #5ea9ff, #d5d3ff 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include mobile {
+      font-size: vmin(40);
+    }
+  }
+
+  &__stat-title {
+    @include h6;
+    font-size: 16px;
+    margin-bottom: 16px;
+
+    @include mobile {
+      font-size: vmin(16);
+      margin-bottom: vmin(16);
+    }
+  }
+
+  &__stat-desc {
+    @include b1;
+    color: $grey400;
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+  }
+
+  &__slider {
+    padding-top: 64px;
+
+    @include tablet {
+      padding-top: 48px;
+    }
+
+    @include mobile {
+      padding-top: vmin(40);
+    }
+
+    .main-slider {
+      padding-bottom: 0;
+    }
+
+    .main-slider__container {
+      position: relative;
+    }
+
+    .main-slider__controls {
+      position: absolute;
+      bottom: 84px;
+      right: 88px;
+      margin: 0;
+      z-index: 3;
+
+      @include desktop-m {
+        right: 52px;
+        bottom: 76px;
+      }
+
+      @include mobile {
+        right: calc(16px + vmin(24));
+        bottom: vmin(24);
+      }
+    }
+  }
+
+  &__list-block {
+    padding-top: 64px;
+
+    @include tablet {
+      padding-top: 28px;
+    }
+
+    @include mobile {
+      padding-top: vmin(64);
+    }
+  }
+
+  &__list-title {
+    @include h3;
+    margin: 0 0 24px;
+    text-align: center;
+
+    @include tablet {
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-size: vmin(24);
+      margin-bottom: vmin(24);
+    }
+  }
+
+  &__list-desc {
+    @include b1;
+    color: $grey400;
+    margin-bottom: 48px;
+    text-align: center;
+
+    @include mobile {
+      font-size: vmin(12);
+      margin-bottom: vmin(24);
+    }
+  }
+
+  &__list-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    @include mobile {
+      gap: vmin(8);
+    }
+  }
+
+  &__list-filter {
+    width: calc((100% - 32px) / 3);
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__list-wrapper {
+    padding-top: 48px;
+
+    @include mobile {
+      padding-top: vmin(24);
+    }
+
+    .pagination {
+      margin-top: 48px;
+
+      @include mobile {
+        margin-top: vmin(40);
+      }
+
+      .pagination__container {
+        padding-left: 0;
+        padding-right: 0;
+        min-width: auto;
+      }
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    & ~ .vacancies__not-found {
+      display: none;
+    }
+
+    @include mobile {
+      gap: vmin(16);
+    }
+  }
+
+  &__card {
+    padding: 32px;
+    display: flex;
+    gap: 48px;
+    border: 1.5px solid $grey250;
+    border-radius: 16px;
+
+    @include mobile {
+      padding: vmin(24);
+      flex-direction: column;
+      gap: vmin(24);
+      border-width: vmin(1.5);
+      border-radius: vmin(16);
+    }
+  }
+
+  &__card-details {
+    width: 70%;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__card-main {
+    width: calc(30% - 48px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @include mobile {
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__card-title {
+    @include h5;
+    margin: 0 0 8px;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: vmin(16);
+      margin-bottom: vmin(8);
+    }
+  }
+
+  &__card-desc {
+    @include b1;
+    color: $grey400;
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+  }
+
+  &__card-additional {
+    display: flex;
+    gap: 12px;
+    margin: 24px 0 0;
+
+    @include mobile {
+      gap: vmin(12);
+      margin: vmin(16) 0 0;
+    }
+
+    .dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      align-self: flex-start;
+      margin-top: 2px;
+
+      @include mobile {
+        width: vmin(16);
+        height: vmin(16);
+        margin-top: vmin(2);
+      }
+    }
+
+    .text {
+      @include b1;
+
+      @include mobile {
+        font-size: vmin(12);
+      }
+    }
+  }
+
+  &__card-price {
+    @include h5;
+    margin: 0 0 26px;
+
+    @include tablet {
+      font-size: 16px;
+      margin: 0 0 36px;
+    }
+
+    @include mobile {
+      font-size: vmin(16);
+      margin: 0 vmin(16) 0 0;
+    }
+  }
+
+  &__card-link {
+    font-size: 0;
+    line-height: 0;
+    color: #fff;
+    width: 48px;
+    height: 48px;
+    background-color: $primary;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    margin-top: auto;
+
+    @include mobile {
+      width: vmin(40);
+      height: vmin(40);
+      border-radius: vmin(12);
+      margin: 0 0 0 auto;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+
+      @include mobile {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+
+    @include hover {
+      background-color: $additional2;
+    }
+  }
+
+  &__list-pagination {
+    margin-top: 48px;
+
+    @include mobile {
+      margin-top: vmin(40);
+    }
+  }
+
+  &__not-found {
+    @include b1;
+    color: $grey400;
+    // display: none;
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+  }
+
+  &__list-wrapper:not(:has(.vacancies__list)) {
+    // .vacancies__not-found {
+    //   display: block;
+    // }
+
+    .vacancies__list-pagination {
+      display: none;
+    }
+  }
+}

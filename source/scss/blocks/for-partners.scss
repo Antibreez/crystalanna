@@ -1,0 +1,131 @@
+.for-partners {
+  &__promo {
+    margin-top: 64px;
+    background: url('../img/partner-promo-bg-1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &.is--companies-page {
+      background-image: url('../img/partners-promo-bg-2.png');
+
+      .for-partners__promo-content {
+        background-image: url('../img/partners-promo-2.png');
+        background-size: auto 100%;
+      }
+    }
+
+    &.is--engineers {
+      background-image: url('../img/partners-promo-bg-3.jpg');
+
+      .for-partners__promo-content {
+        background-image: url('../img/partners-promo-3.png');
+        background-size: auto 100%;
+      }
+    }
+
+    &.is--corporative-clients-page {
+      background-image: url('../img/partners-promo-bg-4.jpg');
+
+      .for-partners__promo-content {
+        background-image: url('../img/partners-promo-4.png');
+        background-size: auto 100%;
+      }
+    }
+
+    @include desktop-m {
+      margin-top: 60px;
+    }
+
+    @include tablet {
+      margin-top: 36px;
+    }
+
+    @include mobile {
+      margin-top: vmin(24);
+    }
+  }
+
+  &__promo-container {
+    min-height: 400px;
+    display: flex;
+
+    @include tablet {
+      min-height: 300px;
+    }
+
+    @include mobile {
+      min-height: vmin(200);
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__promo-content {
+    background: url('../img/partners-promo-1.png');
+    width: 100%;
+    background-size: auto 120%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 48px;
+
+    @include desktop-m {
+      background-size: auto 106%;
+    }
+
+    @include mobile {
+      padding-bottom: vmin(24);
+      background-size: auto 104%;
+    }
+  }
+
+  &__promo-btn {
+    margin-top: auto;
+
+    @include mobile {
+      width: calc(100% - 32px);
+    }
+  }
+
+  &__form-block {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url('../img/for-partners-form-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+
+    @include desktop-m {
+      padding-top: 64px;
+      padding-bottom: 74px;
+    }
+
+    @include mobile {
+      padding-top: vmin(64);
+      padding-bottom: vmin(64);
+    }
+  }
+
+  &__form {
+    max-width: 794px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__cooperation {
+    margin-bottom: 0;
+  }
+}
+
+.page__promo + .for-partners__items {
+  padding-top: 52px;
+
+  @include tablet {
+    padding-top: 16px;
+  }
+
+  @include mobile {
+    padding-top: vmin(40);
+  }
+}

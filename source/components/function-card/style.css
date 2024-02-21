@@ -1,0 +1,74 @@
+.function-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 24px;
+  border: 1.5px solid #e6e6ef;
+  border-radius: 8px;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  color: #151515;
+}
+@media (max-width: 767px) {
+  .function-card {
+    bottom: vmin(24);
+    border-radius: vmin(8);
+    border-width: vmin(1.5);
+  }
+}
+.function-card__icon {
+  width: 48px;
+  height: auto;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+@media (max-width: 767px) {
+  .function-card__icon {
+    width: vmin(48);
+  }
+}
+.function-card__text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 120%;
+  font-weight: 600;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin: 0 16px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .function-card__text {
+    font-size: vmin(12);
+    margin: 0 vmin(16);
+  }
+}
+.function-card__info {
+  width: 24px;
+  height: 24px;
+  color: #6c7684;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-top: 12px;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+@media (max-width: 767px) {
+  .function-card__info {
+    width: vmin(24);
+    height: vmin(24);
+    margin-top: vmin(12);
+  }
+}
+@media (min-width: 1024px) {
+  .function-card:hover {
+    cursor: pointer;
+    background-color: #f4f4f8;
+  }
+  .function-card:hover .function-card__info {
+    color: #151515;
+  }
+}

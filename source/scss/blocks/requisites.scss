@@ -1,0 +1,46 @@
+.requisites {
+  &__title {
+    @include h3;
+    margin: 0 0 40px;
+
+    @include mobile {
+      font-size: vmin(24);
+      margin-bottom: vmin(24);
+    }
+  }
+
+  &__item {
+    @include b1;
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+
+    span {
+      &:nth-child(1) {
+        width: 200px;
+        color: $grey400;
+        margin-right: 32px;
+      }
+    }
+
+    @include mobile {
+      font-size: vmin(12);
+      flex-direction: column;
+
+      &:not(:last-child) {
+        margin-bottom: vmin(16);
+      }
+
+      span {
+        &:nth-child(1) {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: vmin(4);
+          font-size: vmin(10);
+        }
+      }
+    }
+  }
+}

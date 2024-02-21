@@ -1,0 +1,67 @@
+@import '../../scss/global/variables.scss';
+@import '../../scss/global/mixins.scss';
+
+.download-card {
+  display: flex;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  color: $main-text;
+  flex-direction: column;
+
+  @include hover {
+    .download-card__icon {
+      color: $additional3;
+    }
+  }
+
+  @include mobile {
+    padding: vmin(16);
+    border-radius: vmin(16);
+    box-shadow: 0px vmin(4) vmin(24) rgba(0, 0, 0, 0.1);
+  }
+
+  &__icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 16px;
+    transition: color 0.2s;
+
+    svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    @include mobile {
+      width: vmin(24);
+      height: vmin(24);
+      margin-bottom: vmin(16);
+
+      svg {
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+  }
+
+  &__name {
+    @include h7;
+    margin: 0 0 8px;
+
+    @include mobile {
+      font-size: vmin(12);
+      margin-bottom: vmin(8);
+    }
+  }
+
+  &__note {
+    @include b1;
+    color: $grey400;
+    margin-top: auto;
+
+    @include mobile {
+      font-size: vmin(10);
+    }
+  }
+}

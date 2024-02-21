@@ -1,0 +1,41 @@
+.contacts-page__support {
+  margin-top: 48px;
+  margin-bottom: 58px;
+
+  @include mobile {
+    margin-top: vmin(24);
+    margin-bottom: vmin(24);
+  }
+}
+
+.contacts-page__branches {
+  margin: 0 0 48px;
+
+  @include mobile {
+    margin-bottom: vmin(24);
+  }
+}
+
+.contacts-page__branches-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contacts-page__branch {
+  &:not(:last-child) {
+    margin-bottom: 24px;
+
+    @include mobile {
+      margin-bottom: vmin(16);
+    }
+  }
+}
+
+.contacts-page__ymaps {
+  margin-bottom: 100px;
+
+  @include mobile {
+    margin-bottom: vmin(64);
+  }
+}

@@ -1,0 +1,531 @@
+@import '../../scss/global/variables.scss';
+@import '../../scss/global/mixins.scss';
+
+.select-field {
+  position: relative;
+
+  select {
+    width: 100%;
+  }
+
+  label {
+    @include b1;
+    position: absolute;
+    top: 23px;
+    left: 16px;
+    pointer-events: none;
+    transition: font-size 0.2s, top 0.2s, color 0.2s;
+
+    span {
+      color: $fail;
+    }
+
+    @include mobile {
+      font-size: vmin(14);
+      top: vmin(23);
+      left: vmin(16);
+    }
+  }
+
+  select:not([data-empty]) {
+    & ~ label {
+      @include b2;
+      top: 12px;
+      color: $grey400;
+
+      @include mobile {
+        font-size: vmin(12);
+        top: vmin(12);
+      }
+    }
+  }
+
+  select[data-selected],
+  select:has(option[data-select2-id]:not([disabled])) {
+    & ~ label {
+      @include b2;
+      top: 12px;
+      color: $grey400;
+
+      @include mobile {
+        font-size: vmin(12);
+        top: vmin(12);
+      }
+    }
+  }
+
+  select:disabled {
+    & ~ label {
+      color: $grey300;
+    }
+  }
+
+  &.is--invalid {
+    label {
+      color: $fail;
+    }
+  }
+
+  .select2 {
+    width: 100% !important;
+  }
+
+  .select2-selection {
+    outline: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+      height: calc(64px + 8px);
+      width: calc(100% + 8px);
+      transform: translate(-4px, -4px);
+      border: 2px solid $primary;
+      border-radius: 9px;
+      pointer-events: none;
+
+      @include mobile {
+        height: calc(vmin(64) + vmin(8));
+        width: calc(100% + vmin(8));
+        transform: translate(vmin(-4), vmin(-4));
+        border-width: vmin(2);
+        border-radius: vmin(9);
+      }
+    }
+
+    &.focused {
+      &::after {
+        display: block;
+
+        @include tablet {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .select2-container .select2-selection--single {
+    background-color: $grey200;
+    border: none;
+    border-radius: 5px;
+    height: auto;
+    transition: background-color 0.2s;
+
+    @include mobile {
+      border-radius: vmin(5);
+    }
+
+    @include hover {
+      background-color: $grey250;
+    }
+  }
+
+  .select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 16px;
+    padding-right: 40px;
+    padding-bottom: 13px;
+    padding-top: 30px;
+    min-height: 64px;
+    @include b1;
+
+    @include mobile {
+      padding-left: vmin(16);
+      padding-right: vmin(40);
+      padding-bottom: vmin(13);
+      padding-top: vmin(30);
+      min-height: vmin(64);
+      font-size: vmin(14);
+    }
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__arrow {
+    width: 24px;
+    height: 24px;
+    top: calc(50% - 12px);
+    right: 16px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include mobile {
+      width: vmin(24);
+      height: vmin(24);
+      top: calc(50% - vmin(12));
+      right: vmin(16);
+    }
+
+    @include bg-svg(
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 10L12 14L16 10" stroke="rgba(108, 118, 132, 1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    );
+
+    b {
+      display: none;
+    }
+  }
+
+  .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow {
+    transform: rotate(180deg);
+  }
+
+  .select2-container.select2-container--disabled .select2-selection--single {
+    background-color: $grey200;
+
+    .select2-selection__arrow {
+      @include bg-svg(
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 10L12 14L16 10" stroke="rgba(209, 216, 225, 1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+      );
+    }
+  }
+
+  .select2-container.select2-container--disabled .select2-selection--single .select2-selection__rendered {
+    color: $grey300;
+  }
+
+  &__mobile-button {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    @include mobile {
+      display: block;
+    }
+  }
+}
+
+.select2-dropdown {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+  z-index: 100000;
+
+  @include mobile {
+    border-radius: vmin(5);
+    box-shadow: 0px vmin(4) vmin(30) rgba(0, 0, 0, 0.1);
+  }
+
+  .select2-results {
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    @include mobile {
+      padding-top: vmin(8);
+      padding-bottom: vmin(8);
+    }
+  }
+
+  &.select2-dropdown-first-empty {
+    .select2-results__option:first-child {
+      display: none;
+    }
+  }
+
+  .select2-results__options {
+    position: relative;
+
+    /*FireFox*/
+    scrollbar-width: none;
+    /*IE10+*/
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    &::-webkit-scrollbar {
+      /*Chrome, Safari, Edge*/
+      display: none;
+    }
+  }
+
+  .select2-results__option {
+    padding: 12px 16px;
+    color: $main-text;
+    @include b2;
+
+    @include mobile {
+      padding: vmin(12) vmin(16);
+      font-size: vmin(12);
+    }
+  }
+
+  .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: $grey200;
+    color: $main-text;
+  }
+
+  .select2-results__option--selected {
+    background-color: #fff;
+    font-weight: 600;
+    padding-right: 44px;
+    position: relative;
+
+    @include mobile {
+      padding-right: vmin(44);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      @include bg-svg(
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6.5L9 17.5L4 12.5" stroke="rgba(50, 50, 50, 1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+      );
+      transform: translateY(-50%);
+
+      @include mobile {
+        right: vmin(10);
+        width: vmin(24);
+        height: vmin(24);
+      }
+    }
+  }
+
+  .ps__rail-y {
+    opacity: 1;
+    background-color: $grey200;
+    width: 2px;
+    right: 4px !important;
+    transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out, right 0.2s ease-in-out;
+
+    &::before {
+      content: '';
+      width: 24px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .ps:hover > .ps__rail-y,
+  .ps__rail-y.ps--clicking {
+    opacity: 1;
+  }
+
+  .ps .ps__rail-y:hover,
+  .ps .ps__rail-y.ps--clicking {
+    width: 10px;
+    background-color: $grey200;
+    right: 0 !important;
+  }
+
+  .ps__rail-y:hover > .ps__thumb-y,
+  .ps__rail-y.ps--clicking > .ps__thumb-y {
+    background-color: $main-text;
+    width: 10px;
+  }
+
+  .ps__thumb-y {
+    background-color: $main-text;
+    width: 2px;
+    right: 0;
+  }
+}
+
+.select2-search {
+  padding: 10px;
+  position: relative;
+
+  @include mobile {
+    padding: vmin(10);
+  }
+
+  &.is--filled {
+    .select2-search-close {
+      display: block;
+    }
+  }
+}
+
+.select2-container--default .select2-search .select2-search__field {
+  @include b1;
+  height: 46px;
+  background-color: $grey200;
+  border: none;
+  border-radius: 8px;
+  padding-left: 56px;
+  padding-right: 56px;
+  transition: background-color 0.2s;
+
+  @include mobile {
+    font-size: vmin(14);
+    height: vmin(46);
+    border-radius: vmin(8);
+    padding-left: vmin(56);
+    padding-right: vmin(56);
+  }
+
+  @include hover {
+    background-color: $grey250;
+  }
+
+  &:focus {
+    & ~ .select2-search-icon {
+      color: $main-text;
+    }
+  }
+}
+
+.select2-search-close,
+.select2-search-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  right: 26px;
+  transform: translateY(-50%);
+  color: $grey400;
+  transition: color 0.2s;
+
+  @include mobile {
+    width: vmin(24);
+    height: vmin(24);
+    right: vmin(26);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+
+    @include mobile {
+      width: vmin(24);
+      height: vmin(24);
+    }
+  }
+}
+
+.select2-search-close {
+  display: none;
+
+  &.focused {
+    position: absolute;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @include hover {
+    color: $main-text;
+    cursor: pointer;
+  }
+}
+
+.select2-search-icon {
+  right: auto;
+  left: 26px;
+  pointer-events: none;
+
+  @include mobile {
+    left: vmin(26);
+  }
+}
+
+.select-field__modal {
+  padding: 0 16px 32px;
+  width: 100%;
+  height: 100%;
+
+  &-title {
+    @include h5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 10;
+    padding: vmin(16) 16px;
+    width: 100%;
+    display: flex;
+    font-size: vmin(16);
+    box-shadow: 0px vmin(4) vmin(30) rgba(0, 0, 0, 0.1);
+
+    span {
+      padding-top: vmin(4);
+    }
+  }
+
+  &-title-close-button {
+    width: vmin(24);
+    height: vmin(24);
+    margin-right: vmin(16);
+    padding: 0;
+    color: $primary;
+
+    svg {
+      width: vmin(24);
+      height: vmin(24);
+      transform: rotate(180deg);
+    }
+  }
+
+  &-body {
+    padding-top: vmin(80);
+  }
+
+  &-search {
+    margin-bottom: vmin(24);
+  }
+
+  &-search-list {
+    margin: 0;
+    padding: 0;
+    padding-right: 10px;
+    list-style: none;
+    position: relative;
+    max-height: 350px;
+    overflow: hidden;
+    width: calc(100% + 10px);
+    max-height: none;
+  }
+
+  &-search-item {
+    padding: 0;
+
+    &:first-child {
+      .select-field__modal-search-link {
+        border-top: vmin(2) solid $grey250;
+      }
+    }
+  }
+
+  &-search-link {
+    @include b1;
+    display: block;
+    color: $grey400;
+    transition: color 0.2s;
+    font-size: vmin(12);
+    padding: vmin(10) vmin(40) vmin(10) 0;
+    border-bottom: vmin(2) solid $grey250;
+
+    @include hover {
+      color: $main-text;
+    }
+
+    &.active {
+      color: $main-text;
+      font-weight: 600;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: vmin(24);
+        height: vmin(24);
+        background: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6.5L9 17.5L4 12.5" stroke="rgba(50, 50, 50, 1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

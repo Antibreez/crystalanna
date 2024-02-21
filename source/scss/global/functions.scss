@@ -1,0 +1,51 @@
+@function gradient1($direction: to bottom) {
+  @return linear-gradient($direction, $gradient1-start 0%, $gradient1-end 100%);
+}
+
+@function gradient2($direction: to bottom) {
+  @return linear-gradient($direction, $gradient2-start 0%, $gradient2-end 100%);
+}
+
+@function gradient3($direction: to bottom) {
+  @return linear-gradient($direction, $gradient3-start 0%, $gradient3-end 100%);
+}
+
+@function gradient4($direction: to bottom) {
+  @return linear-gradient($direction, $gradient4-start 0%, $gradient4-end 100%);
+}
+
+@function gradient5($direction: to bottom) {
+  @return linear-gradient($direction, $gradient5-start 0%, $gradient5-end 100%);
+}
+
+@function gradient6($direction: to bottom) {
+  @return linear-gradient($direction, $gradient6-start 0%, $gradient6-end 100%);
+}
+
+@function gradient7($direction: to bottom) {
+  @return linear-gradient($direction, $gradient7-start 0%, $gradient7-end 100%);
+}
+
+@function gradientCustom($direction: to bottom, $start: $gradient1-start, $end: $gradient1-end) {
+  @return linear-gradient($direction, $start 0%, $end 100%);
+}
+
+@function svg-url($svg) {
+  @return url('data:image/svg+xml;utf8,' + $svg);
+}
+
+@function vw($value, $base: 1280) {
+  @return calc($value / $base * 100vw);
+}
+
+// @function px($value, $base: 1280) {
+// 	@return $value * 2000px / $base;
+// }
+
+// @function vh($value, $base: 800) {
+// 	@return $value / $base * 100vh;
+// }
+
+@function vmin($value, $base: 360) {
+  @return calc($value / $base * 100vmin);
+}

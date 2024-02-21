@@ -1,0 +1,84 @@
+.certificate-check {
+  width: 100%;
+  background-image: url('../img/certificate-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  // margin-bottom: 0;
+  overflow: hidden;
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+
+  @include mobile {
+    background-size: auto 55.55vw;
+    background-position: top center;
+  }
+
+  &__container {
+    display: flex;
+
+    @include mobile {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__text-block {
+    max-width: 40.67%;
+    padding-top: 64px;
+    margin-right: 20px;
+
+    @include desktop-m {
+      max-width: 28.7%;
+      margin-right: auto;
+    }
+    @include tablet {
+      padding-top: 48px;
+    }
+    @include mobile {
+      max-width: 100%;
+      width: 100%;
+      padding-top: vmin(16);
+      text-align: center;
+    }
+  }
+
+  &__title {
+    @include tablet {
+      font-size: 24px;
+    }
+
+    @include mobile {
+      font-size: vmin(16);
+      margin-bottom: vmin(16);
+    }
+  }
+
+  &__image {
+    width: 57.58%;
+    height: auto;
+
+    @include desktop-m {
+      width: 68.5%;
+      margin-right: -12px;
+    }
+
+    @include tablet {
+      width: 67.93%;
+      margin-right: -16px;
+    }
+
+    @include mobile {
+      width: 100vw;
+      margin-right: 0;
+      max-width: none;
+      margin-left: -16px;
+    }
+  }
+
+  &__link {
+    @include mobile {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+.download-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  -webkit-box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  color: #151515;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (min-width: 1024px) {
+  .download-card:hover .download-card__icon {
+    color: #2858ff;
+  }
+}
+@media (max-width: 767px) {
+  .download-card {
+    padding: vmin(16);
+    border-radius: vmin(16);
+    -webkit-box-shadow: 0px vmin(4) vmin(24) rgba(0, 0, 0, 0.1);
+            box-shadow: 0px vmin(4) vmin(24) rgba(0, 0, 0, 0.1);
+  }
+}
+.download-card__icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 16px;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.download-card__icon svg {
+  width: 36px;
+  height: 36px;
+}
+@media (max-width: 767px) {
+  .download-card__icon {
+    width: vmin(24);
+    height: vmin(24);
+    margin-bottom: vmin(16);
+  }
+  .download-card__icon svg {
+    width: vmin(24);
+    height: vmin(24);
+  }
+}
+.download-card__name {
+  margin: 0;
+  font-size: 16px;
+  line-height: 120%;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+@media (max-width: 767px) {
+  .download-card__name {
+    font-size: vmin(12);
+    margin-bottom: vmin(8);
+  }
+}
+.download-card__note {
+  margin: 0;
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 400;
+  color: #6c7684;
+  margin-top: auto;
+}
+@media (max-width: 767px) {
+  .download-card__note {
+    font-size: vmin(10);
+  }
+}

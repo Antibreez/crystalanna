@@ -1,0 +1,54 @@
+@import '../../scss/global/variables.scss';
+@import '../../scss/global/mixins.scss';
+
+.content-tabs {
+  overflow: hidden;
+
+  &__slider {
+    overflow: visible !important;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    width: auto;
+    display: block;
+
+    &:not(:last-child) {
+      margin-right: 32px;
+
+      @include mobile {
+        margin-right: vmin(32);
+      }
+    }
+  }
+
+  &__link {
+    @include b1;
+    color: $grey400;
+    padding: 0 0 3px;
+    display: block;
+    border-bottom: 1.5px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+
+    @include mobile {
+      font-size: vmin(14);
+      padding: 0 0 vmin(3);
+      border-bottom-width: vmin(1.5);
+    }
+
+    @include hover {
+      cursor: pointer;
+    }
+
+    &.active {
+      color: $main-text;
+      font-weight: 600;
+      border-color: $main-text;
+    }
+  }
+}

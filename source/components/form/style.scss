@@ -1,0 +1,130 @@
+@import '../../scss/global/variables.scss';
+@import '../../scss/global/mixins.scss';
+
+.form {
+  padding: 60px;
+  border-radius: 10px;
+  background-color: #fff;
+
+  @include mobile {
+    padding: vmin(24);
+    border-radius: vmin(16);
+  }
+
+  &__title {
+    @include h3;
+    margin: 0 0 48px;
+    text-align: center;
+
+    @include mobile {
+      font-size: vmin(24);
+      margin-bottom: vmin(16);
+    }
+  }
+
+  &__fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    @include mobile {
+      gap: vmin(8);
+    }
+
+    & + .form__bottom {
+      margin-top: 48px;
+
+      @include mobile {
+        margin-top: vmin(16);
+      }
+    }
+
+    .col-100 {
+      width: 100%;
+    }
+
+    .col-50 {
+      width: calc((100% - 16px) / 2);
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+
+    .col-33 {
+      width: calc((100% - 32px) / 3);
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: flex-start;
+
+    @include mobile {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__submit {
+    width: 277px;
+    flex-shrink: 0;
+    margin-left: auto;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__policy {
+    @include b2;
+    padding-top: 8px;
+    margin-right: 24px;
+
+    a {
+      color: $main-text;
+      text-decoration: underline;
+    }
+
+    @include mobile {
+      font-size: vmin(12);
+      margin-top: vmin(24);
+      margin-right: 0;
+    }
+  }
+
+  &__fields-section {
+    & + .form__fields-section {
+      margin-top: 24px;
+
+      @include mobile {
+        margin-top: vmin(24);
+      }
+    }
+
+    & + .form__bottom {
+      margin-top: 48px;
+
+      @include mobile {
+        margin-top: vmin(16);
+      }
+    }
+  }
+
+  &__fields-section-title {
+    @include h7;
+    margin: 0 0 16px;
+
+    span {
+      color: $fail;
+    }
+
+    @include mobile {
+      font-size: vmin(12);
+      margin: 0 0 vmin(16);
+    }
+  }
+}

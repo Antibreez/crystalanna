@@ -1,0 +1,172 @@
+.branch-card {
+  display: flex;
+  padding: 40px;
+  gap: 20px;
+  border: 1.5px solid #e6e6ef;
+  border-radius: 16px;
+
+  @include tablet {
+    flex-wrap: wrap;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    padding: vmin(32) vmin(24);
+    gap: vmin(20);
+    border-radius: vmin(16);
+  }
+
+  &__column {
+    width: 265px;
+
+    &:not(:last-child) {
+      flex: 1;
+    }
+
+    @include tablet {
+      &:nth-child(n) {
+        flex: unset;
+        width: calc((100% - 20px) / 2);
+      }
+
+      &:not(:first-child) {
+        margin-left: auto;
+      }
+
+      &:first-child {
+        height: 24px;
+      }
+    }
+
+    @include mobile {
+      &:nth-child(n) {
+        width: 100%;
+        height: auto;
+      }
+
+      &:not(:first-child) {
+        padding-left: vmin(17);
+      }
+    }
+  }
+
+  &__title {
+    @include h5;
+
+    @include mobile {
+      font-size: vmin(18);
+    }
+
+    img {
+      width: 129px;
+      height: auto;
+
+      @include mobile {
+        width: vmin(129);
+      }
+    }
+
+    span {
+      padding-left: 17px;
+      @include h8;
+      display: block;
+      margin-top: 4px;
+
+      @include mobile {
+        font-size: vmin(12);
+        padding-left: vmin(17);
+        margin-top: vmin(4);
+      }
+    }
+
+    & + .branch-card__cities {
+      margin-top: 20px;
+
+      @include mobile {
+        margin-top: vmin(16);
+      }
+    }
+  }
+
+  &__cities {
+    @include b1;
+    color: $grey400;
+    padding-left: 17px;
+
+    @include mobile {
+      font-size: vmin(12);
+      padding-left: vmin(17);
+    }
+  }
+
+  &__text-item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @include mobile {
+        margin-bottom: vmin(20);
+      }
+    }
+  }
+
+  &__text-title {
+    @include b2;
+    color: $grey400;
+    margin-bottom: 4px;
+    display: block;
+
+    @include mobile {
+      font-size: vmin(10);
+      margin-bottom: vmin(4);
+    }
+  }
+
+  &__text-desc {
+    @include b1;
+    display: block;
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+  }
+
+  &__text-link {
+    @include h7;
+    color: $main-text;
+    transition: color 0.2s;
+
+    @include hover {
+      color: $additional2;
+    }
+
+    @include mobile {
+      font-size: vmin(12);
+    }
+  }
+}
+
+.branch-card--main {
+  color: #fff;
+  background-color: $main-text;
+  border-color: $main-text;
+
+  .branch-card__text-link {
+    color: #fff;
+
+    @include hover {
+      color: $grey300;
+    }
+  }
+
+  .branch-card__text-title {
+    color: $grey300;
+  }
+
+  .branch-card__column {
+    @include mobile {
+      &:nth-child(n) {
+        padding-left: 0;
+      }
+    }
+  }
+}

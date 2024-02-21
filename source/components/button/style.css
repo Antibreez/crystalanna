@@ -1,0 +1,1191 @@
+.button,
+.button-secondary,
+.button-third,
+.button-fourth,
+.button-midea,
+.button-midea-secondary,
+.button-daikin,
+.button-daikin-secondary,
+.button-kentatsu,
+.button-kentatsu-secondary,
+.button-bosch,
+.button-bosch-secondary,
+.button-axioma,
+.button-axioma-secondary,
+.button-airwave,
+.button-airwave-secondary,
+.button-ecoletta,
+.button-ecoletta-secondary,
+.button-primera,
+.button-primera-secondary,
+.button-aurum,
+.button-aurum-secondary,
+.button-border,
+.button-white,
+.button-gradient-1,
+.button-gradient-2,
+.button-gradient-3,
+.button-gradient-4,
+.button-gradient-5,
+.button-gradient-6,
+.button-gradient-7,
+.button-gradient-8 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 120%;
+  font-weight: 500;
+  line-height: 19px;
+  display: inline-block;
+  padding: 17px 24px 15px;
+  background-color: #151515;
+  border: none;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  border-radius: 8px;
+  outline: none;
+}
+.button svg,
+.button-secondary svg,
+.button-third svg,
+.button-fourth svg,
+.button-midea svg,
+.button-midea-secondary svg,
+.button-daikin svg,
+.button-daikin-secondary svg,
+.button-kentatsu svg,
+.button-kentatsu-secondary svg,
+.button-bosch svg,
+.button-bosch-secondary svg,
+.button-axioma svg,
+.button-axioma-secondary svg,
+.button-airwave svg,
+.button-airwave-secondary svg,
+.button-ecoletta svg,
+.button-ecoletta-secondary svg,
+.button-primera svg,
+.button-primera-secondary svg,
+.button-aurum svg,
+.button-aurum-secondary svg,
+.button-border svg,
+.button-white svg,
+.button-gradient-1 svg,
+.button-gradient-2 svg,
+.button-gradient-3 svg,
+.button-gradient-4 svg,
+.button-gradient-5 svg,
+.button-gradient-6 svg,
+.button-gradient-7 svg,
+.button-gradient-8 svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  margin-top: -6px;
+}
+@media (max-width: 767px) {
+  .button svg,
+  .button-secondary svg,
+  .button-third svg,
+  .button-fourth svg,
+  .button-midea svg,
+  .button-midea-secondary svg,
+  .button-daikin svg,
+  .button-daikin-secondary svg,
+  .button-kentatsu svg,
+  .button-kentatsu-secondary svg,
+  .button-bosch svg,
+  .button-bosch-secondary svg,
+  .button-axioma svg,
+  .button-axioma-secondary svg,
+  .button-airwave svg,
+  .button-airwave-secondary svg,
+  .button-ecoletta svg,
+  .button-ecoletta-secondary svg,
+  .button-primera svg,
+  .button-primera-secondary svg,
+  .button-aurum svg,
+  .button-aurum-secondary svg,
+  .button-border svg,
+  .button-white svg,
+  .button-gradient-1 svg,
+  .button-gradient-2 svg,
+  .button-gradient-3 svg,
+  .button-gradient-4 svg,
+  .button-gradient-5 svg,
+  .button-gradient-6 svg,
+  .button-gradient-7 svg,
+  .button-gradient-8 svg {
+    width: 6.6666666667vmin;
+    height: 6.6666666667vmin;
+    margin-left: 2.7777777778vmin;
+    margin-top: -2.5vmin;
+    margin-bottom: -1.1111111111vmin;
+  }
+}
+.button *,
+.button-secondary *,
+.button-third *,
+.button-fourth *,
+.button-midea *,
+.button-midea-secondary *,
+.button-daikin *,
+.button-daikin-secondary *,
+.button-kentatsu *,
+.button-kentatsu-secondary *,
+.button-bosch *,
+.button-bosch-secondary *,
+.button-axioma *,
+.button-axioma-secondary *,
+.button-airwave *,
+.button-airwave-secondary *,
+.button-ecoletta *,
+.button-ecoletta-secondary *,
+.button-primera *,
+.button-primera-secondary *,
+.button-aurum *,
+.button-aurum-secondary *,
+.button-border *,
+.button-white *,
+.button-gradient-1 *,
+.button-gradient-2 *,
+.button-gradient-3 *,
+.button-gradient-4 *,
+.button-gradient-5 *,
+.button-gradient-6 *,
+.button-gradient-7 *,
+.button-gradient-8 * {
+  vertical-align: middle;
+}
+@media (max-width: 767px) {
+  .button,
+  .button-secondary,
+  .button-third,
+  .button-fourth,
+  .button-midea,
+  .button-midea-secondary,
+  .button-daikin,
+  .button-daikin-secondary,
+  .button-kentatsu,
+  .button-kentatsu-secondary,
+  .button-bosch,
+  .button-bosch-secondary,
+  .button-axioma,
+  .button-axioma-secondary,
+  .button-airwave,
+  .button-airwave-secondary,
+  .button-ecoletta,
+  .button-ecoletta-secondary,
+  .button-primera,
+  .button-primera-secondary,
+  .button-aurum,
+  .button-aurum-secondary,
+  .button-border,
+  .button-white,
+  .button-gradient-1,
+  .button-gradient-2,
+  .button-gradient-3,
+  .button-gradient-4,
+  .button-gradient-5,
+  .button-gradient-6,
+  .button-gradient-7,
+  .button-gradient-8 {
+    font-size: 3.3333333333vmin;
+    line-height: 120%;
+    padding: 4.7222222222vmin 6.6666666667vmin 4.1666666667vmin;
+    border-radius: 2.2222222222vmin;
+  }
+}
+.button.focused,
+.button-secondary.focused,
+.button-third.focused,
+.button-fourth.focused,
+.button-midea.focused,
+.button-midea-secondary.focused,
+.button-daikin.focused,
+.button-daikin-secondary.focused,
+.button-kentatsu.focused,
+.button-kentatsu-secondary.focused,
+.button-bosch.focused,
+.button-bosch-secondary.focused,
+.button-axioma.focused,
+.button-axioma-secondary.focused,
+.button-airwave.focused,
+.button-airwave-secondary.focused,
+.button-ecoletta.focused,
+.button-ecoletta-secondary.focused,
+.button-primera.focused,
+.button-primera-secondary.focused,
+.button-aurum.focused,
+.button-aurum-secondary.focused,
+.button-border.focused,
+.button-white.focused,
+.button-gradient-1.focused,
+.button-gradient-2.focused,
+.button-gradient-3.focused,
+.button-gradient-4.focused,
+.button-gradient-5.focused,
+.button-gradient-6.focused,
+.button-gradient-7.focused,
+.button-gradient-8.focused {
+  position: relative;
+}
+.button.focused::after,
+.button-secondary.focused::after,
+.button-third.focused::after,
+.button-fourth.focused::after,
+.button-midea.focused::after,
+.button-midea-secondary.focused::after,
+.button-daikin.focused::after,
+.button-daikin-secondary.focused::after,
+.button-kentatsu.focused::after,
+.button-kentatsu-secondary.focused::after,
+.button-bosch.focused::after,
+.button-bosch-secondary.focused::after,
+.button-axioma.focused::after,
+.button-axioma-secondary.focused::after,
+.button-airwave.focused::after,
+.button-airwave-secondary.focused::after,
+.button-ecoletta.focused::after,
+.button-ecoletta-secondary.focused::after,
+.button-primera.focused::after,
+.button-primera-secondary.focused::after,
+.button-aurum.focused::after,
+.button-aurum-secondary.focused::after,
+.button-border.focused::after,
+.button-white.focused::after,
+.button-gradient-1.focused::after,
+.button-gradient-2.focused::after,
+.button-gradient-3.focused::after,
+.button-gradient-4.focused::after,
+.button-gradient-5.focused::after,
+.button-gradient-6.focused::after,
+.button-gradient-7.focused::after,
+.button-gradient-8.focused::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  border: 2px solid #151515;
+  -webkit-transform: translate(-4px, -4px);
+      -ms-transform: translate(-4px, -4px);
+          transform: translate(-4px, -4px);
+  border-radius: 12px;
+  pointer-events: none;
+}
+@media (max-width: 1023px) {
+  .button.focused::after,
+  .button-secondary.focused::after,
+  .button-third.focused::after,
+  .button-fourth.focused::after,
+  .button-midea.focused::after,
+  .button-midea-secondary.focused::after,
+  .button-daikin.focused::after,
+  .button-daikin-secondary.focused::after,
+  .button-kentatsu.focused::after,
+  .button-kentatsu-secondary.focused::after,
+  .button-bosch.focused::after,
+  .button-bosch-secondary.focused::after,
+  .button-axioma.focused::after,
+  .button-axioma-secondary.focused::after,
+  .button-airwave.focused::after,
+  .button-airwave-secondary.focused::after,
+  .button-ecoletta.focused::after,
+  .button-ecoletta-secondary.focused::after,
+  .button-primera.focused::after,
+  .button-primera-secondary.focused::after,
+  .button-aurum.focused::after,
+  .button-aurum-secondary.focused::after,
+  .button-border.focused::after,
+  .button-white.focused::after,
+  .button-gradient-1.focused::after,
+  .button-gradient-2.focused::after,
+  .button-gradient-3.focused::after,
+  .button-gradient-4.focused::after,
+  .button-gradient-5.focused::after,
+  .button-gradient-6.focused::after,
+  .button-gradient-7.focused::after,
+  .button-gradient-8.focused::after {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .button.focused::after,
+  .button-secondary.focused::after,
+  .button-third.focused::after,
+  .button-fourth.focused::after,
+  .button-midea.focused::after,
+  .button-midea-secondary.focused::after,
+  .button-daikin.focused::after,
+  .button-daikin-secondary.focused::after,
+  .button-kentatsu.focused::after,
+  .button-kentatsu-secondary.focused::after,
+  .button-bosch.focused::after,
+  .button-bosch-secondary.focused::after,
+  .button-axioma.focused::after,
+  .button-axioma-secondary.focused::after,
+  .button-airwave.focused::after,
+  .button-airwave-secondary.focused::after,
+  .button-ecoletta.focused::after,
+  .button-ecoletta-secondary.focused::after,
+  .button-primera.focused::after,
+  .button-primera-secondary.focused::after,
+  .button-aurum.focused::after,
+  .button-aurum-secondary.focused::after,
+  .button-border.focused::after,
+  .button-white.focused::after,
+  .button-gradient-1.focused::after,
+  .button-gradient-2.focused::after,
+  .button-gradient-3.focused::after,
+  .button-gradient-4.focused::after,
+  .button-gradient-5.focused::after,
+  .button-gradient-6.focused::after,
+  .button-gradient-7.focused::after,
+  .button-gradient-8.focused::after {
+    border-radius: calc(2.2222222222vmin + 4px);
+  }
+}
+
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button:hover {
+    cursor: pointer;
+    background-color: #525252;
+  }
+}
+@media (min-width: 1024px) {
+  .button:active {
+    background-color: #525252;
+  }
+}
+.button:disabled, .button.disabled {
+  cursor: default;
+  background-color: #d1d8e1;
+  pointer-events: none;
+}
+
+.button-gradient-1,
+.button-gradient-2,
+.button-gradient-3,
+.button-gradient-4,
+.button-gradient-5,
+.button-gradient-6,
+.button-gradient-7,
+.button-gradient-8 {
+  position: relative;
+  background-position: left center;
+  background-size: 200% 100% !important;
+  -webkit-transition: background-position 0.4s;
+  transition: background-position 0.4s;
+  overflow: hidden;
+  background-color: unset;
+  z-index: 1;
+}
+@media (min-width: 1024px) {
+  .button-gradient-1:hover,
+  .button-gradient-2:hover,
+  .button-gradient-3:hover,
+  .button-gradient-4:hover,
+  .button-gradient-5:hover,
+  .button-gradient-6:hover,
+  .button-gradient-7:hover,
+  .button-gradient-8:hover {
+    cursor: pointer;
+  }
+  .button-gradient-1:hover::before,
+  .button-gradient-2:hover::before,
+  .button-gradient-3:hover::before,
+  .button-gradient-4:hover::before,
+  .button-gradient-5:hover::before,
+  .button-gradient-6:hover::before,
+  .button-gradient-7:hover::before,
+  .button-gradient-8:hover::before {
+    opacity: 1;
+  }
+  .button-gradient-1:hover::after,
+  .button-gradient-2:hover::after,
+  .button-gradient-3:hover::after,
+  .button-gradient-4:hover::after,
+  .button-gradient-5:hover::after,
+  .button-gradient-6:hover::after,
+  .button-gradient-7:hover::after,
+  .button-gradient-8:hover::after {
+    opacity: 0;
+  }
+}
+.button-gradient-1:disabled, .button-gradient-1.disabled,
+.button-gradient-2:disabled,
+.button-gradient-2.disabled,
+.button-gradient-3:disabled,
+.button-gradient-3.disabled,
+.button-gradient-4:disabled,
+.button-gradient-4.disabled,
+.button-gradient-5:disabled,
+.button-gradient-5.disabled,
+.button-gradient-6:disabled,
+.button-gradient-6.disabled,
+.button-gradient-7:disabled,
+.button-gradient-7.disabled,
+.button-gradient-8:disabled,
+.button-gradient-8.disabled {
+  cursor: default;
+  background: none;
+  background-color: #d1d8e1;
+  pointer-events: none;
+}
+.button-gradient-1::after, .button-gradient-1::before,
+.button-gradient-2::after,
+.button-gradient-2::before,
+.button-gradient-3::after,
+.button-gradient-3::before,
+.button-gradient-4::after,
+.button-gradient-4::before,
+.button-gradient-5::after,
+.button-gradient-5::before,
+.button-gradient-6::after,
+.button-gradient-6::before,
+.button-gradient-7::after,
+.button-gradient-7::before,
+.button-gradient-8::after,
+.button-gradient-8::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 8px;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  opacity: 1;
+}
+@media (max-width: 767px) {
+  .button-gradient-1::after, .button-gradient-1::before,
+  .button-gradient-2::after,
+  .button-gradient-2::before,
+  .button-gradient-3::after,
+  .button-gradient-3::before,
+  .button-gradient-4::after,
+  .button-gradient-4::before,
+  .button-gradient-5::after,
+  .button-gradient-5::before,
+  .button-gradient-6::after,
+  .button-gradient-6::before,
+  .button-gradient-7::after,
+  .button-gradient-7::before,
+  .button-gradient-8::after,
+  .button-gradient-8::before {
+    border-radius: 2.2222222222vmin;
+  }
+}
+.button-gradient-1::before,
+.button-gradient-2::before,
+.button-gradient-3::before,
+.button-gradient-4::before,
+.button-gradient-5::before,
+.button-gradient-6::before,
+.button-gradient-7::before,
+.button-gradient-8::before {
+  opacity: 0;
+}
+
+.button-gradient-1::after {
+  background: -webkit-gradient(linear, left top, right top, from(#5ea9ff), to(#d5d3ff));
+  background: linear-gradient(to right, #5ea9ff, #d5d3ff);
+}
+.button-gradient-1::before {
+  background: -webkit-gradient(linear, right top, left top, from(#5ea9ff), to(#d5d3ff));
+  background: linear-gradient(to left, #5ea9ff, #d5d3ff);
+}
+
+.button-gradient-2::after {
+  background: -webkit-gradient(linear, left top, right top, from(#ffa3b9), to(#ffe4aa));
+  background: linear-gradient(to right, #ffa3b9, #ffe4aa);
+}
+.button-gradient-2::before {
+  background: -webkit-gradient(linear, right top, left top, from(#ffa3b9), to(#ffe4aa));
+  background: linear-gradient(to left, #ffa3b9, #ffe4aa);
+}
+
+.button-gradient-3::after {
+  background: -webkit-gradient(linear, left top, right top, from(#71d6c8), to(#ffdecb));
+  background: linear-gradient(to right, #71d6c8, #ffdecb);
+}
+.button-gradient-3::before {
+  background: -webkit-gradient(linear, right top, left top, from(#71d6c8), to(#ffdecb));
+  background: linear-gradient(to left, #71d6c8, #ffdecb);
+}
+
+.button-gradient-4::after {
+  background: -webkit-gradient(linear, left top, right top, from(#7bbaff), to(#ceeede));
+  background: linear-gradient(to right, #7bbaff, #ceeede);
+}
+.button-gradient-4::before {
+  background: -webkit-gradient(linear, right top, left top, from(#7bbaff), to(#ceeede));
+  background: linear-gradient(to left, #7bbaff, #ceeede);
+}
+
+.button-gradient-5::after {
+  background: -webkit-gradient(linear, left top, right top, from(#a0b1ff), to(#ffdcd6));
+  background: linear-gradient(to right, #a0b1ff, #ffdcd6);
+}
+.button-gradient-5::before {
+  background: -webkit-gradient(linear, right top, left top, from(#a0b1ff), to(#ffdcd6));
+  background: linear-gradient(to left, #a0b1ff, #ffdcd6);
+}
+
+.button-gradient-6::after {
+  background: -webkit-gradient(linear, left top, right top, from(#ff9986), to(#ffdcd6));
+  background: linear-gradient(to right, #ff9986, #ffdcd6);
+}
+.button-gradient-6::before {
+  background: -webkit-gradient(linear, right top, left top, from(#ff9986), to(#ffdcd6));
+  background: linear-gradient(to left, #ff9986, #ffdcd6);
+}
+
+.button-gradient-7::after {
+  background: -webkit-gradient(linear, left top, right top, from(#7bbaff), to(#ffdecb));
+  background: linear-gradient(to right, #7bbaff, #ffdecb);
+}
+.button-gradient-7::before {
+  background: -webkit-gradient(linear, right top, left top, from(#7bbaff), to(#ffdecb));
+  background: linear-gradient(to left, #7bbaff, #ffdecb);
+}
+
+.button-gradient-8::after {
+  background: -webkit-gradient(linear, left top, right top, from(#3593ff), to(#eb91fa));
+  background: linear-gradient(to right, #3593ff, #eb91fa);
+}
+.button-gradient-8::before {
+  background: -webkit-gradient(linear, right top, left top, from(#3593ff), to(#eb91fa));
+  background: linear-gradient(to left, #3593ff, #eb91fa);
+}
+
+.button-secondary,
+.button-third,
+.button-fourth,
+.button-midea,
+.button-daikin,
+.button-kentatsu,
+.button-axioma,
+.button-airwave,
+.button-ecoletta,
+.button-primera,
+.button-aurum,
+.button-bosch {
+  background-color: #f4f4f8;
+  color: #151515;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-secondary:hover,
+  .button-third:hover,
+  .button-fourth:hover,
+  .button-midea:hover,
+  .button-daikin:hover,
+  .button-kentatsu:hover,
+  .button-axioma:hover,
+  .button-airwave:hover,
+  .button-ecoletta:hover,
+  .button-primera:hover,
+  .button-aurum:hover,
+  .button-bosch:hover {
+    cursor: pointer;
+    background-color: #e6e6ef;
+  }
+}
+@media (min-width: 1024px) {
+  .button-secondary:active,
+  .button-third:active,
+  .button-fourth:active,
+  .button-midea:active,
+  .button-daikin:active,
+  .button-kentatsu:active,
+  .button-axioma:active,
+  .button-airwave:active,
+  .button-ecoletta:active,
+  .button-primera:active,
+  .button-aurum:active,
+  .button-bosch:active {
+    background-color: #e6e6ef;
+  }
+}
+.button-secondary:disabled, .button-secondary.disabled,
+.button-third:disabled,
+.button-third.disabled,
+.button-fourth:disabled,
+.button-fourth.disabled,
+.button-midea:disabled,
+.button-midea.disabled,
+.button-daikin:disabled,
+.button-daikin.disabled,
+.button-kentatsu:disabled,
+.button-kentatsu.disabled,
+.button-axioma:disabled,
+.button-axioma.disabled,
+.button-airwave:disabled,
+.button-airwave.disabled,
+.button-ecoletta:disabled,
+.button-ecoletta.disabled,
+.button-primera:disabled,
+.button-primera.disabled,
+.button-aurum:disabled,
+.button-aurum.disabled,
+.button-bosch:disabled,
+.button-bosch.disabled {
+  cursor: default;
+  background-color: #f4f4f8;
+  color: #d1d8e1;
+  pointer-events: none;
+}
+
+.button-third {
+  background-color: #fff;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-third:hover {
+    background-color: #f4f4f8;
+  }
+}
+@media (min-width: 1024px) {
+  .button-third:active {
+    background-color: #f4f4f8;
+  }
+}
+
+.button-fourth {
+  background-color: #2858ff;
+  color: #fff;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-fourth:hover {
+    background-color: #2858ff;
+    opacity: 0.8;
+  }
+}
+@media (min-width: 1024px) {
+  .button-fourth:active {
+    background-color: #2858ff;
+    opacity: 0.8;
+  }
+}
+
+.button-midea,
+.button-daikin,
+.button-kentatsu,
+.button-axioma,
+.button-airwave,
+.button-ecoletta,
+.button-primera,
+.button-aurum,
+.button-bosch {
+  background-color: #00a1ed;
+  color: #fff;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-midea:hover,
+  .button-daikin:hover,
+  .button-kentatsu:hover,
+  .button-axioma:hover,
+  .button-airwave:hover,
+  .button-ecoletta:hover,
+  .button-primera:hover,
+  .button-aurum:hover,
+  .button-bosch:hover {
+    background-color: #1fb8ff;
+  }
+}
+@media (min-width: 1024px) {
+  .button-midea:active,
+  .button-daikin:active,
+  .button-kentatsu:active,
+  .button-axioma:active,
+  .button-airwave:active,
+  .button-ecoletta:active,
+  .button-primera:active,
+  .button-aurum:active,
+  .button-bosch:active {
+    background-color: #1fb8ff;
+  }
+}
+
+.button-daikin {
+  background-color: #0097e0;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-daikin:hover {
+    background-color: #0aadff;
+  }
+}
+@media (min-width: 1024px) {
+  .button-daikin:active {
+    background-color: #0aadff;
+  }
+}
+
+.button-kentatsu {
+  background-color: #f32424;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-kentatsu:hover {
+    background-color: #f65151;
+  }
+}
+@media (min-width: 1024px) {
+  .button-kentatsu:active {
+    background-color: #f65151;
+  }
+}
+
+.button-bosch {
+  background-color: #007bc0;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-bosch:hover {
+    background-color: #009bf5;
+  }
+}
+@media (min-width: 1024px) {
+  .button-bosch:active {
+    background-color: #009bf5;
+  }
+}
+
+.button-axioma {
+  background-color: #30aeea;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-axioma:hover {
+    background-color: #58bfee;
+  }
+}
+@media (min-width: 1024px) {
+  .button-axioma:active {
+    background-color: #58bfee;
+  }
+}
+
+.button-airwave {
+  background-color: #3bd0fe;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-airwave:hover {
+    background-color: #71ddfe;
+  }
+}
+@media (min-width: 1024px) {
+  .button-airwave:active {
+    background-color: #71ddfe;
+  }
+}
+
+.button-ecoletta {
+  background-color: #61a60e;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-ecoletta:hover {
+    background-color: #7ace12;
+  }
+}
+@media (min-width: 1024px) {
+  .button-ecoletta:active {
+    background-color: #7ace12;
+  }
+}
+
+.button-primera {
+  background-color: #00964d;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-primera:hover {
+    background-color: #00cc69;
+  }
+}
+@media (min-width: 1024px) {
+  .button-primera:active {
+    background-color: #00cc69;
+  }
+}
+
+.button-aurum {
+  background-color: #c29742;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-aurum:hover {
+    background-color: #cdaa65;
+  }
+}
+@media (min-width: 1024px) {
+  .button-aurum:active {
+    background-color: #cdaa65;
+  }
+}
+
+.button-midea-secondary,
+.button-daikin-secondary,
+.button-bosch-secondary,
+.button-axioma-secondary,
+.button-airwave-secondary,
+.button-ecoletta-secondary,
+.button-primera-secondary,
+.button-aurum-secondary,
+.button-kentatsu-secondary,
+.button-border {
+  border: 2px solid #00a1ed;
+  background-color: transparent;
+  color: #00a1ed;
+  padding-top: 15px;
+  padding-bottom: 13px;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-midea-secondary:hover,
+  .button-daikin-secondary:hover,
+  .button-bosch-secondary:hover,
+  .button-axioma-secondary:hover,
+  .button-airwave-secondary:hover,
+  .button-ecoletta-secondary:hover,
+  .button-primera-secondary:hover,
+  .button-aurum-secondary:hover,
+  .button-kentatsu-secondary:hover,
+  .button-border:hover {
+    cursor: pointer;
+    color: #1fb8ff;
+    border-color: #1fb8ff;
+  }
+}
+@media (min-width: 1024px) {
+  .button-midea-secondary:active,
+  .button-daikin-secondary:active,
+  .button-bosch-secondary:active,
+  .button-axioma-secondary:active,
+  .button-airwave-secondary:active,
+  .button-ecoletta-secondary:active,
+  .button-primera-secondary:active,
+  .button-aurum-secondary:active,
+  .button-kentatsu-secondary:active,
+  .button-border:active {
+    color: #1fb8ff;
+    border-color: #1fb8ff;
+  }
+}
+@media (max-width: 767px) {
+  .button-midea-secondary,
+  .button-daikin-secondary,
+  .button-bosch-secondary,
+  .button-axioma-secondary,
+  .button-airwave-secondary,
+  .button-ecoletta-secondary,
+  .button-primera-secondary,
+  .button-aurum-secondary,
+  .button-kentatsu-secondary,
+  .button-border {
+    padding-top: 4.1666666667vmin;
+    padding-bottom: 3.6111111111vmin;
+  }
+}
+.button-midea-secondary:disabled, .button-midea-secondary.disabled,
+.button-daikin-secondary:disabled,
+.button-daikin-secondary.disabled,
+.button-bosch-secondary:disabled,
+.button-bosch-secondary.disabled,
+.button-axioma-secondary:disabled,
+.button-axioma-secondary.disabled,
+.button-airwave-secondary:disabled,
+.button-airwave-secondary.disabled,
+.button-ecoletta-secondary:disabled,
+.button-ecoletta-secondary.disabled,
+.button-primera-secondary:disabled,
+.button-primera-secondary.disabled,
+.button-aurum-secondary:disabled,
+.button-aurum-secondary.disabled,
+.button-kentatsu-secondary:disabled,
+.button-kentatsu-secondary.disabled,
+.button-border:disabled,
+.button-border.disabled {
+  cursor: default;
+  color: #d1d8e1;
+  pointer-events: none;
+  border-color: #d1d8e1;
+}
+
+.button-border {
+  border: 2px solid #151515;
+  color: #151515;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-border:hover {
+    color: #525252;
+    border-color: #525252;
+  }
+}
+@media (min-width: 1024px) {
+  .button-border:active {
+    color: #525252;
+    border-color: #525252;
+  }
+}
+
+.button-white {
+  background-color: #fff;
+  color: #151515;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-white:hover {
+    cursor: pointer;
+    color: #525252;
+  }
+}
+@media (min-width: 1024px) {
+  .button-white:active {
+    color: #525252;
+  }
+}
+.button-white:disabled, .button-white.disabled {
+  cursor: default;
+  color: #d1d8e1;
+  pointer-events: none;
+}
+
+.button-midea-secondary {
+  border-color: #00a1ed;
+  color: #00a1ed;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-midea-secondary:hover {
+    cursor: pointer;
+    color: #1fb8ff;
+    border-color: #1fb8ff;
+  }
+}
+@media (min-width: 1024px) {
+  .button-midea-secondary:active {
+    color: #1fb8ff;
+    border-color: #1fb8ff;
+  }
+}
+
+.button-daikin-secondary {
+  border: 2px solid #0097e0;
+  color: #0097e0;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-daikin-secondary:hover {
+    color: #0aadff;
+    border-color: #0aadff;
+  }
+}
+@media (min-width: 1024px) {
+  .button-daikin-secondary:active {
+    color: #0aadff;
+    border-color: #0aadff;
+  }
+}
+
+.button-kentatsu-secondary {
+  border: 2px solid #f32424;
+  color: #f32424;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-kentatsu-secondary:hover {
+    color: #f65151;
+    border-color: #f65151;
+  }
+}
+@media (min-width: 1024px) {
+  .button-kentatsu-secondary:active {
+    color: #f65151;
+    border-color: #f65151;
+  }
+}
+
+.button-bosch-secondary {
+  border: 2px solid #007bc0;
+  color: #007bc0;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-bosch-secondary:hover {
+    color: #009bf5;
+    border-color: #009bf5;
+  }
+}
+@media (min-width: 1024px) {
+  .button-bosch-secondary:active {
+    color: #009bf5;
+    border-color: #009bf5;
+  }
+}
+
+.button-axioma-secondary {
+  border: 2px solid #30aeea;
+  color: #30aeea;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-axioma-secondary:hover {
+    color: #58bfee;
+    border-color: #58bfee;
+  }
+}
+@media (min-width: 1024px) {
+  .button-axioma-secondary:active {
+    color: #58bfee;
+    border-color: #58bfee;
+  }
+}
+
+.button-airwave-secondary {
+  border: 2px solid #3bd0fe;
+  color: #3bd0fe;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-airwave-secondary:hover {
+    color: #71ddfe;
+    border-color: #71ddfe;
+  }
+}
+@media (min-width: 1024px) {
+  .button-airwave-secondary:active {
+    color: #71ddfe;
+    border-color: #71ddfe;
+  }
+}
+
+.button-ecoletta-secondary {
+  border: 2px solid #61a60e;
+  color: #61a60e;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-ecoletta-secondary:hover {
+    color: #7ace12;
+    border-color: #7ace12;
+  }
+}
+@media (min-width: 1024px) {
+  .button-ecoletta-secondary:active {
+    color: #7ace12;
+    border-color: #7ace12;
+  }
+}
+
+.button-primera-secondary {
+  border: 2px solid #00964d;
+  color: #00964d;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-primera-secondary:hover {
+    color: #00cc69;
+    border-color: #00cc69;
+  }
+}
+@media (min-width: 1024px) {
+  .button-primera-secondary:active {
+    color: #00cc69;
+    border-color: #00cc69;
+  }
+}
+
+.button-aurum-secondary {
+  border: 2px solid #c29742;
+  color: #c29742;
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .button-aurum-secondary:hover {
+    color: #cdaa65;
+    border-color: #cdaa65;
+  }
+}
+@media (min-width: 1024px) {
+  .button-aurum-secondary:active {
+    color: #cdaa65;
+    border-color: #cdaa65;
+  }
+}
+
+.button-arrow {
+  margin: 0;
+  font-size: 16px;
+  line-height: 120%;
+  font-weight: 500;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #151515;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.button-arrow svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  -webkit-transform: translateY(-1px);
+      -ms-transform: translateY(-1px);
+          transform: translateY(-1px);
+}
+@media (min-width: 1024px) {
+  .button-arrow:hover {
+    cursor: pointer;
+    color: #525252;
+  }
+}
+.button-arrow:active {
+  color: #525252;
+}
+.button-arrow:disabled, .button-arrow.disabled {
+  color: #d1d8e1;
+  pointer-events: none;
+}
+.button-arrow.focused {
+  position: relative;
+}
+.button-arrow.focused::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + 6px);
+  height: calc(100% + 4px);
+  border: 2px solid #151515;
+  -webkit-transform: translate(-3px, -2px);
+      -ms-transform: translate(-3px, -2px);
+          transform: translate(-3px, -2px);
+  border-radius: 4px;
+  pointer-events: none;
+}
+@media (max-width: 1023px) {
+  .button-arrow.focused::after {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .button-arrow {
+    font-size: 4.4444444444vmin;
+  }
+  .button-arrow svg {
+    width: 6.6666666667vmin;
+    height: 6.6666666667vmin;
+    margin-left: 2.2222222222vmin;
+  }
+}
+
+.button--small {
+  margin: 0;
+  font-size: 12px;
+  line-height: 120%;
+  font-weight: 600;
+  line-height: 14px;
+}
+@media (max-width: 767px) {
+  .button--small {
+    font-size: 3.3333333333vmin;
+    line-height: 3.8888888889vmin;
+  }
+}

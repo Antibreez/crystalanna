@@ -1,0 +1,808 @@
+$duration: 0.4s;
+
+.about-company {
+  background-color: #fff;
+  margin-bottom: 0;
+  padding-bottom: 160px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+
+  & + .brands {
+    padding-top: 0;
+  }
+
+  @include tablet {
+    padding-bottom: 80px;
+  }
+
+  @include mobile {
+    padding-bottom: vmin(64);
+  }
+
+  &__top {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    z-index: 2;
+    padding-bottom: 24px;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 0;
+      background-color: transparent;
+    }
+
+    @include mobile {
+      padding-bottom: vmin(5);
+    }
+  }
+
+  &__slogan {
+    margin-bottom: 0;
+  }
+
+  &__top-main {
+    max-width: 387px;
+
+    @include tablet {
+      max-width: none;
+      text-align: center;
+    }
+  }
+
+  &__top-history {
+    max-width: 692px;
+    padding-top: 40px;
+
+    @include desktop-m {
+      max-width: 56.15vw;
+    }
+
+    @include tablet {
+      max-width: none;
+      padding-top: vmin(16);
+      text-align: center;
+    }
+  }
+
+  &__top-desc {
+    @include b1;
+    color: $grey400;
+    margin: 0 0 16px;
+
+    @include mobile {
+      font-size: vmin(12);
+      margin-bottom: vmin(16);
+    }
+  }
+
+  &__map {
+    @include tablet {
+      margin-top: -51px;
+    }
+
+    @include mobile {
+      margin-top: 0;
+    }
+  }
+
+  &__benefits {
+    position: relative;
+    padding-top: 64px;
+    z-index: 2;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -20px;
+
+    @include tablet {
+      padding-top: vmin(55);
+    }
+
+    @include mobile {
+      margin-top: 0;
+      padding-top: vmin(24);
+    }
+  }
+
+  &__benefits-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__benefit-item {
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    padding: 24px;
+    border-radius: 24px;
+    border: 1.5px solid $grey250;
+    height: 200px;
+    transition: border-color 0.3s ease-in-out;
+    margin-top: 20px;
+
+    &.is--large {
+      width: calc((100% - 20px) * 0.586);
+    }
+
+    &.is--medium {
+      width: calc((100% - 20px) * 0.414);
+    }
+
+    &.is--short {
+      width: calc((100% - 40px) / 3);
+    }
+
+    &:not(:nth-child(2)):not(:nth-child(5)):not(:nth-child(7)) {
+      margin-right: 20px;
+    }
+
+    @include hover {
+      border-color: $grey400;
+    }
+
+    @include desktop-m {
+      height: vw(200);
+      min-height: 167px;
+      padding: vw(24);
+    }
+
+    @include tablet {
+      height: 16.02vw;
+      min-height: auto;
+      padding: 2.08vw;
+      z-index: 1;
+
+      &:nth-child(3),
+      &:nth-child(5) {
+        width: calc((100% - 20px) * 0.414);
+      }
+
+      &:nth-child(4),
+      &:nth-child(6) {
+        width: calc((100% - 20px) * 0.586);
+      }
+
+      &:nth-child(7) {
+        width: 100%;
+      }
+
+      &:not(:nth-child(2)):not(:nth-child(5)):not(:nth-child(7)) {
+        margin-right: 0;
+      }
+
+      &:not(:nth-child(2)):not(:nth-child(4)):not(:nth-child(5)):not(:nth-child(7)) {
+        margin-right: 20px;
+      }
+    }
+
+    @include mobile {
+      height: auto;
+      min-height: 26.67vw;
+      padding: 4.44vw;
+      border-radius: 3.33vw;
+      margin-top: vmin(12);
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:nth-child(n) {
+        width: 100%;
+      }
+
+      &:not(:nth-child(2)):not(:nth-child(4)):not(:nth-child(5)):not(:nth-child(7)) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__benefit-count-wrap {
+    max-width: 258px;
+    margin-bottom: 4px;
+  }
+
+  &__benefit-count {
+    display: inline;
+    margin-bottom: 4px;
+    background: -webkit-linear-gradient(0deg, #5ea9ff, #d5d3ff 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include desktop-m {
+      font-size: 40px;
+    }
+
+    @include mobile {
+      font-size: vmin(24);
+    }
+  }
+
+  &__benefit-text {
+    @include b1;
+    margin: 0;
+    display: block;
+    max-width: 258px;
+    color: $main-text;
+
+    @include tablet {
+      font-size: 12px;
+    }
+
+    @include mobile {
+      font-size: vmin(10);
+    }
+  }
+
+  &__benefit-img {
+    position: absolute;
+    transition: transform $duration ease-in-out, right $duration ease-in-out, bottom $duration ease-in-out,
+      top $duration ease-in-out;
+  }
+
+  &__benefit-item--branches {
+    .about-company__benefit-img {
+      &--1 {
+        right: 12.45%;
+        bottom: 9.2%;
+        z-index: 2;
+
+        @include desktop-m {
+          height: 81.13%;
+          width: auto;
+        }
+      }
+
+      &--2 {
+        width: 44.35%;
+        height: auto;
+        top: 8.5%;
+        right: 1.3%;
+        z-index: 1;
+      }
+    }
+
+    @include hover {
+      .about-company__benefit-img {
+        &--1 {
+          right: 5.9%;
+        }
+
+        &--2 {
+          transform: rotate(30deg);
+        }
+      }
+    }
+  }
+
+  &__benefit-item--service {
+    .about-company__benefit-img {
+      &--1 {
+        bottom: 0;
+        right: 0;
+        width: auto;
+        height: 100%;
+      }
+
+      &--2 {
+        bottom: 0;
+        right: 0;
+        width: auto;
+        height: 100%;
+      }
+
+      &--3 {
+        top: 29.11%;
+        right: 24.35%;
+
+        @include desktop-m {
+          height: 49.7%;
+          width: auto;
+        }
+
+        @include mobile {
+          right: 18%;
+        }
+      }
+
+      &--4 {
+        top: calc(29.11% + 24.6px);
+        right: calc(24.35% + 25.5px);
+
+        @include desktop-m {
+          height: 23.95%;
+          width: auto;
+          top: 42%;
+          right: 30.09%;
+        }
+
+        @include mobile {
+          right: 21.8%;
+        }
+      }
+
+      &--5 {
+        bottom: 0;
+        right: 0;
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    @include hover {
+      .about-company__benefit-img {
+        &--1 {
+          right: 5.5%;
+        }
+
+        &--2 {
+          right: -4.9%;
+        }
+
+        &--4 {
+          transform: rotate(-180deg);
+        }
+
+        &--5 {
+          right: -4.9%;
+        }
+      }
+    }
+  }
+
+  &__benefit-item--number-1 {
+    .about-company__benefit-count-wrap {
+      position: relative;
+      max-width: 120px;
+    }
+
+    .about-company__benefit-count {
+      @include desktop-m {
+        font-size: 28px;
+      }
+
+      @include mobile {
+        font-size: vmin(24);
+      }
+    }
+
+    .about-company__benefit-text {
+      position: relative;
+      max-width: 120px;
+
+      @include desktop-m {
+        max-width: 37.9%;
+      }
+
+      @include mobile {
+        max-width: vmin(156);
+      }
+    }
+    .about-company__benefit-img {
+      &--1 {
+        width: 26.36%;
+        top: 14.5%;
+        right: 11.37%;
+        z-index: 3;
+
+        @include tablet {
+          width: auto;
+          height: 64%;
+          right: 9%;
+        }
+
+        @include mobile {
+          right: vmin(37);
+        }
+      }
+
+      &--2 {
+        height: 100%;
+        width: auto;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+
+        @include mobile {
+          right: vmin(15);
+        }
+      }
+
+      &--3 {
+        width: 56.85%;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+
+        @include tablet {
+          width: auto;
+          height: 100%;
+        }
+
+        @include mobile {
+          right: vmin(15);
+        }
+      }
+    }
+
+    @include hover {
+      .about-company__benefit-img {
+        &--3 {
+          right: -8.27%;
+        }
+
+        &--2 {
+          right: 8.52%;
+        }
+
+        &--1 {
+          transform: scale(1.3);
+          transform-origin: center;
+        }
+      }
+    }
+  }
+
+  &__benefit-item--staff {
+    .about-company__benefit-count-wrap {
+      position: relative;
+      z-index: 5;
+      max-width: 120px;
+    }
+
+    .about-company__benefit-text {
+      position: relative;
+      z-index: 6;
+      max-width: 120px;
+
+      @include desktop-m {
+        max-width: 37.9%;
+      }
+    }
+
+    .about-company__benefit-underlayer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 43%;
+      height: 100%;
+      background: #fff;
+    }
+    .about-company__benefit-img {
+      &--1 {
+        height: 100%;
+        width: auto;
+        bottom: 0;
+        right: 0;
+        z-index: 3;
+
+        @include mobile {
+          right: 7.8%;
+        }
+      }
+
+      &--2 {
+        height: 100%;
+        width: auto;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+      }
+
+      &--3 {
+        bottom: 4.7%;
+        right: 2.4%;
+        z-index: 2;
+
+        @include tablet {
+          height: 34.15%;
+          width: auto;
+          right: 6px;
+        }
+
+        @include mobile {
+          right: 8.84%;
+        }
+      }
+    }
+
+    @include hover {
+      .about-company__benefit-img {
+        &--2 {
+          right: -4.55%;
+        }
+
+        &--1 {
+          right: 6.23%;
+        }
+      }
+    }
+  }
+
+  &__benefit-item--engineers {
+    @include tablet {
+      order: 3;
+    }
+
+    .about-company__benefit-img {
+      &--1 {
+        top: 4.8%;
+        right: 2.4%;
+        z-index: 2;
+
+        @include desktop-m {
+          height: 34.13%;
+          width: auto;
+        }
+
+        @include mobile {
+          right: 6.71%;
+        }
+      }
+
+      &--2 {
+        height: 100%;
+        width: auto;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+
+        @include mobile {
+          right: 4.27%;
+        }
+      }
+    }
+
+    @include hover {
+      .about-company__benefit-img {
+        &--2 {
+          right: 5.43%;
+        }
+      }
+    }
+  }
+
+  &__benefit-item--r-and-d {
+    @include tablet {
+      order: 2;
+    }
+    .about-company__benefit-text {
+      max-width: 156px;
+
+      @include desktop-m {
+        max-width: 39.1%;
+      }
+
+      @include mobile {
+        max-width: vmin(156);
+      }
+    }
+
+    .about-company__benefit-count {
+      @include desktop-m {
+        font-size: 24px;
+      }
+
+      @include mobile {
+        font-size: vmin(16);
+      }
+    }
+
+    .about-company__benefit-img {
+      &--1,
+      &--2,
+      &--4 {
+        bottom: 0;
+        right: 0;
+        width: auto;
+        height: 100%;
+      }
+
+      &--3-1 {
+        top: 25.63%;
+        right: 28.58%;
+        z-index: 1;
+        transform-origin: center;
+
+        @include tablet {
+          right: 15%;
+        }
+      }
+
+      &--3-2 {
+        top: calc(25.63% - 13.21px);
+        right: calc(28.58% - 13.21px);
+        z-index: 1;
+        transform-origin: center;
+
+        @include tablet {
+          right: calc(15% - 13.21px);
+        }
+      }
+
+      &--3-3 {
+        top: calc(25.63% - 28.54px);
+        right: calc(28.58% - 28.54px);
+        z-index: 1;
+        transform-origin: center;
+
+        @include tablet {
+          right: calc(15% - 28.54px);
+        }
+      }
+
+      &--3-4 {
+        top: calc(25.63% - 46.76px);
+        right: calc(28.58% - 46.76px);
+        z-index: 1;
+        transform-origin: center;
+
+        @include tablet {
+          right: calc(15% - 46.76px);
+        }
+      }
+
+      &--2 {
+        z-index: 2;
+      }
+
+      &--4 {
+        z-index: 3;
+      }
+
+      &--1 {
+        z-index: 4;
+      }
+    }
+
+    @include hover {
+      .about-company__benefit-img {
+        &--1 {
+          right: -3.74%;
+        }
+
+        &--2 {
+          right: -6.15%;
+        }
+
+        &--4 {
+          right: -8.45%;
+        }
+
+        &--3-1 {
+          right: 21.5%;
+          transform: scale(0.96);
+        }
+
+        &--3-2 {
+          right: calc(21.5% - 13.21px);
+          transform: scale(1.18);
+        }
+
+        &--3-3 {
+          right: calc(21.5% - 28.54px);
+          transform: scale(1.31);
+        }
+
+        &--3-4 {
+          right: calc(21.5% - 46.76px);
+          transform: scale(1.47);
+        }
+      }
+    }
+  }
+
+  &__benefit-item--business-portal {
+    @include tablet {
+      order: 4;
+    }
+    .about-company__benefit-count-wrap {
+      @include desktop-m {
+        max-width: 38%;
+      }
+
+      @include mobile {
+        position: relative;
+        z-index: 2;
+      }
+    }
+    .about-company__benefit-count {
+      @include desktop-m {
+        font-size: 24px;
+      }
+
+      @include mobile {
+        font-size: vmin(16);
+      }
+    }
+
+    .about-company__benefit-text {
+      @include desktop-m {
+        max-width: 38%;
+      }
+
+      @include mobile {
+        position: relative;
+        z-index: 2;
+        max-width: vmin(156);
+      }
+    }
+    .about-company__benefit-img {
+      &--1 {
+        width: auto;
+        height: 64%;
+        bottom: 10%;
+        right: 21.67%;
+        z-index: 4;
+
+        @include tablet {
+          right: 13.07%;
+        }
+
+        @include mobile {
+          height: 56.25%;
+          right: 13.11%;
+        }
+      }
+
+      &--2 {
+        top: 3%;
+        right: 12%;
+        z-index: 2;
+
+        @include desktop-m {
+          height: 55.1%;
+        }
+
+        @include tablet {
+          right: 7.23%;
+        }
+
+        @include mobile {
+          height: 37.5%;
+          right: 6.71%;
+        }
+      }
+
+      &--3 {
+        height: 100%;
+        width: auto;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+
+        @include mobile {
+          right: -7.31%;
+        }
+      }
+
+      &--4 {
+        height: 100%;
+        width: auto;
+        bottom: 0;
+        right: 0;
+        z-index: 3;
+
+        @include mobile {
+          right: -7.31%;
+        }
+      }
+    }
+
+    @include hover {
+      .about-company__benefit-img {
+        &--1 {
+          right: 26.91%;
+        }
+        &--3,
+        &--4 {
+          right: -4.67%;
+        }
+      }
+    }
+  }
+}
